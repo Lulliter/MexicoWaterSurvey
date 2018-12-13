@@ -1,4 +1,4 @@
-	# Go To (git) ./ folder
+	# Go To (git) ./sub-folder (one below the Rproj wdir) 
 	cd ./08_DataMEX_site
 	ls
 	git remote show origin 
