@@ -16,3 +16,5 @@ rmarkdown::clean_site()
 # =======render your sweet site. 
 rmarkdown::render_site()
 
+# =======render just one page
+# rmarkdown::render_site("index.Rmd")
