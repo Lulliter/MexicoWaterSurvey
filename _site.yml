@@ -5,7 +5,6 @@ name: "Survey-WSS-Operators-Mexico"
 # exclude: ["docs.txt", "*.csv"] 
 exclude: 
 - Lula_deploy.sh  # enable you to override what files / dir  are copied into the output directory
-- data
 - zzz_extra
 - CNAME
 - README.html
