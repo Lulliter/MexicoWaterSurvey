@@ -1,0 +1,27 @@
+# Site output
+_site/*
+site_libs/*
+
+# knitr and caching stuff
+*_files/*
+*_cache/*
+
+# Other folders
+zzz_extra/*
+ 
+# R stuff
+.Rproj.user
+.Rhistory
+.RData
+
+# Miscellaneous
+CNAME
+#*.~lock.*
+#.DS_Store
+#.dropbox
+#Icon?
+
+## Temporarily ignore data and output
+#Output/*
+#Data/data_clean/*.rds
+
