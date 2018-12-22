@@ -6,7 +6,6 @@ name: "Survey-WSS-Operators-Mexico"
 exclude: 
 - Lula_deploy.sh  # enable you to override what files / dir  are copied into the output directory
 - zzz_extra
-- CNAME
 ### by default all these are EXCLUDED from the output dir
 ###       beginning with (_.ffff , .fff ), 
 ###       ending with  (*.R, *.s, *.Rmd), 
