@@ -19,7 +19,7 @@ fi
 git commit -m "$msg"
 
 		# or git commit -m "free text "
-		git commit -m "Added AH css and footer "
+		# git commit -m "Added AH css and footer "
 		
 # Push source and build repos.
 git push origin master
