@@ -1,6 +1,6 @@
 # Site output
 # _site/*
-site_libs/*
+# site_libs/*
 
 # knitr and caching stuff
 *_files/*
@@ -15,7 +15,7 @@ zzz_extra/*
 .RData
 
 # Miscellaneous
-CNAME
+# CNAME
 #*.~lock.*
 #.DS_Store
 #.dropbox
