@@ -8,6 +8,8 @@ exclude:
 - data
 - zzz_extra
 - CNAME
+- README.html
+- LICENCE.html
 ### by default all these are EXCLUDED from the output dir
 ###       beginning with (_.ffff , .fff ), 
 ###       ending with  (*.R, *.s, *.Rmd), 
