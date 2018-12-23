@@ -4,4 +4,65 @@ title: "Descriptive Statistics of Survey WSS Operators Mexico"
 
 Descriptive Statistics of Survey WSS Operators Mexico
 
-che cazz!
+
+```{r SETUP , echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(fig.retina = 2,
+                      tidy.opts = list(width.cutoff = 120),  # For code
+                      options(width = 120))  # For output
+
+
+```
+
+```{r LOADPCK, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(stringr)
+library(forcats)
+library(scales)
+library(patchwork)
+library(countrycode)
+library(sf)
+library(here) # OKKIO, I am in /DataMEX, because it contains a file `.here`
+
+library(here)
+here::dr_here(show_reason = T)
+```
+
+```{r sourceFunc, echo=FALSE, message=FALSE}
+# doesn't work in any way
+#knitr::opts_knit$set(root.dir = '.')
+
+# source(here("MexicoWaterSurvey","lib", "graphics.R"))
+# source(here("MexicoWaterSurvey","lib", "pandoc.R"))
+# # # source(here("MexicoWaterSurvey","lib", "bayes.R"))
+# # source("./MexicoWaterSurvey/lib/graphics.R")
+# # source("./MexicoWaterSurvey/lib/pandoc.R")
+# # # source("./MexicoWaterSurvey/lib/bayes.R")
+
+my.seed <- 1234
+set.seed(my.seed)
+
+# #======  Source NECESSARY Functions 
+# needed_func <- c("MexicoWaterSurvey/lib/graphics.R", "MexicoWaterSurvey/lib/pandoc.R")
+# # Execute them them in the environment
+# purrr::walk(needed_func, source, local = FALSE, echo = TRUE, verbose = F) 
+
+```
+
+
+
+
+```{r COPYOUTP, echo=FALSE, message=FALSE}
+library(here)
+here::dr_here(show_reason = T)
+
+from_dir <- here("07_output")
+to_dir <- here("MexicoWaterSurvey", "output")
+
+files <- list.files(path = from_dir , full.names = TRUE) #,  pattern = ".png$" )
+move <- files[sapply(files, file.size) < 100000000] # < 100 MB or Github will get stuck
+
+file.copy( from =  move, to = to_dir , overwrite = T )
+# if I had listed with full.names = F
+# file.copy( file.path(from_dir, move), to = to_dir  )
+```
+
