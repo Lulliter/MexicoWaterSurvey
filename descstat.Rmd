@@ -27,26 +27,7 @@ library(here)
 here::dr_here(show_reason = T)
 ```
 
-```{r sourceFunc, echo=FALSE, message=FALSE}
-# doesn't work in any way
-#knitr::opts_knit$set(root.dir = '.')
 
-# source(here("MexicoWaterSurvey","lib", "graphics.R"))
-# source(here("MexicoWaterSurvey","lib", "pandoc.R"))
-# # # source(here("MexicoWaterSurvey","lib", "bayes.R"))
-# # source("./MexicoWaterSurvey/lib/graphics.R")
-# # source("./MexicoWaterSurvey/lib/pandoc.R")
-# # # source("./MexicoWaterSurvey/lib/bayes.R")
-
-my.seed <- 1234
-set.seed(my.seed)
-
-# #======  Source NECESSARY Functions 
-# needed_func <- c("MexicoWaterSurvey/lib/graphics.R", "MexicoWaterSurvey/lib/pandoc.R")
-# # Execute them them in the environment
-# purrr::walk(needed_func, source, local = FALSE, echo = TRUE, verbose = F) 
-
-```
 
 
 
