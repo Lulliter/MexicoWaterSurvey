@@ -1,5 +1,5 @@
 ---
-title: "Descriptive Statistics of Survey WSS Operators Mexico"
+title: "Descriptive Statistics"
 ---
 
 Descriptive Statistics of Survey WSS Operators Mexico

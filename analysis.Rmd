@@ -1,5 +1,5 @@
 ---
-title: "Analysis of Survey WSS Operators Mexico"
+title: "Analysis"
 ---
 
 Analysis of Survey WSS Operators Mexico
