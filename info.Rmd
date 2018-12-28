@@ -14,6 +14,6 @@ xcge  [see @noauthor_new_2018, pp. 33-35;  ch. 1].
 
 # Aknowledgements
 
-1. I shamelessly copied the formatting of this static webpage from one of Prof. Andrew Weiss' research projects, graciously shared [here](https://stats.andrewheiss.com/donors-ngo-restrictions/).
+1. I shamelessly copied the formatting of this static webpage from one of Prof. [Andrew Weiss](https://www.andrewheiss.com/)' research projects, graciously shared [here](https://stats.andrewheiss.com/donors-ngo-restrictions/).
 
 # Consulted Documents

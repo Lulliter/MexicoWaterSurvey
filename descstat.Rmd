@@ -8,7 +8,7 @@ Descriptive Statistics of Survey WSS Operators Mexico
 ```{r SETUP , echo=FALSE, message=FALSE}
 knitr::opts_chunk$set(fig.retina = 2,
                       tidy.opts = list(width.cutoff = 120),  # For code
-                      options(width = 120))  # For output
+                      options(width = 120) )  # For output
 
 
 ```
@@ -46,4 +46,59 @@ file.copy( from =  move, to = to_dir , overwrite = T )
 # if I had listed with full.names = F
 # file.copy( file.path(from_dir, move), to = to_dir  )
 ```
+
+
+
+# STARTING POINT
+
+1. The sample for the survey is mutuated from the sampling design of LAPOP
+
+I looked into the STATA file with the sample of MX - 2016 which surveyd 1,563 IDs located in 260 *clusters* , which covered 110 * municipios* (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62))
+LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (slightly changed in 2018).MFclass
+
+2. In order to match official admin boundaries and shapefile (as in Census 2010), I downloaded from INEGI. 
+	--> saved in 
+	+ save(MXent2010_sf, file = "./03_cleandata/MXent2010_sf.Rdata") # ENTIDAD (32)
+	+ save(MXmun2010_sf, file = "./03_cleandata/MXmun2010_sf.Rdata") # Municipios (2546)
+	+ save(MXLocUr2010_sf, file = "./03_cleandata/MXLocUr2010_sf.Rdata") # Localidades URb( 4525 of 192,217 ) MULTiPOLYGON
+	+ save(MXLocRur2010_sf, file = "./03_cleandata/MXLocRur2010_sf.Rdata") # Localidades Rur (187719 of 192,217)
+	
+	+save(MXAGEBUr2010_sf, file = "./03_cleandata/MXAGEBUr2010_sf.Rdata") # 56195 AGEB urb-
+ 
+3. Identification of (expected) clusters for POPA 2018 sample (based on LAPOP) & matching to INEGI keys  admin boundaries (names and shapes)
+	--> saved POPA Cluster size by Admin Bound in 
+	+ save(PopaByM_sf, file = "./03_cleandata/PopaByM_sf.Rdata")
+	+ save(PopaByE_sf, file = "./03_cleandata/PopaByE_sf.Rdata")
+	--> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
+	+ save(Lapop2016Centr_IntersMun, file = "./03_cleandata/Lapop2016Centr_IntersMun.Rdata") #  # ccomplete 130 // unique 110 (out of 2556)	
+	+ save(Lapop2016Fence_IntersMun, file = "./03_cleandata/Lapop2016Fence_IntersMun.Rdata") # # complete 394 // unique 165 (out of 2556) !	
+
+ 
+
+```{r,  echo=FALSE, fig.cap="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
+knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleE.png"))
+
+#list.files(path = to_dir)
+```	
+	
+
+
+```{r,  echo=FALSE, fig.cap="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
+knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleM.png"))
+
+#list.files(path = to_dir)
+```	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
