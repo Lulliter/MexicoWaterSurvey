@@ -1,5 +1,5 @@
 ---
-title: "Sample"
+title: "How we created the sample"
 ---
 
 How we obtained the Sample WSS Operators Mexico and what it looks like
@@ -23,7 +23,6 @@ library(countrycode)
 library(sf)
 library(here) # OKKIO, I am in /DataMEX, because it contains a file `.here`
 
-library(here)
 here::dr_here(show_reason = T)
 ```
 
@@ -42,7 +41,7 @@ to_dir <- here("MexicoWaterSurvey", "output")
 files <- list.files(path = from_dir , full.names = TRUE) #,  pattern = ".png$" )
 move <- files[sapply(files, file.size) < 100000000] # < 100 MB or Github will get stuck
 
-file.copy( from =  move, to = to_dir , overwrite = T )
+file.copy( from =  from_dir, to = to_dir , overwrite = T )
 # if I had listed with full.names = F
 # file.copy( file.path(from_dir, move), to = to_dir  )
 ```
