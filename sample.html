@@ -11,7 +11,7 @@
 
 
 
-<title>Home</title>
+<title>Sample</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -260,7 +260,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("index.Rmd");
+  window.initializeSourceEmbed("sample.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -432,30 +432,56 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Home</h1>
+<h1 class="title toc-ignore">Sample</h1>
 
 </div>
 
 
-<div id="description-and-context" class="section level3">
-<h3>Description and context</h3>
-<p>This is a static webpage created to track the progress of a survey on Mexico WSS Operators. The survey is part of a larger effort to collect original data in preparation of the publication <strong>“Development in America” 2020</strong> that will focus on Infrastructure. This specific survey is sponsored by the <strong>Interamerican Development Bank (IADB)</strong>, Water Division, Knowledge Team <a href="https://idbg.sharepoint.com/sites/WSAknowledge">WSA Knowledge</a>, where I work as a consultant.</p>
+<p>How we obtained the Sample WSS Operators Mexico and what it looks like</p>
+<pre><code>## logical(0)</code></pre>
+<div id="starting-point" class="section level2">
+<h2>STARTING POINT</h2>
+<ol style="list-style-type: decimal">
+<li>The sample for the survey is mutuated from the sampling design of LAPOP</li>
+</ol>
+<p>I looked into the STATA files with the sample of MX - 2016 which surveyd 1,563 IDs located in 260 <em>clusters</em> , which covered 110 * municipios* (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 &amp; 62))</p>
+<p>LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (slightly changed in 2018)</p>
+<ol start="2" style="list-style-type: decimal">
+<li>In order to match official admin boundaries and shapefile (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for<br />
+</li>
+</ol>
+<ul>
+<li>ENTIDAD (32)</li>
+<li>Municipios (2546)</li>
+<li>Localidades URb( 4525 of 192,217 ) MULTiPOLYGON</li>
+<li>Localidades Rur (187719 of 192,217) points</li>
+<li>AGEB urb- 56195</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Identification of (expected) clusters for POPA 2018 sample (based on LAPOP) &amp; matching to INEGI keys admin boundaries (names and shapes) –&gt; saved POPA Cluster size by Admin Bound in –&gt; saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences)</li>
+</ol>
 </div>
-<div id="content" class="section level3">
-<h3>Content</h3>
-<p>This webpage <a href="http://mexicowatersurvey.lulliter.com/" class="uri">http://mexicowatersurvey.lulliter.com/</a> has been built as an <code>R Markdown website</code>, using <code>Jekyll</code> as a static site generator with <code>GitHub Pages</code> - actually redirected to my custom domain on <code>AWS</code>.</p>
-<p>The code for the page is on my <a href="https://github.com/Lulliter/MexicoWaterSurvey">Github repo</a>, which is actually a sud-directory of the research project. The latter (not publicly disclosed because includes confidential data) is on the IADB company OneDrive cloud.</p>
+<div id="the-entidades-and-municipios-including-lapoppopa-clusters-2016-closely-followed-in-2018" class="section level2">
+<h2>The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 –&gt; closely followed in 2018)</h2>
+<div class="figure">
+<img src="/Users/luisamimmi/OneDrive - Inter-American Development Bank Group/DataMEX/MexicoWaterSurvey/MexicoWaterSurvey/output/01_tmap_PopaSampleE.png" alt="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016" width="100%" />
+<p class="caption">
+The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016
+</p>
 </div>
-<div id="creators" class="section level3">
-<h3>Creators</h3>
-<p>This page was created by Luisa Mimmi (<a href="mailto:lmm76@georgetown.edu">lmm76@georgetown.edu</a> or <a href="mailto:lmmimmi@iadb.org">lmmimmi@iadb.org</a>) but builds on data collected by various IADB colleagues and partner organizations. See <a href="http://mexicowatersurvey.lulliter.com/info.html"><strong>Info page</strong></a> for all due credits.</p>
+<div class="figure">
+<img src="/Users/luisamimmi/OneDrive - Inter-American Development Bank Group/DataMEX/MexicoWaterSurvey/MexicoWaterSurvey/output/01_tmap_PopaSampleM.png" alt="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016" width="100%" />
+<p class="caption">
+The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016
+</p>
 </div>
-<div id="warning" class="section level3">
-<h3>WARNING</h3>
-<p>Please note, as of today <em>(23 January, 2019)</em> this is still a work in progress, subject to change and not ready for dissemination. <!-- <span style="color:red">Please note, this is still a work in progress, subject to change and not ready for dissemination.</span>. --></p>
+</div>
+<div id="the-changes-in-entidades-and-municipios-including-lapoppopa-clusters-according-to-census-2010-compared-to-census-2000" class="section level2">
+<h2>The changes in ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters according to census 2010 compared to census 2000</h2>
+<p>……</p>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG9tZSIKLS0tCgojIyMgRGVzY3JpcHRpb24gYW5kIGNvbnRleHQKVGhpcyBpcyBhIHN0YXRpYyB3ZWJwYWdlIGNyZWF0ZWQgdG8gdHJhY2sgdGhlIHByb2dyZXNzIG9mIGEgc3VydmV5IG9uIE1leGljbyBXU1MgT3BlcmF0b3JzLiBUaGUgc3VydmV5IGlzIHBhcnQgb2YgYSBsYXJnZXIgZWZmb3J0IHRvIGNvbGxlY3Qgb3JpZ2luYWwgZGF0YSBpbiBwcmVwYXJhdGlvbiBvZiB0aGUgcHVibGljYXRpb24gKioiRGV2ZWxvcG1lbnQgaW4gQW1lcmljYSIgMjAyMCoqIHRoYXQgd2lsbCBmb2N1cyBvbiBJbmZyYXN0cnVjdHVyZS4gVGhpcyBzcGVjaWZpYyBzdXJ2ZXkgaXMgc3BvbnNvcmVkIGJ5IHRoZSAqKkludGVyYW1lcmljYW4gRGV2ZWxvcG1lbnQgQmFuayAoSUFEQikqKiwgV2F0ZXIgRGl2aXNpb24sIEtub3dsZWRnZSBUZWFtICBbV1NBIEtub3dsZWRnZV0oaHR0cHM6Ly9pZGJnLnNoYXJlcG9pbnQuY29tL3NpdGVzL1dTQWtub3dsZWRnZSksIHdoZXJlIEkgd29yayBhcyBhIGNvbnN1bHRhbnQuIAoKIyMjIENvbnRlbnQKVGhpcyB3ZWJwYWdlIGh0dHA6Ly9tZXhpY293YXRlcnN1cnZleS5sdWxsaXRlci5jb20vIGhhcyBiZWVuIGJ1aWx0IGFzIGFuIGBSIE1hcmtkb3duIHdlYnNpdGVgLCB1c2luZyBgSmVreWxsYCBhcyBhIHN0YXRpYyBzaXRlIGdlbmVyYXRvciB3aXRoIGBHaXRIdWIgUGFnZXNgIC0gYWN0dWFsbHkgcmVkaXJlY3RlZCB0byBteSBjdXN0b20gZG9tYWluIG9uIGBBV1NgLiAKClRoZSBjb2RlIGZvciB0aGUgcGFnZSBpcyBvbiBteSBbR2l0aHViIHJlcG9dKGh0dHBzOi8vZ2l0aHViLmNvbS9MdWxsaXRlci9NZXhpY29XYXRlclN1cnZleSksIHdoaWNoIGlzIGFjdHVhbGx5IGEgc3VkLWRpcmVjdG9yeSBvZiB0aGUgcmVzZWFyY2ggcHJvamVjdC4gVGhlIGxhdHRlciAobm90IHB1YmxpY2x5IGRpc2Nsb3NlZCBiZWNhdXNlIGluY2x1ZGVzIGNvbmZpZGVudGlhbCBkYXRhKSBpcyBvbiB0aGUgSUFEQiBjb21wYW55IE9uZURyaXZlIGNsb3VkLiAJCgojIyMgQ3JlYXRvcnMKVGhpcyBwYWdlIHdhcyBjcmVhdGVkIGJ5IEx1aXNhIE1pbW1pIChsbW03NkBnZW9yZ2V0b3duLmVkdSBvciBsbW1pbW1pQGlhZGIub3JnKSBidXQgYnVpbGRzIG9uIGRhdGEgY29sbGVjdGVkIGJ5IHZhcmlvdXMgSUFEQiBjb2xsZWFndWVzIGFuZCBwYXJ0bmVyIG9yZ2FuaXphdGlvbnMuIFNlZSBbKipJbmZvIHBhZ2UqKl0oaHR0cDovL21leGljb3dhdGVyc3VydmV5Lmx1bGxpdGVyLmNvbS9pbmZvLmh0bWwpIGZvciBhbGwgZHVlIGNyZWRpdHMuIAoKIyMjIFdBUk5JTkcKUGxlYXNlIG5vdGUsIGFzIG9mIHRvZGF5IF8oYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiwgJVknKWApXyB0aGlzIGlzIHN0aWxsIGEgd29yayBpbiBwcm9ncmVzcywgc3ViamVjdCB0byBjaGFuZ2UgYW5kIG5vdCByZWFkeSBmb3IgZGlzc2VtaW5hdGlvbi4KPCEtLSA8c3BhbiBzdHlsZT0iY29sb3I6cmVkIj5QbGVhc2Ugbm90ZSwgdGhpcyBpcyBzdGlsbCBhIHdvcmsgaW4gcHJvZ3Jlc3MsIHN1YmplY3QgdG8gY2hhbmdlIGFuZCBub3QgcmVhZHkgZm9yIGRpc3NlbWluYXRpb24uPC9zcGFuPi4gLS0+Cg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2FtcGxlIgotLS0KCkhvdyB3ZSBvYnRhaW5lZCB0aGUgU2FtcGxlIFdTUyBPcGVyYXRvcnMgTWV4aWNvIGFuZCB3aGF0IGl0IGxvb2tzIGxpa2UKCgpgYGB7ciBTRVRVUCAsIGVjaG89RkFMU0UsIG1lc3NhZ2U9RkFMU0V9CmtuaXRyOjpvcHRzX2NodW5rJHNldChmaWcucmV0aW5hID0gMiwKICAgICAgICAgICAgICAgICAgICAgIHRpZHkub3B0cyA9IGxpc3Qod2lkdGguY3V0b2ZmID0gMTIwKSwgICMgRm9yIGNvZGUKICAgICAgICAgICAgICAgICAgICAgIG9wdGlvbnMod2lkdGggPSAxMjApICkgICMgRm9yIG91dHB1dAoKCmBgYAoKYGBge3IgTE9BRFBDSywgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShmb3JjYXRzKQpsaWJyYXJ5KHNjYWxlcykKbGlicmFyeShwYXRjaHdvcmspCmxpYnJhcnkoY291bnRyeWNvZGUpCmxpYnJhcnkoc2YpCmxpYnJhcnkoaGVyZSkgIyBPS0tJTywgSSBhbSBpbiAvRGF0YU1FWCwgYmVjYXVzZSBpdCBjb250YWlucyBhIGZpbGUgYC5oZXJlYAoKbGlicmFyeShoZXJlKQpoZXJlOjpkcl9oZXJlKHNob3dfcmVhc29uID0gVCkKYGBgCgoKCgoKCmBgYHtyIENPUFlPVVRQLCBlY2hvPUZBTFNFLCBtZXNzYWdlPUZBTFNFfQpsaWJyYXJ5KGhlcmUpCmhlcmU6OmRyX2hlcmUoc2hvd19yZWFzb24gPSBUKQoKZnJvbV9kaXIgPC0gaGVyZSgiMDdfb3V0cHV0IikKdG9fZGlyIDwtIGhlcmUoIk1leGljb1dhdGVyU3VydmV5IiwgIm91dHB1dCIpCgpmaWxlcyA8LSBsaXN0LmZpbGVzKHBhdGggPSBmcm9tX2RpciAsIGZ1bGwubmFtZXMgPSBUUlVFKSAjLCAgcGF0dGVybiA9ICIucG5nJCIgKQptb3ZlIDwtIGZpbGVzW3NhcHBseShmaWxlcywgZmlsZS5zaXplKSA8IDEwMDAwMDAwMF0gIyA8IDEwMCBNQiBvciBHaXRodWIgd2lsbCBnZXQgc3R1Y2sKCmZpbGUuY29weSggZnJvbSA9ICBtb3ZlLCB0byA9IHRvX2RpciAsIG92ZXJ3cml0ZSA9IFQgKQojIGlmIEkgaGFkIGxpc3RlZCB3aXRoIGZ1bGwubmFtZXMgPSBGCiMgZmlsZS5jb3B5KCBmaWxlLnBhdGgoZnJvbV9kaXIsIG1vdmUpLCB0byA9IHRvX2RpciAgKQpgYGAKCgoKIyMgU1RBUlRJTkcgUE9JTlQKCjEuIFRoZSBzYW1wbGUgZm9yIHRoZSBzdXJ2ZXkgaXMgbXV0dWF0ZWQgZnJvbSB0aGUgc2FtcGxpbmcgZGVzaWduIG9mIExBUE9QCgpJIGxvb2tlZCBpbnRvIHRoZSBTVEFUQSBmaWxlcyB3aXRoIHRoZSBzYW1wbGUgb2YgTVggLSAyMDE2IHdoaWNoIHN1cnZleWQgMSw1NjMgSURzIGxvY2F0ZWQgaW4gMjYwICpjbHVzdGVycyogLCB3aGljaCBjb3ZlcmVkIDExMCAqIG11bmljaXBpb3MqIChzaW5jZSBzYW1wbGVzIGFyZSBwcm9wb3J0aW9uYWwgdG8gdGhlIHNpemUgb2YgdGhlIHBvcHVsYXRpb24sIGxhcmdlciBtdW5pY2lwaW9zIGhhdmUgbW9yZSB0aGFuIG9uZSBQU1UgKGVzIFRpanVhbmEgaGFzIDYxICYgNjIpKQoKTEFQT1AgcHJvdmlkZWQgYSBmaWxlIHdpdGggZ2VvZmVuY2VzIHRoYXQgaW5kaWNhdGUgYSBjaXJjbGUgY29udGFpbmluZyBlYWNoIGNsdXN0ZXIgaW4gMjAxNiAoc2xpZ2h0bHkgY2hhbmdlZCBpbiAyMDE4KSAKCjIuIEluIG9yZGVyIHRvIG1hdGNoIG9mZmljaWFsIGFkbWluIGJvdW5kYXJpZXMgYW5kIHNoYXBlZmlsZSAoYXMgaW4gQ2Vuc3VzIDIwMTApLCBJIGRvd25sb2FkZWQgZnJvbSBJTkVHSSB0aGUgSUQga2V5cyBhbmQgc2hhcGVmaWxlcyAocG9seWdvbnMpIGZvciAgCisgRU5USURBRCAoMzIpIAorIE11bmljaXBpb3MgKDI1NDYpCisgTG9jYWxpZGFkZXMgVVJiKCA0NTI1IG9mIDE5MiwyMTcgKSBNVUxUaVBPTFlHT04KKyBMb2NhbGlkYWRlcyBSdXIgKDE4NzcxOSBvZiAxOTIsMjE3KSBwb2ludHMgCisgQUdFQiB1cmItIDU2MTk1IAogCjMuIElkZW50aWZpY2F0aW9uIG9mIChleHBlY3RlZCkgY2x1c3RlcnMgZm9yIFBPUEEgMjAxOCBzYW1wbGUgKGJhc2VkIG9uIExBUE9QKSAmIG1hdGNoaW5nIHRvIElORUdJIGtleXMgIGFkbWluIGJvdW5kYXJpZXMgKG5hbWVzIGFuZCBzaGFwZXMpCgktLT4gc2F2ZWQgUE9QQSBDbHVzdGVyIHNpemUgYnkgQWRtaW4gQm91bmQgaW4gCgktLT4gc2F2ZWQgU1BKT0lOIFJFU1VMVFMgTEFQT1AgRkVOQ0VTIGludGVyc2VjdGVkIHdpdGggTXVuIChDZW50cm9pZHMgYW5kIGZlbmNlcykgCgkgCgojIyBUaGUgRU5USURBREVTIGFuZCBNVU5JQ0lQSU9TIElOQ0xVRElORyBMQVBPUC9QT1BBIGNsdXN0ZXJzICgyMDE2IC0tPiBjbG9zZWx5IGZvbGxvd2VkIGluIDIwMTgpCgpgYGB7ciwgIGVjaG89RkFMU0UsIGZpZy5jYXA9IlRoZSBFTlRJREFERVMgd2hpY2ggaW5jbHVkZSBMQVBPUCBjbHVzdGVycyBieSAjIG9mIGhoIGludGVydmlld2VkIGluIDIwMTYiLCBvdXQud2lkdGggPSAnMTAwJScsIHJlc3VsdHM9J2FzaXMnfQprbml0cjo6aW5jbHVkZV9ncmFwaGljcyhwYXN0ZTAodG9fZGlyLCIvMDFfdG1hcF9Qb3BhU2FtcGxlRS5wbmciKSkKCiNsaXN0LmZpbGVzKHBhdGggPSB0b19kaXIpCmBgYAkKCQoKCmBgYHtyLCAgZWNobz1GQUxTRSwgZmlnLmNhcD0iVGhlIE1VTklDSVBJT1Mgd2hpY2ggaW5jbHVkZSBMQVBPUCBjbHVzdGVycyBieSAjIG9mIGhoIGludGVydmlld2VkIGluIDIwMTYiLCBvdXQud2lkdGggPSAnMTAwJScsIHJlc3VsdHM9J2FzaXMnfQprbml0cjo6aW5jbHVkZV9ncmFwaGljcyhwYXN0ZTAodG9fZGlyLCIvMDFfdG1hcF9Qb3BhU2FtcGxlTS5wbmciKSkKCiNsaXN0LmZpbGVzKHBhdGggPSB0b19kaXIpCmBgYAkKCgojIyBUaGUgY2hhbmdlcyBpbiBFTlRJREFERVMgYW5kIE1VTklDSVBJT1MgSU5DTFVESU5HIExBUE9QL1BPUEEgY2x1c3RlcnMgYWNjb3JkaW5nIHRvIGNlbnN1cyAyMDEwIGNvbXBhcmVkIHRvIGNlbnN1cyAyMDAwCgoKLi4uLi4uCgoKCgoKCgoKCgoKCg==</div>
 <p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Luisa M. Mimmi</a>. 
 Code available on <a href="https://github.com/Lulliter/MexicoWaterSurvey">GitHub</a>. <br />
 

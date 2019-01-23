@@ -32,68 +32,6 @@ here::dr_here(show_reason = T)
 
 
 
-```{r COPYOUTP, echo=FALSE, message=FALSE}
-library(here)
-here::dr_here(show_reason = T)
-
-from_dir <- here("07_output")
-to_dir <- here("MexicoWaterSurvey", "output")
-
-files <- list.files(path = from_dir , full.names = TRUE) #,  pattern = ".png$" )
-move <- files[sapply(files, file.size) < 100000000] # < 100 MB or Github will get stuck
-
-file.copy( from =  move, to = to_dir , overwrite = T )
-# if I had listed with full.names = F
-# file.copy( file.path(from_dir, move), to = to_dir  )
-```
-
-
-
-## STARTING POINT
-
-1. The sample for the survey is mutuated from the sampling design of LAPOP
-
-I looked into the STATA files with the sample of MX - 2016 which surveyd 1,563 IDs located in 260 *clusters* , which covered 110 * municipios* (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62))
-
-LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (slightly changed in 2018) 
-
-2. In order to match official admin boundaries and shapefile (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for  
-+ ENTIDAD (32) 
-+ Municipios (2546)
-+ Localidades URb( 4525 of 192,217 ) MULTiPOLYGON
-+ Localidades Rur (187719 of 192,217) points 
-+ AGEB urb- 56195 
- 
-3. Identification of (expected) clusters for POPA 2018 sample (based on LAPOP) & matching to INEGI keys  admin boundaries (names and shapes)
-	--> saved POPA Cluster size by Admin Bound in 
-	--> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
-	 
-
-## The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 --> closely followed in 2018)
-
-```{r,  echo=FALSE, fig.cap="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
-knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleE.png"))
-
-#list.files(path = to_dir)
-```	
-	
-
-
-```{r,  echo=FALSE, fig.cap="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
-knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleM.png"))
-
-#list.files(path = to_dir)
-```	
-
-
-## The changes in ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters according to census 2010 compared to census 2000
-
-
-......
-
-
-
-
 
 
 
