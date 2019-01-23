@@ -19,7 +19,7 @@ fi
 git commit -m "$msg"
 
 		# or git commit -m "free text "
-		# git commit -m "Added page Sample"
+		# git commit -m "changed to _site"
 		
 # Push source and build repos.
 git push origin master
