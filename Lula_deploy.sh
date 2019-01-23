@@ -19,7 +19,7 @@ fi
 git commit -m "$msg"
 
 		# or git commit -m "free text "
-		# git commit -m "Copright in html/footer"
+		# git commit -m "Added page Sample"
 		
 # Push source and build repos.
 git push origin master
