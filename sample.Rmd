@@ -75,18 +75,27 @@ LAPOP provided a file with geofences that indicate a circle containing each clus
 ## The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 --> closely followed in 2018)
 
 ```{r,  echo=FALSE, fig.cap="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
-knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleE.png"))
 
-#list.files(path = to_dir)
+# knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleE.png"))   # NOT RENDERING 
+
+### #list.files(path = to_dir)
 ```	
 	
 
 
-```{r,  echo=FALSE, fig.cap="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
-knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleM.png"))
 
-#list.files(path = to_dir)
+![The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleE.png) 
+
+
+
+
+```{r,  echo=FALSE, fig.cap="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
+# knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleM.png")) # NOT RENDERING 
+
+### #list.files(path = to_dir)
 ```	
+
+![The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleM.png) 
 
 
 ## The changes in ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters according to census 2010 compared to census 2000
