@@ -6,6 +6,10 @@ How we obtained the Sample WSS Operators Mexico and what it looks like
 
 
 ```{r SETUP , echo=FALSE, message=FALSE}
+# https://stackoverflow.com/questions/43549930/pdf-figures-not-shown-in-html-files-produced-by-rmarkdown-when-open-with-firefox
+# to fix issue of picture not rendering TRY 
+# devtools::install_github('yihui/knitr')
+
 knitr::opts_chunk$set(fig.retina = 2,
                       tidy.opts = list(width.cutoff = 120),  # For code
                       options(width = 120) )  # For output
