@@ -1,5 +1,9 @@
 ---
 title: "How we created the sample"
+bibliography: MX_WaterSurvey.bib
+# nocite: '@*' # @* is a wildcard for all references. (ITEMS NOT MENTIONED THAT I WANT IN THE BIBLIOGRAPHY)
+# nocite: |
+# @riquelme_organismos_2018
 ---
 
 How we obtained the Sample WSS Operators Mexico and what it looks like
@@ -52,22 +56,22 @@ file.copy( from =  from_dir, to = to_dir , overwrite = T )
 
 
 
-## STARTING POINT
+## SOURCES of DATA
 
 1. The sample for the survey is mutuated from the sampling design of LAPOP
 
-I looked into the STATA files with the sample of MX - 2016 which surveyd 1,563 IDs located in 260 *clusters* , which covered 110 * municipios* (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62))
+I looked into the STATA files with the sample of MX - 2016 which surveyd 1,563 IDs located in 260 **clusters** , which covered 110 **municipios** (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62))
 
 LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (slightly changed in 2018) 
 
 2. In order to match official admin boundaries and shapefile (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for  
-+ ENTIDAD (32) 
++ Entidad (32) 
 + Municipios (2546)
 + Localidades URb( 4525 of 192,217 ) MULTiPOLYGON
 + Localidades Rur (187719 of 192,217) points 
 + AGEB urb- 56195 
  
-3. Identification of (expected) clusters for POPA 2018 sample (based on LAPOP) & matching to INEGI keys  admin boundaries (names and shapes)
+3. Identification of (expected) clusters for POPA 2018 sample (based on LAPOP) & matching to INEGI keys admin boundaries (names and shapes)
 	--> saved POPA Cluster size by Admin Bound in 
 	--> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
 	 
@@ -98,7 +102,7 @@ LAPOP provided a file with geofences that indicate a circle containing each clus
 ![The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleM.png) 
 
 
-## The changes in ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters according to census 2010 compared to census 2000
+## Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000
 
 
 ......
@@ -110,7 +114,15 @@ LAPOP provided a file with geofences that indicate a circle containing each clus
 
 
 
+## A LOOK AT THE WATER & SANITATION SERVICE PROVIDERS - SPECIFICALLY IN THE SURVEY AREA
+
+The service providers *"prestadores de los servicios de agua y saneamiento"* in Mexico are extremely heterogeneous in nature and conditions. 
+
+The classification that we use is mostly derived from the Nota Tecnica prepared by some colleagues of the IADB, WSA division [See @riquelme_organismos_2018, pp. 1-3].
+
+...... 
 
 
 
 
+### REFERENCE
