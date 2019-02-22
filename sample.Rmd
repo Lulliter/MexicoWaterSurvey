@@ -197,7 +197,7 @@ knitr::kable(Freq_Tipo, format = "pandoc", caption = "Title of the table")
 
 
 
-```{r knitAttempt, eval=F}
+```{r knitAttempt, echo = F, eval=F}
 # knitr::knit2html('./sample.Rmd',encoding = 'UTF-8',force_v1 = TRUE)
 ```
 
