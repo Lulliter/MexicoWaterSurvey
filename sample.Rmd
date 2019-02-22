@@ -1,5 +1,9 @@
 ---
 title: "How we created the sample"
+output: 
+  html_document: 
+    # css: /Library/Frameworks/R.framework/Versions/3.5/Resources/library/summarytools/includes/stylesheets
+    # css: html/summarytools.css
 bibliography: MX_WaterSurvey.bib
 # nocite: '@*' # @* is a wildcard for all references. (ITEMS NOT MENTIONED THAT I WANT IN THE BIBLIOGRAPHY)
 # nocite: |
@@ -16,7 +20,13 @@ How we obtained the Sample WSS Operators Mexico and what it looks like
 
 knitr::opts_chunk$set(fig.retina = 2,
                       tidy.opts = list(width.cutoff = 120),  # For code
-                      options(width = 120) )  # For output
+                      options(width = 120) # For output
+							 )  
+
+#  The encoding ("ISO-8859-1") is not UTF-8. We will only support UTF-8 in the future. Please re-save your file "sample.Rmd" with the UTF-8 encoding.
+
+
+# To generate tables using summarytool s own html rendering, the .Rmd document s configuration part (yaml) must point to the package s summarytools.css file.
 
 
 ```
@@ -29,9 +39,11 @@ library(scales)
 library(patchwork)
 library(countrycode)
 library(sf)
-library(here) # OKKIO, I am in /DataMEX, because it contains a file `.here`
+library(here)
+library(kableExtra)
+library(summarytools)
 
-here::dr_here(show_reason = T)
+
 ```
 
 
@@ -39,7 +51,8 @@ here::dr_here(show_reason = T)
 
 
 
-```{r COPYOUTP, echo=FALSE, message=FALSE}
+```{r COPYOUTPimage, echo=FALSE, message=FALSE}
+# OKKIO, I am in /DataMEX, because it contains a file `.here`
 library(here)
 here::dr_here(show_reason = T)
 
@@ -49,14 +62,32 @@ to_dir <- here("MexicoWaterSurvey", "output")
 files <- list.files(path = from_dir , full.names = TRUE) #,  pattern = ".png$" )
 move <- files[sapply(files, file.size) < 100000000] # < 100 MB or Github will get stuck
 
-file.copy( from =  from_dir, to = to_dir , overwrite = T )
+# --- SYNTAX
+# file.copy(list.of.files, new.folder)
+
+file.copy( move, to = to_dir , overwrite = T )
 # if I had listed with full.names = F
 # file.copy( file.path(from_dir, move), to = to_dir  )
 ```
 
+```{r COPYOUTPdata, echo=FALSE, message=FALSE}
+library(here)
+here::dr_here(show_reason = T)
+
+from_dir2 <- here("03_cleandata")
+to_dir2 <- here("MexicoWaterSurvey", "data")
+
+files2 <- list.files(path = from_dir2 , full.names = TRUE,  pattern =  "(^oper|^pres).*\\.Rdata$") 
+move2 <- files2[sapply(files2, file.size) < 100000000] # < 100 MB or Github will get stuck
+
+# --- SYNTAX
+# file.copy(list.of.files, new.folder)
+file.copy( move2, to = to_dir2 , overwrite = T )
+```
 
 
-## SOURCES of DATA
+
+## Sources of Data
 
 1. The sample for the survey is mutuated from the sampling design of LAPOP
 
@@ -76,7 +107,9 @@ LAPOP provided a file with geofences that indicate a circle containing each clus
 	--> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
 	 
 
-## The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 --> closely followed in 2018)
+## Which Entidades and Municipios
+
+The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 --> closely followed in 2018)
 
 ```{r,  echo=FALSE, fig.cap="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
 
@@ -102,7 +135,9 @@ LAPOP provided a file with geofences that indicate a circle containing each clus
 ![The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleM.png) 
 
 
-## Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000
+## Changes occurred between 2000-2010
+
+Look at Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000
 
 
 ......
@@ -114,15 +149,55 @@ LAPOP provided a file with geofences that indicate a circle containing each clus
 
 
 
-## A LOOK AT THE WATER & SANITATION SERVICE PROVIDERS - SPECIFICALLY IN THE SURVEY AREA
+## The Water & Sanitation Providers 
+
+Look at THE WATER & SANITATION SERVICE PROVIDERS - SPECIFICALLY IN THE SURVEY AREA
+
+INEGI has identified a total of 2688 _"prestadores"_ in the _"Censo de Captacion, Tratamiento y Suministro de Agua"_ 
+conducted in 2014 and published in 2015. Of all of these, some 700 could be rightly defined as _"organismos operadores"_, i.e. 
+entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their 
+decision making and financial management.
 
 The service providers *"prestadores de los servicios de agua y saneamiento"* in Mexico are extremely heterogeneous in nature and conditions. 
 
-The classification that we use is mostly derived from the Nota Tecnica prepared by some colleagues of the IADB, WSA division [See @riquelme_organismos_2018, pp. 1-3].
+In this project, the classification that we use is mostly derived from a _Nota Tecnica_ prepared by some colleagues of the IADB, WSA division [See @riquelme_organismos_2018, pp. 1-3]. This tracks some key information on **2,251 Prestadores**. 
 
-...... 
+```{r OperTIPO, echo=TRUE, message=FALSE, results = 'asis'}
 
+load( here("MexicoWaterSurvey", "data", "prestadoresUTF.Rdata"))
+
+# https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
+library(summarytools)
+Freq_Tipo <- summarytools::freq(prestadoresUTF$Tipo_lbl , 
+			 report.nas = FALSE, 
+			round.digits = 1, # default 2
+			order = "freq", #  
+			 style = 'rmarkdown', #  
+			 omit.headings = T
+			) 
+
+# # Then use view(), like so:
+# view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE)
+# 
+# print(Freq_Tipo, style = "rmarkdown", report.nas = FALSE, 
+#                  totals = FALSE, omit.headings = TRUE)
+# # print(FreqTipo)
+# 
+# kable(FreqTipo) %>%
+#   kable_styling("striped", full_width = F, latex_options = "scale_down") # %>%
+#   #   row_spec(11, bold = T, color = "white", background = "#D7261E")
+
+
+knitr::kable(Freq_Tipo, format = "pandoc", caption = "Title of the table")
+```
 
 
 
 ### REFERENCE
+
+
+
+```{r knitAttempt, eval=F}
+# knitr::knit2html('./MexicoWaterSurvey/sample.Rmd',encoding = 'UTF-8',force_v1 = TRUE)
+```
+
