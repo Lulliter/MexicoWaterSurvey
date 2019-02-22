@@ -1,7 +1,7 @@
 ---
 title: "How we created the sample"
-output: 
-  html_document: 
+#output: 
+ # html_document: 
     # css: /Library/Frameworks/R.framework/Versions/3.5/Resources/library/summarytools/includes/stylesheets
     # css: html/summarytools.css
 bibliography: MX_WaterSurvey.bib
@@ -162,7 +162,7 @@ The service providers *"prestadores de los servicios de agua y saneamiento"* in 
 
 In this project, the classification that we use is mostly derived from a _Nota Tecnica_ prepared by some colleagues of the IADB, WSA division [See @riquelme_organismos_2018, pp. 1-3]. This tracks some key information on **2,251 Prestadores**. 
 
-```{r OperTIPO, echo=TRUE, message=FALSE, results = 'asis'}
+```{r OperTIPO, echo=FALSE, message=FALSE, results = 'asis'}
 
 load( here("MexicoWaterSurvey", "data", "prestadoresUTF.Rdata"))
 
@@ -177,7 +177,7 @@ Freq_Tipo <- summarytools::freq(prestadoresUTF$Tipo_lbl ,
 			) 
 
 # # Then use view(), like so:
-# view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE)
+#  view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE)
 # 
 # print(Freq_Tipo, style = "rmarkdown", report.nas = FALSE, 
 #                  totals = FALSE, omit.headings = TRUE)
@@ -198,6 +198,6 @@ knitr::kable(Freq_Tipo, format = "pandoc", caption = "Title of the table")
 
 
 ```{r knitAttempt, eval=F}
-# knitr::knit2html('./MexicoWaterSurvey/sample.Rmd',encoding = 'UTF-8',force_v1 = TRUE)
+# knitr::knit2html('./sample.Rmd',encoding = 'UTF-8',force_v1 = TRUE)
 ```
 
