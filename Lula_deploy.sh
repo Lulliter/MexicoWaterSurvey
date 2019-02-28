@@ -18,7 +18,7 @@ fi
 # ... Commit Those changes.
 git commit -m "$msg"
 
-		# or git commit -m "free text "
+		# or git commit -m "Kable Table in SAMPLE2"
 		# git commit -m "changed to _site"
 		
 # Push source and build repos.

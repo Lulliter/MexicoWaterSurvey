@@ -445,17 +445,10 @@ div.tocify {
 
 
 <p>How we obtained the Sample WSS Operators Mexico and what it looks like</p>
-<pre><code>## [1] TRUE TRUE TRUE</code></pre>
-<pre><code>## [1] TRUE TRUE</code></pre>
-<div id="sources-of-data" class="section level2">
-<h2>Sources of Data</h2>
+<div id="sampling-design" class="section level2">
+<h2>Sampling design</h2>
 <ol style="list-style-type: decimal">
-<li>The sample for the survey is mutuated from the sampling design of LAPOP</li>
-</ol>
-<p>I looked into the STATA files with the sample of MX - 2016 which surveyd 1,563 IDs located in 260 <strong>clusters</strong> , which covered 110 <strong>municipios</strong> (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 &amp; 62))</p>
-<p>LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (slightly changed in 2018)</p>
-<ol start="2" style="list-style-type: decimal">
-<li>In order to match official admin boundaries and shapefile (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for<br />
+<li>In order to match our sample to official Mexico admin boundaries (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for<br />
 </li>
 </ol>
 <ul>
@@ -465,35 +458,40 @@ div.tocify {
 <li>Localidades Rur (187719 of 192,217) points</li>
 <li>AGEB urb- 56195</li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Identification of (expected) clusters for POPA 2018 sample (based on LAPOP) &amp; matching to INEGI keys admin boundaries (names and shapes) –&gt; saved POPA Cluster size by Admin Bound in –&gt; saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences)</li>
+<ol start="2" style="list-style-type: decimal">
+<li>The sample for the survey is mutuated from the sampling design of LAPOP because the goal is to survey the WSSS providers in the <em>same</em> areas where LAPOP was interviewing households. LAPOP households interviews covered <strong>1,563 IDs</strong> located in <strong>260 clusters</strong>, found in <strong>110 municipios</strong>.[^1]</li>
 </ol>
+<p>[^1] This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 &amp; 62)).</p>
+<p>LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (might be slightly changed in 2018)</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Based on those, we identified the (expected) clusters for POPA 2018 sample &amp; matched each location with the pertinent WSS Supplier in the area. We arrived to a sample of <strong>96 different suppliers</strong>.</p></li>
+<li><p>This survey encompasses two main goals</p>
+<ul>
+<li><ol style="list-style-type: upper-roman">
+<li>Survey of WSS suppliers</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: upper-roman">
+<li>Survey of small samples of househods served by the above suppliers (also a chance to validate the LAPOP hh survey in the same areas)</li>
+</ol></li>
+</ul></li>
+</ol>
+<p>What follow is a preliminary analysis of the 2 respective samples.</p>
 </div>
-<div id="which-entidades-and-municipios" class="section level2">
-<h2>Which Entidades and Municipios</h2>
-<p>The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 –&gt; closely followed in 2018)</p>
-<div class="figure">
-<img src="output/01_tmap_PopaSampleE.png" alt="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016" />
-<p class="caption">The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016</p>
-</div>
-<div class="figure">
-<img src="output/01_tmap_PopaSampleM.png" alt="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016" />
-<p class="caption">The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016</p>
-</div>
-</div>
-<div id="changes-occurred-between-2000-2010" class="section level2">
-<h2>Changes occurred between 2000-2010</h2>
-<p>Look at Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000</p>
-<p>……</p>
-</div>
-<div id="the-water-sanitation-providers" class="section level2">
-<h2>The Water &amp; Sanitation Providers</h2>
+<div id="phase-i-the-water-sanitation-providers" class="section level2">
+<h2>(PHASE I) The Water &amp; Sanitation Providers</h2>
 <p>Look at THE WATER &amp; SANITATION SERVICE PROVIDERS - SPECIFICALLY IN THE SURVEY AREA</p>
 <p>INEGI has identified a total of 2688 <em>“prestadores”</em> in the <em>“Censo de Captacion, Tratamiento y Suministro de Agua”</em> conducted in 2014 and published in 2015. Of all of these, some 700 could be rightly defined as <em>“organismos operadores”</em>, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management.</p>
 <p>The service providers <em>“prestadores de los servicios de agua y saneamiento”</em> in Mexico are extremely heterogeneous in nature and conditions.</p>
-<p>In this project, the classification that we use is mostly derived from a <em>Nota Tecnica</em> prepared by some colleagues of the IADB, WSA division <span class="citation">(See Riquelme and Martinez 2018, 1–3)</span>. This tracks some key information on <strong>2,251 Prestadores</strong>.</p>
+<p>In this project, the classification that we use is mostly derived from a <em>Nota Tecnica</em> prepared by some colleagues of the IADB, WSA division <span class="citation">(See Riquelme and Martinez 2018, 1–3)</span>. This tracks some key information on <strong>2,252 Prestadores</strong>.</p>
+<ul>
+<li>“TIPO” refers to the juridical status of the agency: <strong>654</strong> are considered proper “PRESTADORES”, whereas 1,557 are not considered as proper utilities in the classification, respectively:
+<ul>
+<li>1,332 are <em>No clasificado</em></li>
+<li>245 are cases in which the municipalities that directly provide water and sanitation services</li>
+</ul></li>
+</ul>
 <table>
-<caption>Title of the table</caption>
+<caption>Agencies Providing Water &amp; Sanitation by Type (Including when Not properly defined</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -508,112 +506,234 @@ div.tocify {
 <tr class="odd">
 <td>No clasificado</td>
 <td align="right">1332</td>
-<td align="right">59.1737006</td>
-<td align="right">59.17370</td>
-<td align="right">59.1737006</td>
-<td align="right">59.17370</td>
+<td align="right">59.15</td>
+<td align="right">59.15</td>
+<td align="right">59.15</td>
+<td align="right">59.15</td>
 </tr>
 <tr class="even">
 <td>OPD paramunicipal</td>
 <td align="right">594</td>
-<td align="right">26.3882719</td>
-<td align="right">85.56197</td>
-<td align="right">26.3882719</td>
-<td align="right">85.56197</td>
+<td align="right">26.38</td>
+<td align="right">85.52</td>
+<td align="right">26.38</td>
+<td align="right">85.52</td>
 </tr>
 <tr class="odd">
 <td>Servicio Centralizado del Municipio</td>
 <td align="right">245</td>
-<td align="right">10.8840515</td>
-<td align="right">96.44602</td>
-<td align="right">10.8840515</td>
-<td align="right">96.44602</td>
+<td align="right">10.88</td>
+<td align="right">96.40</td>
+<td align="right">10.88</td>
+<td align="right">96.40</td>
 </tr>
 <tr class="even">
 <td>OPD paraestatal</td>
-<td align="right">58</td>
-<td align="right">2.5766326</td>
-<td align="right">99.02266</td>
-<td align="right">2.5766326</td>
-<td align="right">99.02266</td>
+<td align="right">59</td>
+<td align="right">2.62</td>
+<td align="right">99.02</td>
+<td align="right">2.62</td>
+<td align="right">99.02</td>
 </tr>
 <tr class="odd">
 <td>Concesionario privado</td>
 <td align="right">10</td>
-<td align="right">0.4442470</td>
-<td align="right">99.46690</td>
-<td align="right">0.4442470</td>
-<td align="right">99.46690</td>
+<td align="right">0.44</td>
+<td align="right">99.47</td>
+<td align="right">0.44</td>
+<td align="right">99.47</td>
 </tr>
 <tr class="even">
 <td>Organismo Desconcentrado del ayuntamiento</td>
 <td align="right">7</td>
-<td align="right">0.3109729</td>
-<td align="right">99.77788</td>
-<td align="right">0.3109729</td>
-<td align="right">99.77788</td>
+<td align="right">0.31</td>
+<td align="right">99.78</td>
+<td align="right">0.31</td>
+<td align="right">99.78</td>
 </tr>
 <tr class="odd">
 <td>Organismo Desconcentrado de la entidad</td>
 <td align="right">2</td>
-<td align="right">0.0888494</td>
-<td align="right">99.86673</td>
-<td align="right">0.0888494</td>
-<td align="right">99.86673</td>
+<td align="right">0.09</td>
+<td align="right">99.87</td>
+<td align="right">0.09</td>
+<td align="right">99.87</td>
 </tr>
 <tr class="even">
 <td>Operador federal</td>
 <td align="right">2</td>
-<td align="right">0.0888494</td>
-<td align="right">99.95558</td>
-<td align="right">0.0888494</td>
-<td align="right">99.95558</td>
+<td align="right">0.09</td>
+<td align="right">99.96</td>
+<td align="right">0.09</td>
+<td align="right">99.96</td>
 </tr>
 <tr class="odd">
 <td>Empresa publico-privada</td>
 <td align="right">1</td>
-<td align="right">0.0444247</td>
-<td align="right">100.00000</td>
-<td align="right">0.0444247</td>
-<td align="right">100.00000</td>
+<td align="right">0.04</td>
+<td align="right">100.00</td>
+<td align="right">0.04</td>
+<td align="right">100.00</td>
 </tr>
 <tr class="even">
 <td>Todos los tipos</td>
 <td align="right">0</td>
-<td align="right">0.0000000</td>
-<td align="right">100.00000</td>
-<td align="right">0.0000000</td>
-<td align="right">100.00000</td>
+<td align="right">0.00</td>
+<td align="right">100.00</td>
+<td align="right">0.00</td>
+<td align="right">100.00</td>
 </tr>
 <tr class="odd">
 <td><NA></td>
 <td align="right">0</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
-<td align="right">0.0000000</td>
-<td align="right">100.00000</td>
+<td align="right">0.00</td>
+<td align="right">100.00</td>
 </tr>
 <tr class="even">
 <td>Total</td>
-<td align="right">2251</td>
-<td align="right">100.0000000</td>
-<td align="right">100.00000</td>
-<td align="right">100.0000000</td>
-<td align="right">100.00000</td>
+<td align="right">2252</td>
+<td align="right">100.00</td>
+<td align="right">100.00</td>
+<td align="right">100.00</td>
+<td align="right">100.00</td>
 </tr>
 </tbody>
 </table>
-<div id="reference" class="section level3 unnumbered">
-<h3>REFERENCE</h3>
+<ul>
+<li>“RANGO” refers to the size of the populaition served.</li>
+</ul>
+<table>
+<caption>Agencies Providing Water &amp; Sanitation by size of population served (Including when Not properly defined</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Freq</th>
+<th align="right">% Valid</th>
+<th align="right">% Valid Cum.</th>
+<th align="right">% Total</th>
+<th align="right">% Total Cum.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MuyPequeno &lt;10k</td>
+<td align="right">1044</td>
+<td align="right">46.36</td>
+<td align="right">46.36</td>
+<td align="right">46.36</td>
+<td align="right">46.36</td>
+</tr>
+<tr class="even">
+<td>Pequeno 10-50k</td>
+<td align="right">931</td>
+<td align="right">41.34</td>
+<td align="right">87.70</td>
+<td align="right">41.34</td>
+<td align="right">87.70</td>
+</tr>
+<tr class="odd">
+<td>Mediano 50-100k</td>
+<td align="right">134</td>
+<td align="right">5.95</td>
+<td align="right">93.65</td>
+<td align="right">5.95</td>
+<td align="right">93.65</td>
+</tr>
+<tr class="even">
+<td>Mediano 100-200k</td>
+<td align="right">53</td>
+<td align="right">2.35</td>
+<td align="right">96.00</td>
+<td align="right">2.35</td>
+<td align="right">96.00</td>
+</tr>
+<tr class="odd">
+<td>Grande 500-900k</td>
+<td align="right">32</td>
+<td align="right">1.42</td>
+<td align="right">97.42</td>
+<td align="right">1.42</td>
+<td align="right">97.42</td>
+</tr>
+<tr class="even">
+<td>Mediano 200-300k</td>
+<td align="right">22</td>
+<td align="right">0.98</td>
+<td align="right">98.40</td>
+<td align="right">0.98</td>
+<td align="right">98.40</td>
+</tr>
+<tr class="odd">
+<td>Mediano 300-500k</td>
+<td align="right">19</td>
+<td align="right">0.84</td>
+<td align="right">99.25</td>
+<td align="right">0.84</td>
+<td align="right">99.25</td>
+</tr>
+<tr class="even">
+<td>Muy grande &gt;900k</td>
+<td align="right">17</td>
+<td align="right">0.75</td>
+<td align="right">100.00</td>
+<td align="right">0.75</td>
+<td align="right">100.00</td>
+</tr>
+<tr class="odd">
+<td><NA></td>
+<td align="right">0</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">0.00</td>
+<td align="right">100.00</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td align="right">2252</td>
+<td align="right">100.00</td>
+<td align="right">100.00</td>
+<td align="right">100.00</td>
+<td align="right">100.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="which-entidades-and-municipios" class="section level2">
+<h2>Which Entidades and Municipios</h2>
+<p>The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 –&gt; closely followed in 2018) –&gt; saved POPA Cluster size by Admin Bound in –&gt; saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences)</p>
+</div>
+<div id="phase-ii-the-households-served-in-the-respective-service-areas-of-the-surveyed-water-sanitation-providers" class="section level2">
+<h2>(PHASE II) The households served in the respective service areas of the surveyed Water &amp; Sanitation Providers</h2>
+<div id="spatial-identification-of-hh-clusters" class="section level3">
+<h3>Spatial identification of hh clusters</h3>
+<p>First of all, let’s see where the household clusters are located.</p>
+<div class="figure">
+<img src="output/01_tmap_PopaSampleE.png" alt="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016" />
+<p class="caption">The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016</p>
+</div>
+<div class="figure">
+<img src="output/01_tmap_PopaSampleM.png" alt="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016" />
+<p class="caption">The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016</p>
+</div>
+</div>
+<div id="changes-occurred-between-2000-2010-in-areas-of-interest" class="section level3">
+<h3>Changes occurred between 2000-2010 in areas of interest</h3>
+<p>Look at Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000</p>
+<p>……</p>
+</div>
+</div>
+<div id="reference" class="section level2 unnumbered">
+<h2>REFERENCE</h2>
 <div id="refs" class="references">
 <div id="ref-riquelme_organismos_2018">
 <p>Riquelme, Rodrigo, and Ricardo Martinez. 2018. “LOS ORGANISMOS OPERADORES DE AGUA Y SANEAMIENTO EN MÉXICO.” CDMX, Mexico.</p>
 </div>
 </div>
 </div>
-</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG93IHdlIGNyZWF0ZWQgdGhlIHNhbXBsZSIKI291dHB1dDogCiAjIGh0bWxfZG9jdW1lbnQ6IAogICAgIyBjc3M6IC9MaWJyYXJ5L0ZyYW1ld29ya3MvUi5mcmFtZXdvcmsvVmVyc2lvbnMvMy41L1Jlc291cmNlcy9saWJyYXJ5L3N1bW1hcnl0b29scy9pbmNsdWRlcy9zdHlsZXNoZWV0cwogICAgIyBjc3M6IGh0bWwvc3VtbWFyeXRvb2xzLmNzcwpiaWJsaW9ncmFwaHk6IE1YX1dhdGVyU3VydmV5LmJpYgojIG5vY2l0ZTogJ0AqJyAjIEAqIGlzIGEgd2lsZGNhcmQgZm9yIGFsbCByZWZlcmVuY2VzLiAoSVRFTVMgTk9UIE1FTlRJT05FRCBUSEFUIEkgV0FOVCBJTiBUSEUgQklCTElPR1JBUEhZKQojIG5vY2l0ZTogfAojIEByaXF1ZWxtZV9vcmdhbmlzbW9zXzIwMTgKLS0tCgpIb3cgd2Ugb2J0YWluZWQgdGhlIFNhbXBsZSBXU1MgT3BlcmF0b3JzIE1leGljbyBhbmQgd2hhdCBpdCBsb29rcyBsaWtlCgoKYGBge3IgU0VUVVAgLCBlY2hvPUZBTFNFLCBtZXNzYWdlPUZBTFNFfQojIGh0dHBzOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzQzNTQ5OTMwL3BkZi1maWd1cmVzLW5vdC1zaG93bi1pbi1odG1sLWZpbGVzLXByb2R1Y2VkLWJ5LXJtYXJrZG93bi13aGVuLW9wZW4td2l0aC1maXJlZm94CiMgdG8gZml4IGlzc3VlIG9mIHBpY3R1cmUgbm90IHJlbmRlcmluZyBUUlkgCiMgZGV2dG9vbHM6Omluc3RhbGxfZ2l0aHViKCd5aWh1aS9rbml0cicpCgprbml0cjo6b3B0c19jaHVuayRzZXQoZmlnLnJldGluYSA9IDIsCiAgICAgICAgICAgICAgICAgICAgICB0aWR5Lm9wdHMgPSBsaXN0KHdpZHRoLmN1dG9mZiA9IDEyMCksICAjIEZvciBjb2RlCiAgICAgICAgICAgICAgICAgICAgICBvcHRpb25zKHdpZHRoID0gMTIwKSAjIEZvciBvdXRwdXQKCQkJCQkJCSApICAKCiMgIFRoZSBlbmNvZGluZyAoIklTTy04ODU5LTEiKSBpcyBub3QgVVRGLTguIFdlIHdpbGwgb25seSBzdXBwb3J0IFVURi04IGluIHRoZSBmdXR1cmUuIFBsZWFzZSByZS1zYXZlIHlvdXIgZmlsZSAic2FtcGxlLlJtZCIgd2l0aCB0aGUgVVRGLTggZW5jb2RpbmcuCgoKIyBUbyBnZW5lcmF0ZSB0YWJsZXMgdXNpbmcgc3VtbWFyeXRvb2wgcyBvd24gaHRtbCByZW5kZXJpbmcsIHRoZSAuUm1kIGRvY3VtZW50IHMgY29uZmlndXJhdGlvbiBwYXJ0ICh5YW1sKSBtdXN0IHBvaW50IHRvIHRoZSBwYWNrYWdlIHMgc3VtbWFyeXRvb2xzLmNzcyBmaWxlLgoKCmBgYAoKYGBge3IgTE9BRFBDSywgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShmb3JjYXRzKQpsaWJyYXJ5KHNjYWxlcykKbGlicmFyeShwYXRjaHdvcmspCmxpYnJhcnkoY291bnRyeWNvZGUpCmxpYnJhcnkoc2YpCmxpYnJhcnkoaGVyZSkKbGlicmFyeShrYWJsZUV4dHJhKQpsaWJyYXJ5KHN1bW1hcnl0b29scykKCgpgYGAKCgoKCgoKYGBge3IgQ09QWU9VVFBpbWFnZSwgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0KIyBPS0tJTywgSSBhbSBpbiAvRGF0YU1FWCwgYmVjYXVzZSBpdCBjb250YWlucyBhIGZpbGUgYC5oZXJlYApsaWJyYXJ5KGhlcmUpCmhlcmU6OmRyX2hlcmUoc2hvd19yZWFzb24gPSBUKQoKZnJvbV9kaXIgPC0gaGVyZSgiMDdfb3V0cHV0IikKdG9fZGlyIDwtIGhlcmUoIk1leGljb1dhdGVyU3VydmV5IiwgIm91dHB1dCIpCgpmaWxlcyA8LSBsaXN0LmZpbGVzKHBhdGggPSBmcm9tX2RpciAsIGZ1bGwubmFtZXMgPSBUUlVFKSAjLCAgcGF0dGVybiA9ICIucG5nJCIgKQptb3ZlIDwtIGZpbGVzW3NhcHBseShmaWxlcywgZmlsZS5zaXplKSA8IDEwMDAwMDAwMF0gIyA8IDEwMCBNQiBvciBHaXRodWIgd2lsbCBnZXQgc3R1Y2sKCiMgLS0tIFNZTlRBWAojIGZpbGUuY29weShsaXN0Lm9mLmZpbGVzLCBuZXcuZm9sZGVyKQoKZmlsZS5jb3B5KCBtb3ZlLCB0byA9IHRvX2RpciAsIG92ZXJ3cml0ZSA9IFQgKQojIGlmIEkgaGFkIGxpc3RlZCB3aXRoIGZ1bGwubmFtZXMgPSBGCiMgZmlsZS5jb3B5KCBmaWxlLnBhdGgoZnJvbV9kaXIsIG1vdmUpLCB0byA9IHRvX2RpciAgKQpgYGAKCmBgYHtyIENPUFlPVVRQZGF0YSwgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0KbGlicmFyeShoZXJlKQpoZXJlOjpkcl9oZXJlKHNob3dfcmVhc29uID0gVCkKCmZyb21fZGlyMiA8LSBoZXJlKCIwM19jbGVhbmRhdGEiKQp0b19kaXIyIDwtIGhlcmUoIk1leGljb1dhdGVyU3VydmV5IiwgImRhdGEiKQoKZmlsZXMyIDwtIGxpc3QuZmlsZXMocGF0aCA9IGZyb21fZGlyMiAsIGZ1bGwubmFtZXMgPSBUUlVFLCAgcGF0dGVybiA9ICAiKF5vcGVyfF5wcmVzKS4qXFwuUmRhdGEkIikgCm1vdmUyIDwtIGZpbGVzMltzYXBwbHkoZmlsZXMyLCBmaWxlLnNpemUpIDwgMTAwMDAwMDAwXSAjIDwgMTAwIE1CIG9yIEdpdGh1YiB3aWxsIGdldCBzdHVjawoKIyAtLS0gU1lOVEFYCiMgZmlsZS5jb3B5KGxpc3Qub2YuZmlsZXMsIG5ldy5mb2xkZXIpCmZpbGUuY29weSggbW92ZTIsIHRvID0gdG9fZGlyMiAsIG92ZXJ3cml0ZSA9IFQgKQpgYGAKCgoKIyMgU291cmNlcyBvZiBEYXRhCgoxLiBUaGUgc2FtcGxlIGZvciB0aGUgc3VydmV5IGlzIG11dHVhdGVkIGZyb20gdGhlIHNhbXBsaW5nIGRlc2lnbiBvZiBMQVBPUAoKSSBsb29rZWQgaW50byB0aGUgU1RBVEEgZmlsZXMgd2l0aCB0aGUgc2FtcGxlIG9mIE1YIC0gMjAxNiB3aGljaCBzdXJ2ZXlkIDEsNTYzIElEcyBsb2NhdGVkIGluIDI2MCAqKmNsdXN0ZXJzKiogLCB3aGljaCBjb3ZlcmVkIDExMCAqKm11bmljaXBpb3MqKiAoc2luY2Ugc2FtcGxlcyBhcmUgcHJvcG9ydGlvbmFsIHRvIHRoZSBzaXplIG9mIHRoZSBwb3B1bGF0aW9uLCBsYXJnZXIgbXVuaWNpcGlvcyBoYXZlIG1vcmUgdGhhbiBvbmUgUFNVIChlcyBUaWp1YW5hIGhhcyA2MSAmIDYyKSkKCkxBUE9QIHByb3ZpZGVkIGEgZmlsZSB3aXRoIGdlb2ZlbmNlcyB0aGF0IGluZGljYXRlIGEgY2lyY2xlIGNvbnRhaW5pbmcgZWFjaCBjbHVzdGVyIGluIDIwMTYgKHNsaWdodGx5IGNoYW5nZWQgaW4gMjAxOCkgCgoyLiBJbiBvcmRlciB0byBtYXRjaCBvZmZpY2lhbCBhZG1pbiBib3VuZGFyaWVzIGFuZCBzaGFwZWZpbGUgKGFzIGluIENlbnN1cyAyMDEwKSwgSSBkb3dubG9hZGVkIGZyb20gSU5FR0kgdGhlIElEIGtleXMgYW5kIHNoYXBlZmlsZXMgKHBvbHlnb25zKSBmb3IgIAorIEVudGlkYWQgKDMyKSAKKyBNdW5pY2lwaW9zICgyNTQ2KQorIExvY2FsaWRhZGVzIFVSYiggNDUyNSBvZiAxOTIsMjE3ICkgTVVMVGlQT0xZR09OCisgTG9jYWxpZGFkZXMgUnVyICgxODc3MTkgb2YgMTkyLDIxNykgcG9pbnRzIAorIEFHRUIgdXJiLSA1NjE5NSAKIAozLiBJZGVudGlmaWNhdGlvbiBvZiAoZXhwZWN0ZWQpIGNsdXN0ZXJzIGZvciBQT1BBIDIwMTggc2FtcGxlIChiYXNlZCBvbiBMQVBPUCkgJiBtYXRjaGluZyB0byBJTkVHSSBrZXlzIGFkbWluIGJvdW5kYXJpZXMgKG5hbWVzIGFuZCBzaGFwZXMpCgktLT4gc2F2ZWQgUE9QQSBDbHVzdGVyIHNpemUgYnkgQWRtaW4gQm91bmQgaW4gCgktLT4gc2F2ZWQgU1BKT0lOIFJFU1VMVFMgTEFQT1AgRkVOQ0VTIGludGVyc2VjdGVkIHdpdGggTXVuIChDZW50cm9pZHMgYW5kIGZlbmNlcykgCgkgCgojIyBXaGljaCBFbnRpZGFkZXMgYW5kIE11bmljaXBpb3MKClRoZSBFTlRJREFERVMgYW5kIE1VTklDSVBJT1MgSU5DTFVESU5HIExBUE9QL1BPUEEgY2x1c3RlcnMgKDIwMTYgLS0+IGNsb3NlbHkgZm9sbG93ZWQgaW4gMjAxOCkKCmBgYHtyLCAgZWNobz1GQUxTRSwgZmlnLmNhcD0iVGhlIEVOVElEQURFUyB3aGljaCBpbmNsdWRlIExBUE9QIGNsdXN0ZXJzIGJ5ICMgb2YgaGggaW50ZXJ2aWV3ZWQgaW4gMjAxNiIsIG91dC53aWR0aCA9ICcxMDAlJywgcmVzdWx0cz0nYXNpcyd9CgojIGtuaXRyOjppbmNsdWRlX2dyYXBoaWNzKHBhc3RlMCh0b19kaXIsIi8wMV90bWFwX1BvcGFTYW1wbGVFLnBuZyIpKSAgICMgTk9UIFJFTkRFUklORyAKCiMjIyAjbGlzdC5maWxlcyhwYXRoID0gdG9fZGlyKQpgYGAJCgkKCgoKIVtUaGUgRU5USURBREVTIHdoaWNoIGluY2x1ZGUgTEFQT1AgY2x1c3RlcnMgYnkgIyBvZiBoaCBpbnRlcnZpZXdlZCBpbiAyMDE2XSguL291dHB1dC8wMV90bWFwX1BvcGFTYW1wbGVFLnBuZykgCgoKCgpgYGB7ciwgIGVjaG89RkFMU0UsIGZpZy5jYXA9IlRoZSBNVU5JQ0lQSU9TIHdoaWNoIGluY2x1ZGUgTEFQT1AgY2x1c3RlcnMgYnkgIyBvZiBoaCBpbnRlcnZpZXdlZCBpbiAyMDE2Iiwgb3V0LndpZHRoID0gJzEwMCUnLCByZXN1bHRzPSdhc2lzJ30KIyBrbml0cjo6aW5jbHVkZV9ncmFwaGljcyhwYXN0ZTAodG9fZGlyLCIvMDFfdG1hcF9Qb3BhU2FtcGxlTS5wbmciKSkgIyBOT1QgUkVOREVSSU5HIAoKIyMjICNsaXN0LmZpbGVzKHBhdGggPSB0b19kaXIpCmBgYAkKCiFbVGhlIE1VTklDSVBJT1Mgd2hpY2ggaW5jbHVkZSBMQVBPUCBjbHVzdGVycyBieSAjIG9mIGhoIGludGVydmlld2VkIGluIDIwMTZdKC4vb3V0cHV0LzAxX3RtYXBfUG9wYVNhbXBsZU0ucG5nKSAKCgojIyBDaGFuZ2VzIG9jY3VycmVkIGJldHdlZW4gMjAwMC0yMDEwCgpMb29rIGF0IENoYW5nZXMgaW4gRU5USURBREVTIGFuZCBNVU5JQ0lQSU9TIGNvdmVyZWQgYnkgTEFQT1AvUE9QQSBjbHVzdGVycyBhY2NvcmRpbmcgdG8gY2Vuc3VzIDIwMTAgY29tcGFyZWQgdG8gY2Vuc3VzIDIwMDAKCgouLi4uLi4KCgoKCgoKCgojIyBUaGUgV2F0ZXIgJiBTYW5pdGF0aW9uIFByb3ZpZGVycyAKCkxvb2sgYXQgVEhFIFdBVEVSICYgU0FOSVRBVElPTiBTRVJWSUNFIFBST1ZJREVSUyAtIFNQRUNJRklDQUxMWSBJTiBUSEUgU1VSVkVZIEFSRUEKCklORUdJIGhhcyBpZGVudGlmaWVkIGEgdG90YWwgb2YgMjY4OCBfInByZXN0YWRvcmVzIl8gaW4gdGhlIF8iQ2Vuc28gZGUgQ2FwdGFjaW9uLCBUcmF0YW1pZW50byB5IFN1bWluaXN0cm8gZGUgQWd1YSJfIApjb25kdWN0ZWQgaW4gMjAxNCBhbmQgcHVibGlzaGVkIGluIDIwMTUuIE9mIGFsbCBvZiB0aGVzZSwgc29tZSA3MDAgY291bGQgYmUgcmlnaHRseSBkZWZpbmVkIGFzIF8ib3JnYW5pc21vcyBvcGVyYWRvcmVzIl8sIGkuZS4gCmVudGl0aWVzIHNwZWNpYWxpemVkIGluIHRoZSBwcm92aXNpb24gb2YgdGhlIHNlcnZpY2VzIG9mIHdhdGVyIGFuZCBzYW5pdGF0aW9uIChyZWdhcmRsZXNzIG9mIHRoZWlyIGRlZ3JlZSBvZiBhdXRvbm9teSBpbiB0aGVpciAKZGVjaXNpb24gbWFraW5nIGFuZCBmaW5hbmNpYWwgbWFuYWdlbWVudC4KClRoZSBzZXJ2aWNlIHByb3ZpZGVycyAqInByZXN0YWRvcmVzIGRlIGxvcyBzZXJ2aWNpb3MgZGUgYWd1YSB5IHNhbmVhbWllbnRvIiogaW4gTWV4aWNvIGFyZSBleHRyZW1lbHkgaGV0ZXJvZ2VuZW91cyBpbiBuYXR1cmUgYW5kIGNvbmRpdGlvbnMuIAoKSW4gdGhpcyBwcm9qZWN0LCB0aGUgY2xhc3NpZmljYXRpb24gdGhhdCB3ZSB1c2UgaXMgbW9zdGx5IGRlcml2ZWQgZnJvbSBhIF9Ob3RhIFRlY25pY2FfIHByZXBhcmVkIGJ5IHNvbWUgY29sbGVhZ3VlcyBvZiB0aGUgSUFEQiwgV1NBIGRpdmlzaW9uIFtTZWUgQHJpcXVlbG1lX29yZ2FuaXNtb3NfMjAxOCwgcHAuIDEtM10uIFRoaXMgdHJhY2tzIHNvbWUga2V5IGluZm9ybWF0aW9uIG9uICoqMiwyNTEgUHJlc3RhZG9yZXMqKi4gCgpgYGB7ciBPcGVyVElQTywgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRSwgcmVzdWx0cyA9ICdhc2lzJ30KCmxvYWQoIGhlcmUoIk1leGljb1dhdGVyU3VydmV5IiwgImRhdGEiLCAicHJlc3RhZG9yZXNVVEYuUmRhdGEiKSkKCiMgaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL3BhY2thZ2VzL3N1bW1hcnl0b29scy92aWduZXR0ZXMvSW50cm9kdWN0aW9uLmh0bWwKbGlicmFyeShzdW1tYXJ5dG9vbHMpCkZyZXFfVGlwbyA8LSBzdW1tYXJ5dG9vbHM6OmZyZXEocHJlc3RhZG9yZXNVVEYkVGlwb19sYmwgLCAKCQkJIHJlcG9ydC5uYXMgPSBGQUxTRSwgCgkJCXJvdW5kLmRpZ2l0cyA9IDEsICMgZGVmYXVsdCAyCgkJCW9yZGVyID0gImZyZXEiLCAjICAKCQkJIHN0eWxlID0gJ3JtYXJrZG93bicsICMgIAoJCQkgb21pdC5oZWFkaW5ncyA9IFQKCQkJKSAKCiMgIyBUaGVuIHVzZSB2aWV3KCksIGxpa2Ugc286CiMgIHZpZXcoRnJlcV9UaXBvLCBtZXRob2QgPSAicGFuZGVyIiwgc3R5bGUgPSAicm1hcmtkb3duIiwgb21pdC5oZWFkaW5ncyA9IFRSVUUpCiMgCiMgcHJpbnQoRnJlcV9UaXBvLCBzdHlsZSA9ICJybWFya2Rvd24iLCByZXBvcnQubmFzID0gRkFMU0UsIAojICAgICAgICAgICAgICAgICAgdG90YWxzID0gRkFMU0UsIG9taXQuaGVhZGluZ3MgPSBUUlVFKQojICMgcHJpbnQoRnJlcVRpcG8pCiMgCiMga2FibGUoRnJlcVRpcG8pICU+JQojICAga2FibGVfc3R5bGluZygic3RyaXBlZCIsIGZ1bGxfd2lkdGggPSBGLCBsYXRleF9vcHRpb25zID0gInNjYWxlX2Rvd24iKSAjICU+JQojICAgIyAgIHJvd19zcGVjKDExLCBib2xkID0gVCwgY29sb3IgPSAid2hpdGUiLCBiYWNrZ3JvdW5kID0gIiNENzI2MUUiKQoKCmtuaXRyOjprYWJsZShGcmVxX1RpcG8sIGZvcm1hdCA9ICJwYW5kb2MiLCBjYXB0aW9uID0gIlRpdGxlIG9mIHRoZSB0YWJsZSIpCmBgYAoKCgojIyMgUkVGRVJFTkNFCgoKCmBgYHtyIGtuaXRBdHRlbXB0LCBlY2hvID0gRiwgZXZhbD1GfQojIGtuaXRyOjprbml0Mmh0bWwoJy4vc2FtcGxlLlJtZCcsZW5jb2RpbmcgPSAnVVRGLTgnLGZvcmNlX3YxID0gVFJVRSkKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG93IHdlIGNyZWF0ZWQgdGhlIHNhbXBsZSIKYmlibGlvZ3JhcGh5OiBNWF9XYXRlclN1cnZleS5iaWIKLS0tCgpIb3cgd2Ugb2J0YWluZWQgdGhlIFNhbXBsZSBXU1MgT3BlcmF0b3JzIE1leGljbyBhbmQgd2hhdCBpdCBsb29rcyBsaWtlCgoKYGBge3IgU0VUVVAsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmc9RkFMU0UsIGluY2x1ZGU9RkFMU0UgfQojIGh0dHBzOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzQzNTQ5OTMwL3BkZi1maWd1cmVzLW5vdC1zaG93bi1pbi1odG1sLWZpbGVzLXByb2R1Y2VkLWJ5LXJtYXJrZG93bi13aGVuLW9wZW4td2l0aC1maXJlZm94CiMgdG8gZml4IGlzc3VlIG9mIHBpY3R1cmUgbm90IHJlbmRlcmluZyBUUlkgCiMgZGV2dG9vbHM6Omluc3RhbGxfZ2l0aHViKCd5aWh1aS9rbml0cicpCgprbml0cjo6b3B0c19jaHVuayRzZXQoZmlnLnJldGluYSA9IDIsCiAgICAgICAgICAgICAgICAgICAgICB0aWR5Lm9wdHMgPSBsaXN0KHdpZHRoLmN1dG9mZiA9IDEyMCksICAjIEZvciBjb2RlCiAgICAgICAgICAgICAgICAgICAgICBvcHRpb25zKHdpZHRoID0gMTIwKSAjIEZvciBvdXRwdXQKCQkJCQkJCSApICAKCiMgIFRoZSBlbmNvZGluZyAoIklTTy04ODU5LTEiKSBpcyBub3QgVVRGLTguIFdlIHdpbGwgb25seSBzdXBwb3J0IFVURi04IGluIHRoZSBmdXR1cmUuIFBsZWFzZSByZS1zYXZlIHlvdXIgZmlsZSAic2FtcGxlLlJtZCIgd2l0aCB0aGUgVVRGLTggZW5jb2RpbmcuCgoKIyBUbyBnZW5lcmF0ZSB0YWJsZXMgdXNpbmcgc3VtbWFyeXRvb2wgcyBvd24gaHRtbCByZW5kZXJpbmcsIHRoZSAuUm1kIGRvY3VtZW50IHMgY29uZmlndXJhdGlvbiBwYXJ0ICh5YW1sKSBtdXN0IHBvaW50IHRvIHRoZSBwYWNrYWdlIHMgc3VtbWFyeXRvb2xzLmNzcyBmaWxlLgoKCmBgYAoKYGBge3IgTE9BRFBDSywgbWVzc2FnZT1GQUxTRSwgd2FybmluZz1GQUxTRSwgaW5jbHVkZT1GQUxTRX0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShmb3JjYXRzKQpsaWJyYXJ5KHNjYWxlcykKbGlicmFyeShwYXRjaHdvcmspCmxpYnJhcnkoY291bnRyeWNvZGUpCmxpYnJhcnkoc2YpCmxpYnJhcnkoaGVyZSkKbGlicmFyeShrYWJsZUV4dHJhKQpsaWJyYXJ5KHN1bW1hcnl0b29scykKCgpgYGAKCgoKCgoKYGBge3IgQ09QWU9VVFBpbWFnZSwgbWVzc2FnZT1GQUxTRSwgaW5jbHVkZT1GQUxTRX0KIyBPS0tJTywgSSBhbSBpbiAvRGF0YU1FWCwgYmVjYXVzZSBpdCBjb250YWlucyBhIGZpbGUgYC5oZXJlYApsaWJyYXJ5KGhlcmUpCmhlcmU6OmRyX2hlcmUoc2hvd19yZWFzb24gPSBUKQoKZnJvbV9kaXIgPC0gaGVyZSgiMDdfb3V0cHV0IikKdG9fZGlyIDwtIGhlcmUoIk1leGljb1dhdGVyU3VydmV5IiwgIm91dHB1dCIpCgpmaWxlcyA8LSBsaXN0LmZpbGVzKHBhdGggPSBmcm9tX2RpciAsIGZ1bGwubmFtZXMgPSBUUlVFKSAjLCAgcGF0dGVybiA9ICIucG5nJCIgKQptb3ZlIDwtIGZpbGVzW3NhcHBseShmaWxlcywgZmlsZS5zaXplKSA8IDEwMDAwMDAwMF0gIyA8IDEwMCBNQiBvciBHaXRodWIgd2lsbCBnZXQgc3R1Y2sKCiMgLS0tIFNZTlRBWAojIGZpbGUuY29weShsaXN0Lm9mLmZpbGVzLCBuZXcuZm9sZGVyKQoKZmlsZS5jb3B5KCBtb3ZlLCB0byA9IHRvX2RpciAsIG92ZXJ3cml0ZSA9IFQgKQojIGlmIEkgaGFkIGxpc3RlZCB3aXRoIGZ1bGwubmFtZXMgPSBGCiMgZmlsZS5jb3B5KCBmaWxlLnBhdGgoZnJvbV9kaXIsIG1vdmUpLCB0byA9IHRvX2RpciAgKQpgYGAKCmBgYHtyIENPUFlPVVRQZGF0YSwgbWVzc2FnZT1GQUxTRSwgaW5jbHVkZT1GQUxTRX0KbGlicmFyeShoZXJlKQpoZXJlOjpkcl9oZXJlKHNob3dfcmVhc29uID0gVCkKCmZyb21fZGlyMiA8LSBoZXJlKCIwM19jbGVhbmRhdGEiKQp0b19kaXIyIDwtIGhlcmUoIk1leGljb1dhdGVyU3VydmV5IiwgImRhdGEiKQoKZmlsZXMyIDwtIGxpc3QuZmlsZXMocGF0aCA9IGZyb21fZGlyMiAsIGZ1bGwubmFtZXMgPSBUUlVFLCAgcGF0dGVybiA9ICAiKF5vcGVyfF5wcmVzKS4qXFwuUmRhdGEkIikgCm1vdmUyIDwtIGZpbGVzMltzYXBwbHkoZmlsZXMyLCBmaWxlLnNpemUpIDwgMTAwMDAwMDAwXSAjIDwgMTAwIE1CIG9yIEdpdGh1YiB3aWxsIGdldCBzdHVjawoKIyAtLS0gU1lOVEFYCiMgZmlsZS5jb3B5KGxpc3Qub2YuZmlsZXMsIG5ldy5mb2xkZXIpCmZpbGUuY29weSggbW92ZTIsIHRvID0gdG9fZGlyMiAsIG92ZXJ3cml0ZSA9IFQgKQpgYGAKCgoKIyMgU2FtcGxpbmcgZGVzaWduCgoxLiBJbiBvcmRlciB0byBtYXRjaCBvdXIgc2FtcGxlIHRvIG9mZmljaWFsIE1leGljbyBhZG1pbiBib3VuZGFyaWVzICAoYXMgaW4gQ2Vuc3VzIDIwMTApLCBJIGRvd25sb2FkZWQgZnJvbSBJTkVHSSB0aGUgSUQga2V5cyBhbmQgc2hhcGVmaWxlcyAocG9seWdvbnMpIGZvciAgCisgRW50aWRhZCAoMzIpIAorIE11bmljaXBpb3MgKDI1NDYpCisgTG9jYWxpZGFkZXMgVVJiKCA0NTI1IG9mIDE5MiwyMTcgKSBNVUxUaVBPTFlHT04KKyBMb2NhbGlkYWRlcyBSdXIgKDE4NzcxOSBvZiAxOTIsMjE3KSBwb2ludHMgCisgQUdFQiB1cmItIDU2MTk1IAoKMi4gVGhlIHNhbXBsZSBmb3IgdGhlIHN1cnZleSBpcyBtdXR1YXRlZCBmcm9tIHRoZSBzYW1wbGluZyBkZXNpZ24gb2YgTEFQT1AgIGJlY2F1c2UgdGhlIGdvYWwgaXMgdG8gc3VydmV5IHRoZSBXU1NTIHByb3ZpZGVycyBpbiB0aGUgX3NhbWVfIGFyZWFzIHdoZXJlIExBUE9QIHdhcyBpbnRlcnZpZXdpbmcgaG91c2Vob2xkcy4gTEFQT1AgaG91c2Vob2xkcyBpbnRlcnZpZXdzIGNvdmVyZWQgKioxLDU2MyBJRHMqKiBsb2NhdGVkIGluICoqMjYwIGNsdXN0ZXJzKiosIGZvdW5kIGluICoqMTEwIG11bmljaXBpb3MqKi5bXjFdIAoKW14xXSBUaGlzIGluZm9ybWF0aW9uIHdhcyByZXRyaWV2ZWQgZnJvbSB0aGUgU1RBVEEgZmlsZXMgd2l0aCB0aGUgc2FtcGxlIG9mIE1YIDIwMTYgLSAoc2luY2Ugc2FtcGxlcyBhcmUgcHJvcG9ydGlvbmFsIHRvIHRoZSBzaXplIG9mIHRoZSBwb3B1bGF0aW9uLCBsYXJnZXIgbXVuaWNpcGlvcyBoYXZlIG1vcmUgdGhhbiBvbmUgUFNVIChlcyBUaWp1YW5hIGhhcyA2MSAmIDYyKSkuIAoKTEFQT1AgcHJvdmlkZWQgYSBmaWxlIHdpdGggZ2VvZmVuY2VzIHRoYXQgaW5kaWNhdGUgYSBjaXJjbGUgY29udGFpbmluZyBlYWNoIGNsdXN0ZXIgaW4gMjAxNiAobWlnaHQgYmUgc2xpZ2h0bHkgY2hhbmdlZCBpbiAyMDE4KSAKIAozLiBCYXNlZCBvbiB0aG9zZSwgd2UgaWRlbnRpZmllZCB0aGUgKGV4cGVjdGVkKSBjbHVzdGVycyBmb3IgUE9QQSAyMDE4IHNhbXBsZSAmIG1hdGNoZWQgZWFjaCBsb2NhdGlvbiB3aXRoIHRoZSBwZXJ0aW5lbnQgV1NTIFN1cHBsaWVyIGluIHRoZSBhcmVhLiAKV2UgYXJyaXZlZCB0byBhIHNhbXBsZSBvZiAqKjk2IGRpZmZlcmVudCBzdXBwbGllcnMqKi4gIAoKNC4gVGhpcyBzdXJ2ZXkgZW5jb21wYXNzZXMgdHdvIG1haW4gZ29hbHMKCgkrIEkpIFN1cnZleSBvZiBXU1Mgc3VwcGxpZXJzIAoJKyBJSSkgU3VydmV5IG9mIHNtYWxsIHNhbXBsZXMgb2YgaG91c2Vob2RzIHNlcnZlZCBieSB0aGUgYWJvdmUgc3VwcGxpZXJzIChhbHNvIGEgY2hhbmNlIHRvIHZhbGlkYXRlIHRoZSBMQVBPUCBoaCBzdXJ2ZXkgaW4gdGhlIHNhbWUgYXJlYXMpCgkKV2hhdCBmb2xsb3cgaXMgYSBwcmVsaW1pbmFyeSBhbmFseXNpcyBvZiB0aGUgMiByZXNwZWN0aXZlIHNhbXBsZXMuIAoKCiMjIChQSEFTRSBJKSBUaGUgV2F0ZXIgJiBTYW5pdGF0aW9uIFByb3ZpZGVycyAKCkxvb2sgYXQgVEhFIFdBVEVSICYgU0FOSVRBVElPTiBTRVJWSUNFIFBST1ZJREVSUyAtIFNQRUNJRklDQUxMWSBJTiBUSEUgU1VSVkVZIEFSRUEKCklORUdJIGhhcyBpZGVudGlmaWVkIGEgdG90YWwgb2YgMjY4OCBfInByZXN0YWRvcmVzIl8gaW4gdGhlIF8iQ2Vuc28gZGUgQ2FwdGFjaW9uLCBUcmF0YW1pZW50byB5IFN1bWluaXN0cm8gZGUgQWd1YSJfIApjb25kdWN0ZWQgaW4gMjAxNCBhbmQgcHVibGlzaGVkIGluIDIwMTUuIE9mIGFsbCBvZiB0aGVzZSwgc29tZSA3MDAgY291bGQgYmUgcmlnaHRseSBkZWZpbmVkIGFzIF8ib3JnYW5pc21vcyBvcGVyYWRvcmVzIl8sIGkuZS4gCmVudGl0aWVzIHNwZWNpYWxpemVkIGluIHRoZSBwcm92aXNpb24gb2YgdGhlIHNlcnZpY2VzIG9mIHdhdGVyIGFuZCBzYW5pdGF0aW9uIChyZWdhcmRsZXNzIG9mIHRoZWlyIGRlZ3JlZSBvZiBhdXRvbm9teSBpbiB0aGVpciAKZGVjaXNpb24gbWFraW5nIGFuZCBmaW5hbmNpYWwgbWFuYWdlbWVudC4KClRoZSBzZXJ2aWNlIHByb3ZpZGVycyAqInByZXN0YWRvcmVzIGRlIGxvcyBzZXJ2aWNpb3MgZGUgYWd1YSB5IHNhbmVhbWllbnRvIiogaW4gTWV4aWNvIGFyZSBleHRyZW1lbHkgaGV0ZXJvZ2VuZW91cyBpbiBuYXR1cmUgYW5kIGNvbmRpdGlvbnMuIAoKSW4gdGhpcyBwcm9qZWN0LCB0aGUgY2xhc3NpZmljYXRpb24gdGhhdCB3ZSB1c2UgaXMgbW9zdGx5IGRlcml2ZWQgZnJvbSBhIF9Ob3RhIFRlY25pY2FfIHByZXBhcmVkIGJ5IHNvbWUgY29sbGVhZ3VlcyBvZiB0aGUgSUFEQiwgV1NBIGRpdmlzaW9uIFtTZWUgQHJpcXVlbG1lX29yZ2FuaXNtb3NfMjAxOCwgcHAuIDEtM10uIFRoaXMgdHJhY2tzIHNvbWUga2V5IGluZm9ybWF0aW9uIG9uICoqMiwyNTIgUHJlc3RhZG9yZXMqKi4gCgoKKyAiVElQTyIgcmVmZXJzIHRvIHRoZSBqdXJpZGljYWwgc3RhdHVzIG9mIHRoZSBhZ2VuY3k6ICoqNjU0KiogYXJlIGNvbnNpZGVyZWQgcHJvcGVyICJQUkVTVEFET1JFUyIsIHdoZXJlYXMgMSw1NTcgYXJlIG5vdCBjb25zaWRlcmVkIGFzIHByb3BlciB1dGlsaXRpZXMgaW4gdGhlIGNsYXNzaWZpY2F0aW9uLCByZXNwZWN0aXZlbHk6ICAKCSogMSwzMzIgYXJlICpObyBjbGFzaWZpY2FkbyoKCSogMjQ1IGFyZSBjYXNlcyBpbiB3aGljaCB0aGUgbXVuaWNpcGFsaXRpZXMgdGhhdCBkaXJlY3RseSBwcm92aWRlIHdhdGVyIGFuZCBzYW5pdGF0aW9uIHNlcnZpY2VzCgkKYGBge3IgT3BlclRJUE8sIGVjaG89RkFMU0UsIG1lc3NhZ2U9RkFMU0UsIHJlc3VsdHMgPSAnYXNpcyd9Cgpsb2FkKCBoZXJlKCAiZGF0YSIsICJwcmVzdGFkb3Jlc19Qb3BhX1VURi5SZGF0YSIpKQoKIyBodHRwczovL2NyYW4uci1wcm9qZWN0Lm9yZy93ZWIvcGFja2FnZXMvc3VtbWFyeXRvb2xzL3ZpZ25ldHRlcy9JbnRyb2R1Y3Rpb24uaHRtbApsaWJyYXJ5KHN1bW1hcnl0b29scykKRnJlcV9UaXBvIDwtIHN1bW1hcnl0b29sczo6ZnJlcShwcmVzdGFkb3Jlc19Qb3BhX1VURiRUaXBvX2xibCAsIAoJCQkgcmVwb3J0Lm5hcyA9IEZBTFNFLCAKCQkJcm91bmQuZGlnaXRzID0gMiwgIyBkZWZhdWx0IDIKCQkJb3JkZXIgPSAiZnJlcSIsICMgIAoJCQkgc3R5bGUgPSAncm1hcmtkb3duJywgIyAgCgkJCSBvbWl0LmhlYWRpbmdzID0gVAoJCQkpIAoKIyAjIFRoZW4gdXNlIHZpZXcoKSwgbGlrZSBzbzoKIyAgdmlldyhGcmVxX1RpcG8sIG1ldGhvZCA9ICJwYW5kZXIiLCBzdHlsZSA9ICJybWFya2Rvd24iLCBvbWl0LmhlYWRpbmdzID0gVFJVRSkKIyAKIyBwcmludChGcmVxX1RpcG8sIHN0eWxlID0gInJtYXJrZG93biIsIHJlcG9ydC5uYXMgPSBGQUxTRSwgCiMgICAgICAgICAgICAgICAgICB0b3RhbHMgPSBGQUxTRSwgb21pdC5oZWFkaW5ncyA9IFRSVUUpCiMgIyBwcmludChGcmVxVGlwbykKIyAKIyBrYWJsZShGcmVxVGlwbykgJT4lCiMgICBrYWJsZV9zdHlsaW5nKCJzdHJpcGVkIiwgZnVsbF93aWR0aCA9IEYsIGxhdGV4X29wdGlvbnMgPSAic2NhbGVfZG93biIpICMgJT4lCiMgICAjICAgcm93X3NwZWMoMTEsIGJvbGQgPSBULCBjb2xvciA9ICJ3aGl0ZSIsIGJhY2tncm91bmQgPSAiI0Q3MjYxRSIpCgoKa25pdHI6OmthYmxlKEZyZXFfVGlwbywgCgkJCQkgZm9ybWF0ID0gInBhbmRvYyIsIAoJCQkJIGRpZ2l0cyA9IDIsIAoJCQkJIGNhcHRpb24gPSAiQWdlbmNpZXMgUHJvdmlkaW5nIFdhdGVyICYgU2FuaXRhdGlvbiBieSBUeXBlIChJbmNsdWRpbmcgd2hlbiBOb3QgcHJvcGVybHkgZGVmaW5lZCIpCmBgYAoKKyAiUkFOR08iIHJlZmVycyB0byB0aGUgc2l6ZSBvZiB0aGUgcG9wdWxhaXRpb24gc2VydmVkLiAgCgoKCmBgYHtyIE9wZXJSQU5HTywgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRSwgcmVzdWx0cyA9ICdhc2lzJ30KCmxvYWQoIGhlcmUoICJkYXRhIiwgInByZXN0YWRvcmVzX1BvcGFfVVRGLlJkYXRhIikpCgojIGh0dHBzOi8vY3Jhbi5yLXByb2plY3Qub3JnL3dlYi9wYWNrYWdlcy9zdW1tYXJ5dG9vbHMvdmlnbmV0dGVzL0ludHJvZHVjdGlvbi5odG1sCmxpYnJhcnkoc3VtbWFyeXRvb2xzKQpGcmVxX1JhbmdvIDwtIHN1bW1hcnl0b29sczo6ZnJlcShwcmVzdGFkb3Jlc19Qb3BhX1VURiRSYW5nb19sYmwgLCAKCQkJIHJlcG9ydC5uYXMgPSBGQUxTRSwgCgkJCXJvdW5kLmRpZ2l0cyA9IDIsICMgZGVmYXVsdCAyCgkJCW9yZGVyID0gImZyZXEiLCAjICAKCQkJIHN0eWxlID0gJ3JtYXJrZG93bicsICMgIAoJCQkgb21pdC5oZWFkaW5ncyA9IFQKCQkJKSAKCiMgIyBUaGVuIHVzZSB2aWV3KCksIGxpa2Ugc286CiMgIHZpZXcoRnJlcV9UaXBvLCBtZXRob2QgPSAicGFuZGVyIiwgc3R5bGUgPSAicm1hcmtkb3duIiwgb21pdC5oZWFkaW5ncyA9IFRSVUUpCiMgCiMgcHJpbnQoRnJlcV9UaXBvLCBzdHlsZSA9ICJybWFya2Rvd24iLCByZXBvcnQubmFzID0gRkFMU0UsIAojICAgICAgICAgICAgICAgICAgdG90YWxzID0gRkFMU0UsIG9taXQuaGVhZGluZ3MgPSBUUlVFKQojICMgcHJpbnQoRnJlcVRpcG8pCiMgCiMga2FibGUoRnJlcVRpcG8pICU+JQojICAga2FibGVfc3R5bGluZygic3RyaXBlZCIsIGZ1bGxfd2lkdGggPSBGLCBsYXRleF9vcHRpb25zID0gInNjYWxlX2Rvd24iKSAjICU+JQojICAgIyAgIHJvd19zcGVjKDExLCBib2xkID0gVCwgY29sb3IgPSAid2hpdGUiLCBiYWNrZ3JvdW5kID0gIiNENzI2MUUiKQoKCmtuaXRyOjprYWJsZShGcmVxX1JhbmdvLCAKCQkJCSBmb3JtYXQgPSAicGFuZG9jIiwgCgkJCQkgZGlnaXRzID0gMiwgCgkJCQkgY2FwdGlvbiA9ICJBZ2VuY2llcyBQcm92aWRpbmcgV2F0ZXIgJiBTYW5pdGF0aW9uIGJ5IHNpemUgb2YgcG9wdWxhdGlvbiBzZXJ2ZWQgKEluY2x1ZGluZyB3aGVuIE5vdCBwcm9wZXJseSBkZWZpbmVkIikKYGBgCgoKIyMgV2hpY2ggRW50aWRhZGVzIGFuZCBNdW5pY2lwaW9zCgpUaGUgRU5USURBREVTIGFuZCBNVU5JQ0lQSU9TIElOQ0xVRElORyBMQVBPUC9QT1BBIGNsdXN0ZXJzICgyMDE2IC0tPiBjbG9zZWx5IGZvbGxvd2VkIGluIDIwMTgpCgktLT4gc2F2ZWQgUE9QQSBDbHVzdGVyIHNpemUgYnkgQWRtaW4gQm91bmQgaW4gCgktLT4gc2F2ZWQgU1BKT0lOIFJFU1VMVFMgTEFQT1AgRkVOQ0VTIGludGVyc2VjdGVkIHdpdGggTXVuIChDZW50cm9pZHMgYW5kIGZlbmNlcykgCgkgCgpgYGB7ciwgIGVjaG89RkFMU0UsIGZpZy5jYXA9IlRoZSBFTlRJREFERVMgd2hpY2ggaW5jbHVkZSBMQVBPUCBjbHVzdGVycyBieSAjIG9mIGhoIGludGVydmlld2VkIGluIDIwMTYiLCBvdXQud2lkdGggPSAnMTAwJScsIHJlc3VsdHM9J2FzaXMnfQoKIyBrbml0cjo6aW5jbHVkZV9ncmFwaGljcyhwYXN0ZTAodG9fZGlyLCIvMDFfdG1hcF9Qb3BhU2FtcGxlRS5wbmciKSkgICAjIE5PVCBSRU5ERVJJTkcgCgojIyMgI2xpc3QuZmlsZXMocGF0aCA9IHRvX2RpcikKYGBgCQoJCgoKIyMgKFBIQVNFIElJKSBUaGUgaG91c2Vob2xkcyBzZXJ2ZWQgaW4gdGhlIHJlc3BlY3RpdmUgc2VydmljZSBhcmVhcyBvZiB0aGUgc3VydmV5ZWQgV2F0ZXIgJiBTYW5pdGF0aW9uIFByb3ZpZGVycyAKCiMjIyBTcGF0aWFsIGlkZW50aWZpY2F0aW9uIG9mIGhoIGNsdXN0ZXJzCgpGaXJzdCBvZiBhbGwsIGxldCdzIHNlZSB3aGVyZSB0aGUgaG91c2Vob2xkIGNsdXN0ZXJzIGFyZSBsb2NhdGVkLiAKCiFbVGhlIEVOVElEQURFUyB3aGljaCBpbmNsdWRlIExBUE9QIGNsdXN0ZXJzIGJ5ICMgb2YgaGggaW50ZXJ2aWV3ZWQgaW4gMjAxNl0oLi9vdXRwdXQvMDFfdG1hcF9Qb3BhU2FtcGxlRS5wbmcpIAoKCgoKYGBge3IsICBlY2hvPUZBTFNFLCBmaWcuY2FwPSJUaGUgTVVOSUNJUElPUyB3aGljaCBpbmNsdWRlIExBUE9QIGNsdXN0ZXJzIGJ5ICMgb2YgaGggaW50ZXJ2aWV3ZWQgaW4gMjAxNiIsIG91dC53aWR0aCA9ICcxMDAlJywgcmVzdWx0cz0nYXNpcyd9CiMga25pdHI6OmluY2x1ZGVfZ3JhcGhpY3MocGFzdGUwKHRvX2RpciwiLzAxX3RtYXBfUG9wYVNhbXBsZU0ucG5nIikpICMgTk9UIFJFTkRFUklORyAKCiMjIyAjbGlzdC5maWxlcyhwYXRoID0gdG9fZGlyKQpgYGAJCgohW1RoZSBNVU5JQ0lQSU9TIHdoaWNoIGluY2x1ZGUgTEFQT1AgY2x1c3RlcnMgYnkgIyBvZiBoaCBpbnRlcnZpZXdlZCBpbiAyMDE2XSguL291dHB1dC8wMV90bWFwX1BvcGFTYW1wbGVNLnBuZykgCgoKIyMjIENoYW5nZXMgb2NjdXJyZWQgYmV0d2VlbiAyMDAwLTIwMTAgaW4gYXJlYXMgb2YgaW50ZXJlc3QKCkxvb2sgYXQgQ2hhbmdlcyBpbiBFTlRJREFERVMgYW5kIE1VTklDSVBJT1MgY292ZXJlZCBieSBMQVBPUC9QT1BBIGNsdXN0ZXJzIGFjY29yZGluZyB0byBjZW5zdXMgMjAxMCBjb21wYXJlZCB0byBjZW5zdXMgMjAwMAoKCi4uLi4uLgoKCgoKCgoKCgoKIyMgUkVGRVJFTkNFCgoKCmBgYHtyIGtuaXRBdHRlbXB0LCBlY2hvID0gRiwgZXZhbD1GfQojIGtuaXRyOjprbml0Mmh0bWwoJy4vc2FtcGxlLlJtZCcsZW5jb2RpbmcgPSAnVVRGLTgnLGZvcmNlX3YxID0gVFJVRSkKYGBgCgo=</div>
 <p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Luisa M. Mimmi</a>. 
 Code available on <a href="https://github.com/Lulliter/MexicoWaterSurvey">GitHub</a>. <br />
 

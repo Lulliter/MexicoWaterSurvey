@@ -1,19 +1,12 @@
 ---
 title: "How we created the sample"
-#output: 
- # html_document: 
-    # css: /Library/Frameworks/R.framework/Versions/3.5/Resources/library/summarytools/includes/stylesheets
-    # css: html/summarytools.css
 bibliography: MX_WaterSurvey.bib
-# nocite: '@*' # @* is a wildcard for all references. (ITEMS NOT MENTIONED THAT I WANT IN THE BIBLIOGRAPHY)
-# nocite: |
-# @riquelme_organismos_2018
 ---
 
 How we obtained the Sample WSS Operators Mexico and what it looks like
 
 
-```{r SETUP , echo=FALSE, message=FALSE}
+```{r SETUP, message=FALSE, warning=FALSE, include=FALSE }
 # https://stackoverflow.com/questions/43549930/pdf-figures-not-shown-in-html-files-produced-by-rmarkdown-when-open-with-firefox
 # to fix issue of picture not rendering TRY 
 # devtools::install_github('yihui/knitr')
@@ -31,7 +24,7 @@ knitr::opts_chunk$set(fig.retina = 2,
 
 ```
 
-```{r LOADPCK, echo=FALSE, message=FALSE}
+```{r LOADPCK, message=FALSE, warning=FALSE, include=FALSE}
 library(tidyverse)
 library(stringr)
 library(forcats)
@@ -51,7 +44,7 @@ library(summarytools)
 
 
 
-```{r COPYOUTPimage, echo=FALSE, message=FALSE}
+```{r COPYOUTPimage, message=FALSE, include=FALSE}
 # OKKIO, I am in /DataMEX, because it contains a file `.here`
 library(here)
 here::dr_here(show_reason = T)
@@ -70,7 +63,7 @@ file.copy( move, to = to_dir , overwrite = T )
 # file.copy( file.path(from_dir, move), to = to_dir  )
 ```
 
-```{r COPYOUTPdata, echo=FALSE, message=FALSE}
+```{r COPYOUTPdata, message=FALSE, include=FALSE}
 library(here)
 here::dr_here(show_reason = T)
 
@@ -87,69 +80,33 @@ file.copy( move2, to = to_dir2 , overwrite = T )
 
 
 
-## Sources of Data
+## Sampling design
 
-1. The sample for the survey is mutuated from the sampling design of LAPOP
-
-I looked into the STATA files with the sample of MX - 2016 which surveyd 1,563 IDs located in 260 **clusters** , which covered 110 **municipios** (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62))
-
-LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (slightly changed in 2018) 
-
-2. In order to match official admin boundaries and shapefile (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for  
+1. In order to match our sample to official Mexico admin boundaries  (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for  
 + Entidad (32) 
 + Municipios (2546)
 + Localidades URb( 4525 of 192,217 ) MULTiPOLYGON
 + Localidades Rur (187719 of 192,217) points 
 + AGEB urb- 56195 
+
+2. The sample for the survey is mutuated from the sampling design of LAPOP  because the goal is to survey the WSSS providers in the _same_ areas where LAPOP was interviewing households. LAPOP households interviews covered **1,563 IDs** located in **260 clusters**, found in **110 municipios**.[^1] 
+
+[^1] This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62)). 
+
+LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (might be slightly changed in 2018) 
  
-3. Identification of (expected) clusters for POPA 2018 sample (based on LAPOP) & matching to INEGI keys admin boundaries (names and shapes)
-	--> saved POPA Cluster size by Admin Bound in 
-	--> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
-	 
+3. Based on those, we identified the (expected) clusters for POPA 2018 sample & matched each location with the pertinent WSS Supplier in the area. 
+We arrived to a sample of **96 different suppliers**.  
 
-## Which Entidades and Municipios
+4. This survey encompasses two main goals
 
-The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 --> closely followed in 2018)
-
-```{r,  echo=FALSE, fig.cap="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
-
-# knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleE.png"))   # NOT RENDERING 
-
-### #list.files(path = to_dir)
-```	
+	+ I) Survey of WSS suppliers 
+	+ II) Survey of small samples of househods served by the above suppliers (also a chance to validate the LAPOP hh survey in the same areas)
 	
+What follow is a preliminary analysis of the 2 respective samples. 
 
 
-
-![The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleE.png) 
-
-
-
-
-```{r,  echo=FALSE, fig.cap="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
-# knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleM.png")) # NOT RENDERING 
-
-### #list.files(path = to_dir)
-```	
-
-![The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleM.png) 
-
-
-## Changes occurred between 2000-2010
-
-Look at Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000
-
-
-......
-
-
-
-
-
-
-
-
-## The Water & Sanitation Providers 
+## (PHASE I) The Water & Sanitation Providers 
 
 Look at THE WATER & SANITATION SERVICE PROVIDERS - SPECIFICALLY IN THE SURVEY AREA
 
@@ -160,17 +117,22 @@ decision making and financial management.
 
 The service providers *"prestadores de los servicios de agua y saneamiento"* in Mexico are extremely heterogeneous in nature and conditions. 
 
-In this project, the classification that we use is mostly derived from a _Nota Tecnica_ prepared by some colleagues of the IADB, WSA division [See @riquelme_organismos_2018, pp. 1-3]. This tracks some key information on **2,251 Prestadores**. 
+In this project, the classification that we use is mostly derived from a _Nota Tecnica_ prepared by some colleagues of the IADB, WSA division [See @riquelme_organismos_2018, pp. 1-3]. This tracks some key information on **2,252 Prestadores**. 
 
+
++ "TIPO" refers to the juridical status of the agency: **654** are considered proper "PRESTADORES", whereas 1,557 are not considered as proper utilities in the classification, respectively:  
+	* 1,332 are *No clasificado*
+	* 245 are cases in which the municipalities that directly provide water and sanitation services
+	
 ```{r OperTIPO, echo=FALSE, message=FALSE, results = 'asis'}
 
-load( here("MexicoWaterSurvey", "data", "prestadoresUTF.Rdata"))
+load( here( "data", "prestadores_Popa_UTF.Rdata"))
 
 # https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
 library(summarytools)
-Freq_Tipo <- summarytools::freq(prestadoresUTF$Tipo_lbl , 
+Freq_Tipo <- summarytools::freq(prestadores_Popa_UTF$Tipo_lbl , 
 			 report.nas = FALSE, 
-			round.digits = 1, # default 2
+			round.digits = 2, # default 2
 			order = "freq", #  
 			 style = 'rmarkdown', #  
 			 omit.headings = T
@@ -188,12 +150,102 @@ Freq_Tipo <- summarytools::freq(prestadoresUTF$Tipo_lbl ,
 #   #   row_spec(11, bold = T, color = "white", background = "#D7261E")
 
 
-knitr::kable(Freq_Tipo, format = "pandoc", caption = "Title of the table")
+knitr::kable(Freq_Tipo, 
+				 format = "pandoc", 
+				 digits = 2, 
+				 caption = "Agencies Providing Water & Sanitation by Type (Including when Not properly defined")
+```
+
++ "RANGO" refers to the size of the populaition served.  
+
+
+
+```{r OperRANGO, echo=FALSE, message=FALSE, results = 'asis'}
+
+load( here( "data", "prestadores_Popa_UTF.Rdata"))
+
+# https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
+library(summarytools)
+Freq_Rango <- summarytools::freq(prestadores_Popa_UTF$Rango_lbl , 
+			 report.nas = FALSE, 
+			round.digits = 2, # default 2
+			order = "freq", #  
+			 style = 'rmarkdown', #  
+			 omit.headings = T
+			) 
+
+# # Then use view(), like so:
+#  view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE)
+# 
+# print(Freq_Tipo, style = "rmarkdown", report.nas = FALSE, 
+#                  totals = FALSE, omit.headings = TRUE)
+# # print(FreqTipo)
+# 
+# kable(FreqTipo) %>%
+#   kable_styling("striped", full_width = F, latex_options = "scale_down") # %>%
+#   #   row_spec(11, bold = T, color = "white", background = "#D7261E")
+
+
+knitr::kable(Freq_Rango, 
+				 format = "pandoc", 
+				 digits = 2, 
+				 caption = "Agencies Providing Water & Sanitation by size of population served (Including when Not properly defined")
 ```
 
 
+## Which Entidades and Municipios
 
-### REFERENCE
+The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 --> closely followed in 2018)
+	--> saved POPA Cluster size by Admin Bound in 
+	--> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
+	 
+
+```{r,  echo=FALSE, fig.cap="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
+
+# knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleE.png"))   # NOT RENDERING 
+
+### #list.files(path = to_dir)
+```	
+	
+
+
+## (PHASE II) The households served in the respective service areas of the surveyed Water & Sanitation Providers 
+
+### Spatial identification of hh clusters
+
+First of all, let's see where the household clusters are located. 
+
+![The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleE.png) 
+
+
+
+
+```{r,  echo=FALSE, fig.cap="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
+# knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleM.png")) # NOT RENDERING 
+
+### #list.files(path = to_dir)
+```	
+
+![The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleM.png) 
+
+
+### Changes occurred between 2000-2010 in areas of interest
+
+Look at Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000
+
+
+......
+
+
+
+
+
+
+
+
+
+
+## REFERENCE
 
 
 
