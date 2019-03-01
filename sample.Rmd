@@ -179,7 +179,7 @@ Freq_Tipo <- summarytools::freq(prestadores_Popa_UTF$Tipo_lbl ,
 			  report.nas = FALSE, 
 			round.digits = 2, # default 2
 			order = "freq", #  
-		 style = 'rmarkdown', #  
+			style = 'rmarkdown', #  
 			 omit.headings = T
 			) 
 
