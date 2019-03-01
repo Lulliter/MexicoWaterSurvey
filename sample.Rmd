@@ -179,12 +179,13 @@ Freq_Tipo <- summarytools::freq(prestadores_Popa_UTF$Tipo_lbl ,
 			  report.nas = FALSE, 
 			round.digits = 2, # default 2
 			order = "freq", #  
-			# style = 'rmarkdown', #  
+		 style = 'rmarkdown', #  
 			 omit.headings = T
 			) 
 
+# ======= DOES NOT RENDER IN SITE 
 # # Then use view(), like so:
-view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE	)
+#view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE	)
 # 
 # print(Freq_Tipo, style = "rmarkdown", report.nas = FALSE, 
  #                totals = FALSE, omit.headings = TRUE)
@@ -195,14 +196,14 @@ view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE	)
 #   #   row_spec(11, bold = T, color = "white", background = "#D7261E")
 
 # ======= WORKS BUT WIHT EXTRA COLUMNS I DONT WANT 
-#  knitr::kable(Freq_Tipo, 
-# 				 format = "html", 
-# 				 digits = 2, 
-# 				 caption = "Agencies Providing Water & Sanitation by Type (Including when Not properly defined") %>% 
-# 	kable_styling("striped", full_width = F) %>% 
-# 	row_spec(1, bold = T, color = "white", background = "#D7261E") %>% 
-# 	row_spec(5, bold = T,   background = "#FFC1C1")%>% 
-# 	row_spec(9, bold = T,  background = "#FFC1C1")
+ knitr::kable(Freq_Tipo,
+				 format = "pandoc",
+				 digits = 2,
+				 caption = "Agencies Providing Water & Sanitation by Type (Including when Not properly defined") %>%
+	kable_styling("striped", full_width = F) %>%
+	row_spec(1, bold = T, color = "white", background = "#D7261E") %>%
+	row_spec(5, bold = T,   background = "#FFC1C1")%>%
+	row_spec(9, bold = T,  background = "#FFC1C1")
 ```
 
 + "RANGO" refers to the size of the populaition served.  
@@ -223,8 +224,9 @@ Freq_Rango <- summarytools::freq(prestadores_Popa_UTF$Rango_lbl ,
 			 omit.headings = T
 			) 
 
+# ======= DOES NOT RENDER IN SITE 
 # # Then use view(), like so:
-view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE)
+# view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE)
 # 
 # print(Freq_Tipo, style = "rmarkdown", report.nas = FALSE, 
 #                  totals = FALSE, omit.headings = TRUE)
@@ -234,11 +236,11 @@ view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE)
 #   kable_styling("striped", full_width = F, latex_options = "scale_down") # %>%
 #   #   row_spec(11, bold = T, color = "white", background = "#D7261E")
 
-# ======= WORKS BUT WIHT EXTRA COLUMNS I DONT WANT 
-# knitr::kable(Freq_Rango, 
-# 				 format = "pandoc", 
-# 				 digits = 2, 
-# 				 caption = "Agencies Providing Water & Sanitation by size of population served (Including when Not properly defined")
+# ======= WORKS BUT WIHT EXTRA COLUMNS I DONT WANT
+knitr::kable(Freq_Rango,
+				 format = "pandoc",
+				 digits = 2,
+				 caption = "Agencies Providing Water & Sanitation by size of population served (Including when Not properly defined")
 
 # st_options()
 ```
