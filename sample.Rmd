@@ -197,7 +197,7 @@ Freq_Tipo <- summarytools::freq(prestadores_Popa_UTF$Tipo_lbl ,
 
 # ======= WORKS BUT WIHT EXTRA COLUMNS I DONT WANT 
  knitr::kable(Freq_Tipo,
-				 format = "pandoc",
+				 format = "html",
 				 digits = 2,
 				 caption = "Agencies Providing Water & Sanitation by Type (Including when Not properly defined") %>%
 	kable_styling("striped", full_width = F) %>%
