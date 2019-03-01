@@ -189,13 +189,12 @@ Freq_Tipo <- summarytools::freq(prestadores_Popa_UTF$Tipo_lbl ,
 # 
 # print(Freq_Tipo, style = "rmarkdown", report.nas = FALSE, 
  #                totals = FALSE, omit.headings = TRUE)
-# # print(FreqTipo)
-# 
-kable(Freq_Tipo) %>%
-  kable_styling("striped", full_width = F, latex_options = "scale_down")   %>%
-     row_spec(11, bold = T, color = "white", background = "#D7261E")
+# # # print(FreqTipo)
+# # 
+# kable(Freq_Tipo) %>%
+#   kable_styling("striped", full_width = F, latex_options = "scale_down")   
 
-# ======= WORKS BUT WIHT EXTRA COLUMNS I DONT WANT 
+# ======= WORKS (locally not in site) BUT WIHT EXTRA COLUMNS I DONT WANT 
  knitr::kable(Freq_Tipo,
 				 format = "html",
 				 digits = 2,
