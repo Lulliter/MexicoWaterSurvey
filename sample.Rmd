@@ -241,7 +241,8 @@ view(Freq_Tipo, method = "pander", style = "rmarkdown", omit.headings = TRUE)
 # 				 format = "pandoc", 
 # 				 digits = 2, 
 # 				 caption = "Agencies Providing Water & Sanitation by size of population served (Including when Not properly defined")
-st_options()
+
+# st_options()
 ```
 
 
