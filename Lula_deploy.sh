@@ -1,5 +1,25 @@
-	# Go To (git) ./sub-folder (one below the Rproj wdir) 
-	cd ./MexicoWaterSurvey
+#==================================RESOURCES ON RMARKDOWN_SITE=====================================#
+#   https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html
+#   https://rmarkdown.rstudio.com/lesson-13.html
+#==================================================================================================#
+
+
+
+#=========================================== (start) ================================================#
+#================================== Invoke build_site.R FROM SHELL ================================#
+# ======= ./MexicoWaterSurvey/build_site.R DOES THE FOLLWOING: 
+# ============== 1) list which files will be removed (all ".html(s)" + "site_libs/");
+# ============== 2) actually remove the above files;
+# ============== 3) Render again the ./MexicoWaterSurvey/ public site. 
+cd ./MexicoWaterSurvey
+pwd
+Rscript build_site.R 
+#=========================================== (end) ================================================#
+
+
+
+# Go To (git) ./sub-folder (one below the Rproj wdir) 
+#	cd ./MexicoWaterSurvey
 	ls
 	git remote show origin 
 
