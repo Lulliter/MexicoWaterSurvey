@@ -1,0 +1,48 @@
+---
+title: "Descriptive Statistic of households"
+bibliography: MX_WaterSurvey.bib
+---
+
+Last updated on `format(Sys.time(), '%d %B, %Y')`
+
+```{r SETUP, message=FALSE, warning=FALSE, include=FALSE }
+# BELLO   https://holtzy.github.io/Pimp-my-rmd/#references
+
+# https://stackoverflow.com/questions/43549930/pdf-figures-not-shown-in-html-files-produced-by-rmarkdown-when-open-with-firefox
+# to fix issue of picture not rendering TRY 
+# devtools::install_github('yihui/knitr')
+
+knitr::opts_chunk$set(fig.retina = 2,
+                      tidy.opts = list(width.cutoff = 120),  # For code
+                      options(width = 120) # For output
+							 )  
+
+#  The encoding ("ISO-8859-1") is not UTF-8. We will only support UTF-8 in the future. Please re-save your file "sample.Rmd" with the UTF-8 encoding.
+
+# To generate tables using summarytool s own html rendering, the .Rmd document s configuration part (yaml) must point to the package s summarytools.css file.
+```
+
+```{r LOADPCK, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(stringr)
+library(forcats)
+library(scales)
+library(patchwork)
+library(countrycode)
+library(sf)
+library(kableExtra)
+library(summarytools)
+library(here)# OKKIO, I am in /DataMEX, because it contains a file `.here`
+here::dr_here(show_reason = T)
+```
+
+
+
+## REFERENCE
+
+
+
+```{r knitAttempt, echo = F, eval=F}
+# knitr::knit2html('./sample.Rmd',encoding = 'UTF-8',force_v1 = TRUE)
+```
+

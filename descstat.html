@@ -11,7 +11,7 @@
 
 
 
-<title>Descriptive Statistics</title>
+<title>Descriptive Statistics of WSS Providers</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -393,14 +393,21 @@ div.tocify {
   <a href="sample.html">
     <span class="fa fa-flask"></span>
      
-    Sample
+    Sample Phase 1 &amp; 2
   </a>
 </li>
 <li>
   <a href="descstat.html">
-    <span class="fa fa-table"></span>
+    <span class="fa fa-wrench"></span>
      
-    Descriptive Statistics
+    Descriptive Statistics Phase 1
+  </a>
+</li>
+<li>
+  <a href="descstat2.html">
+    <span class="fa fa-home"></span>
+     
+    Descriptive Statistics Phase 2
   </a>
 </li>
 <li>
@@ -439,14 +446,17 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Descriptive Statistics</h1>
+<h1 class="title toc-ignore">Descriptive Statistics of WSS Providers</h1>
 
 </div>
 
 
 <p>Descriptive Statistics of Survey WSS Operators Mexico</p>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 3.5.2</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.5.2</code></pre>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.5.2</code></pre>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGVzY3JpcHRpdmUgU3RhdGlzdGljcyIKLS0tCgpEZXNjcmlwdGl2ZSBTdGF0aXN0aWNzIG9mIFN1cnZleSBXU1MgT3BlcmF0b3JzIE1leGljbwoKCmBgYHtyIFNFVFVQICwgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGZpZy5yZXRpbmEgPSAyLAogICAgICAgICAgICAgICAgICAgICAgdGlkeS5vcHRzID0gbGlzdCh3aWR0aC5jdXRvZmYgPSAxMjApLCAgIyBGb3IgY29kZQogICAgICAgICAgICAgICAgICAgICAgb3B0aW9ucyh3aWR0aCA9IDEyMCkgKSAgIyBGb3Igb3V0cHV0CgoKYGBgCgpgYGB7ciBMT0FEUENLLCBlY2hvPUZBTFNFLCBtZXNzYWdlPUZBTFNFfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShzdHJpbmdyKQpsaWJyYXJ5KGZvcmNhdHMpCmxpYnJhcnkoc2NhbGVzKQpsaWJyYXJ5KHBhdGNod29yaykKbGlicmFyeShjb3VudHJ5Y29kZSkKbGlicmFyeShzZikKbGlicmFyeShoZXJlKSAjIE9LS0lPLCBJIGFtIGluIC9EYXRhTUVYLCBiZWNhdXNlIGl0IGNvbnRhaW5zIGEgZmlsZSBgLmhlcmVgCgpsaWJyYXJ5KGhlcmUpCmhlcmU6OmRyX2hlcmUoc2hvd19yZWFzb24gPSBUKQpgYGAKCgoKCgoKCgoKCgoKCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGVzY3JpcHRpdmUgU3RhdGlzdGljcyBvZiBXU1MgUHJvdmlkZXJzIgotLS0KCkRlc2NyaXB0aXZlIFN0YXRpc3RpY3Mgb2YgU3VydmV5IFdTUyBPcGVyYXRvcnMgTWV4aWNvCgoKYGBge3IgU0VUVVAgLCBlY2hvPUZBTFNFLCBtZXNzYWdlPUZBTFNFfQprbml0cjo6b3B0c19jaHVuayRzZXQoZmlnLnJldGluYSA9IDIsCiAgICAgICAgICAgICAgICAgICAgICB0aWR5Lm9wdHMgPSBsaXN0KHdpZHRoLmN1dG9mZiA9IDEyMCksICAjIEZvciBjb2RlCiAgICAgICAgICAgICAgICAgICAgICBvcHRpb25zKHdpZHRoID0gMTIwKSApICAjIEZvciBvdXRwdXQKCgpgYGAKCmBgYHtyIExPQURQQ0ssIGVjaG89RkFMU0UsIG1lc3NhZ2U9RkFMU0V9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KHN0cmluZ3IpCmxpYnJhcnkoZm9yY2F0cykKbGlicmFyeShzY2FsZXMpCmxpYnJhcnkocGF0Y2h3b3JrKQpsaWJyYXJ5KGNvdW50cnljb2RlKQpsaWJyYXJ5KHNmKQpsaWJyYXJ5KGhlcmUpICMgT0tLSU8sIEkgYW0gaW4gL0RhdGFNRVgsIGJlY2F1c2UgaXQgY29udGFpbnMgYSBmaWxlIGAuaGVyZWAKCmxpYnJhcnkoaGVyZSkKaGVyZTo6ZHJfaGVyZShzaG93X3JlYXNvbiA9IFQpCmBgYAoKCgoKCgoKCgoKCgoKCg==</div>
 <p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Luisa M. Mimmi</a>. 
 Code available on <a href="https://github.com/Lulliter/MexicoWaterSurvey">GitHub</a>. <br />
 
