@@ -112,11 +112,11 @@ What follow is a preliminary analysis of the 2 respective samples.
 INEGI has identified a total of _2,688  "Organismos Operadores"_ (OO) in the _"Censo de Captacion, Tratamiento y Suministro de Agua"_ 
 conducted in 2014 and published in 2016 [ @inegi_panorama_2016 ].  Of all of these, some ~700 could be rightly defined as _"Organismos Operadores"_, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management. 
 
-	>  The service providers *"organismo que presta el servicio de captaci髇, tratamiento y suministro de agua"* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census
+	>  The service providers *"organismo que presta el servicio de captaci贸n, tratamiento y suministro de agua"* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census
 
 + JURIDICAL CATEGORY:
-	* 2401 (of 2668) are _servicios del sector p鷅lico_
-	* 257 (of 2668) are _asociaci髇 civil_
+	* 2401 (of 2668) are _servicios del sector p煤blico_
+	* 257 (of 2668) are _asociaci贸n civil_
 	* 30 (of 2668) are _sociedad mercantil con fines de lucro o sociedad cooperativa_
 
 In this project, the classification that we use is mostly derived from a _Nota Tecnica_ prepared by some colleagues of the IADB, WSA division [See @riquelme_lor_2018, pp. 1-3]. This managed to retreive some basic information on **2,252 Prestadores**. 
@@ -132,32 +132,32 @@ In this project, the classification that we use is mostly derived from a _Nota T
 
 + EMPLOYED PERSONNEL:
 	* personal ocupado por sexo; 81.3% con trabajadores hombres y 18.7% mujeres
-	* obreros y t閏nicos; 76,744 obreros y t閏nicos (62.5%)/un total de 117 866 puestos de trabajo
+	* obreros y t茅cnicos; 76,744 obreros y t茅cnicos (62.5%)/un total de 117 866 puestos de trabajo
 	* empleados y directivos; 
 	~~* personal no remunerado~~ 3,764 trabaja- dores no remunerados/un total de 117 866 puestos de trabajo
 	~~* promedio de horas trabajadas~~ 
-	~~* personal no dependiente de la raz髇 social~~ 
+	~~* personal no dependiente de la raz贸n social~~ 
 	~~* remuneraciones pagadas~~ 
 	~~* prestaciones sociales~~ 
 	~~* pago al personal subcontratado.~~
 
 + INGRESOS POR CONSUMO DE BIENES Y SERVICIOS:
 	* Suministro de agua 69.3%
-	* Derechos de conexi髇 y alcantarillado 2.1%
+	* Derechos de conexi贸n y alcantarillado 2.1%
 	* Ingresos por ejercicios anteriores 9.2%
 	* Otros Venta de agua tratada 7.6%
 
 + Tomas de agua por tipo de usuario
- 	* Toma dom閟tica 92.1%
+ 	* Toma dom茅stica 92.1%
 	* Toma comercial 6.3 % 
 	* Toma industrial 0.6 %
-	* Toma de servicios p鷅licos 1 % 
+	* Toma de servicios p煤blicos 1 % 
 	
-+ Distribuci髇 porcentual de los ingresos seg鷑 la venta de agua potable por tipo de usuario
-	* Toma dom閟tica 60.9 %
++ Distribuci贸n porcentual de los ingresos seg煤n la venta de agua potable por tipo de usuario
+	* Toma dom茅stica 60.9 %
 	* Toma comercial 25.3 %
 	* Toma industrial 8.1 %
-	* Toma de servicios p鷅licos 5.7 %
+	* Toma de servicios p煤blicos 5.7 %
 	
 #### THE ORGANISMOS OPERADORES IN OUR SAMPLE 
 + + JURIDICAL CATEGORY ("TIPO") refers to the juridical status of the agency: **654** are considered proper "PRESTADORES", whereas 1,557 are not considered as proper utilities in the classification, respectively:  

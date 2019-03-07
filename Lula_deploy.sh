@@ -11,7 +11,7 @@
 # ============== 1) list which files will be removed (all ".html(s)" + "site_libs/");
 # ============== 2) actually remove the above files;
 # ============== 3) Render again the ./MexicoWaterSurvey/ public site. 
-cd ./MexicoWaterSurvey
+cd ./MexicoWaterSurvey # (build_site.R thinks it is in ./)
 pwd
 Rscript build_site.R 
 #=========================================== (end) ================================================#
@@ -38,7 +38,7 @@ fi
 # ... Commit Those changes.
 git commit -m "$msg"
 
-		# or git commit -m "Added descstat2 tab"
+		# or git commit -m "Not adding  descstat2 tab"
 		# git commit -m "changed to _site"
 		
 # Push source and build repos.
