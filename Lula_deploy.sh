@@ -38,7 +38,7 @@ fi
 # ... Commit Those changes.
 git commit -m "$msg"
 
-		# or git commit -m "Kable Table in SAMPLE2"
+		# or git commit -m "Added descstat2 tab"
 		# git commit -m "changed to _site"
 		
 # Push source and build repos.

@@ -1,13 +1,13 @@
 ---
-title: "How we created the sample"
+title: "The sample of Water & Sanitation Providers"
 bibliography: MX_WaterSurvey.bib
 ---
 
+Last updated on `format(Sys.time(), '%d %B, %Y')`
 How we obtained the Sample WSS Operators Mexico and what it looks like
 
 
 ```{r SETUP, message=FALSE, warning=FALSE, include=FALSE }
-
 # BELLO   https://holtzy.github.io/Pimp-my-rmd/#references
 
 # https://stackoverflow.com/questions/43549930/pdf-figures-not-shown-in-html-files-produced-by-rmarkdown-when-open-with-firefox
@@ -21,10 +21,7 @@ knitr::opts_chunk$set(fig.retina = 2,
 
 #  The encoding ("ISO-8859-1") is not UTF-8. We will only support UTF-8 in the future. Please re-save your file "sample.Rmd" with the UTF-8 encoding.
 
-
 # To generate tables using summarytool s own html rendering, the .Rmd document s configuration part (yaml) must point to the package s summarytools.css file.
-
-
 ```
 
 ```{r LOADPCK, message=FALSE, warning=FALSE, include=FALSE}
