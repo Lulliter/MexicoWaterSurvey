@@ -63,9 +63,7 @@ h6 {
 
 <link rel="stylesheet" href="html/fixes.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -183,8 +181,6 @@ $(document).ready(function () {
   menuAnchor.closest('li.dropdown').addClass('active');
 });
 </script>
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -358,6 +354,16 @@ div.tocify {
 
 </style>
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
 <div class="col-xs-12 col-sm-4 col-md-3">
@@ -398,14 +404,14 @@ div.tocify {
 </li>
 <li>
   <a href="descstat.html">
-    <span class="fa fa-table"></span>
+    <span class="fa fa-wrench"></span>
      
     Descriptive Statistics Phase 1
   </a>
 </li>
 <li>
   <a href="descstat2.html">
-    <span class="fa fa-table"></span>
+    <span class="fa fa-home"></span>
      
     Descriptive Statistics Phase 2
   </a>
@@ -457,7 +463,7 @@ div.tocify {
 </div>
 
 <div id="rmd-source-code">LS0tCnRpdGxlOiAiRGVzY3JpcHRpdmUgU3RhdGlzdGljIG9mIGhvdXNlaG9sZHMiCmJpYmxpb2dyYXBoeTogTVhfV2F0ZXJTdXJ2ZXkuYmliCi0tLQoKTGFzdCB1cGRhdGVkIG9uIGBmb3JtYXQoU3lzLnRpbWUoKSwgJyVkICVCLCAlWScpYAoKYGBge3IgU0VUVVAsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmc9RkFMU0UsIGluY2x1ZGU9RkFMU0UgfQojIEJFTExPICAgaHR0cHM6Ly9ob2x0enkuZ2l0aHViLmlvL1BpbXAtbXktcm1kLyNyZWZlcmVuY2VzCgojIGh0dHBzOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzQzNTQ5OTMwL3BkZi1maWd1cmVzLW5vdC1zaG93bi1pbi1odG1sLWZpbGVzLXByb2R1Y2VkLWJ5LXJtYXJrZG93bi13aGVuLW9wZW4td2l0aC1maXJlZm94CiMgdG8gZml4IGlzc3VlIG9mIHBpY3R1cmUgbm90IHJlbmRlcmluZyBUUlkgCiMgZGV2dG9vbHM6Omluc3RhbGxfZ2l0aHViKCd5aWh1aS9rbml0cicpCgprbml0cjo6b3B0c19jaHVuayRzZXQoZmlnLnJldGluYSA9IDIsCiAgICAgICAgICAgICAgICAgICAgICB0aWR5Lm9wdHMgPSBsaXN0KHdpZHRoLmN1dG9mZiA9IDEyMCksICAjIEZvciBjb2RlCiAgICAgICAgICAgICAgICAgICAgICBvcHRpb25zKHdpZHRoID0gMTIwKSAjIEZvciBvdXRwdXQKCQkJCQkJCSApICAKCiMgIFRoZSBlbmNvZGluZyAoIklTTy04ODU5LTEiKSBpcyBub3QgVVRGLTguIFdlIHdpbGwgb25seSBzdXBwb3J0IFVURi04IGluIHRoZSBmdXR1cmUuIFBsZWFzZSByZS1zYXZlIHlvdXIgZmlsZSAic2FtcGxlLlJtZCIgd2l0aCB0aGUgVVRGLTggZW5jb2RpbmcuCgojIFRvIGdlbmVyYXRlIHRhYmxlcyB1c2luZyBzdW1tYXJ5dG9vbCBzIG93biBodG1sIHJlbmRlcmluZywgdGhlIC5SbWQgZG9jdW1lbnQgcyBjb25maWd1cmF0aW9uIHBhcnQgKHlhbWwpIG11c3QgcG9pbnQgdG8gdGhlIHBhY2thZ2UgcyBzdW1tYXJ5dG9vbHMuY3NzIGZpbGUuCmBgYAoKYGBge3IgTE9BRFBDSywgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShmb3JjYXRzKQpsaWJyYXJ5KHNjYWxlcykKbGlicmFyeShwYXRjaHdvcmspCmxpYnJhcnkoY291bnRyeWNvZGUpCmxpYnJhcnkoc2YpCmxpYnJhcnkoa2FibGVFeHRyYSkKbGlicmFyeShzdW1tYXJ5dG9vbHMpCmxpYnJhcnkoaGVyZSkjIE9LS0lPLCBJIGFtIGluIC9EYXRhTUVYLCBiZWNhdXNlIGl0IGNvbnRhaW5zIGEgZmlsZSBgLmhlcmVgCmhlcmU6OmRyX2hlcmUoc2hvd19yZWFzb24gPSBUKQpgYGAKCgoKIyMgUkVGRVJFTkNFCgoKCmBgYHtyIGtuaXRBdHRlbXB0LCBlY2hvID0gRiwgZXZhbD1GfQojIGtuaXRyOjprbml0Mmh0bWwoJy4vc2FtcGxlLlJtZCcsZW5jb2RpbmcgPSAnVVRGLTgnLGZvcmNlX3YxID0gVFJVRSkKYGBgCgo=</div>
-<p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Luisa M. Mimmi</a>. 
+<p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Banco Interamericano de Desarrollo (“BID”)</a>. 
 Code available on <a href="https://github.com/Lulliter/MexicoWaterSurvey">GitHub</a>. <br />
 
 <span style="color:red">Work in progress, subject to change and not (yet) ready for dissemination.</span>.

@@ -14,7 +14,7 @@ How we obtained the Sample WSS Operators Mexico and what it looks like
 # to fix issue of picture not rendering TRY 
 # devtools::install_github('yihui/knitr')
 
-knitr::opts_chunk$set(fig.retina = 2,
+knitr::opts_chunk$set(fig.retina = 2, # will ensure crisp display on retina screens but be aware that it will double the physical size of your images. 
                       tidy.opts = list(width.cutoff = 120),  # For code
                       options(width = 120) # For output
 							 )  
@@ -69,7 +69,7 @@ here::dr_here(show_reason = T)
 from_dir2 <- here("03_cleandata")
 to_dir2 <- here("MexicoWaterSurvey", "data")
 
-files2 <- list.files(path = from_dir2 , full.names = TRUE,  pattern =  "(^oper|^pres).*\\.Rdata$") 
+files2 <- list.files(path = from_dir2 , full.names = TRUE,  pattern =  "(^oper|^pres|^Census).*\\.Rdata$") 
 move2 <- files2[sapply(files2, file.size) < 100000000] # < 100 MB or Github will get stuck
 
 # --- SYNTAX
@@ -89,6 +89,17 @@ file.copy( move2, to = to_dir2 , overwrite = T )
 + AGEB urb- 56195 
 
 2. The sample for the survey is mutuated from the sampling design of LAPOP  because the goal is to survey the WSSS providers in the _same_ areas where LAPOP was interviewing households. LAPOP households interviews covered **1,563 IDs** located in **260 clusters**, found in **110 municipios**.[^1] 
+
+> UPDATE FROM LAPOP 2019: LAPOP households interviews covered **1,446 IDs** located in **232 clusters**, found in **110 {_BUT, even if the # of municipio is the same, only 105 were actually the same, there are 5 different ones_} municipios**.[^1] 
+
+<center>
+![LAPOP clusters (over mun) of hh interviewed in 2016](./output/Qgis_Lapop2016.png) 
+</center>
+```{r explan, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+# This was created via QGIS {in ./01_rawdata/MEX_fences_2016.qgz} where I added 
+# 1. the LAPOP TRacks and waypoints from 2016 (I guess taken from Google Earth)
+# 2. The INEGI ENT  and munic shp (2010 censim )
+```
 
 [^1]: This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62)). 
 
@@ -112,11 +123,11 @@ What follow is a preliminary analysis of the 2 respective samples.
 INEGI has identified a total of _2,688  "Organismos Operadores"_ (OO) in the _"Censo de Captacion, Tratamiento y Suministro de Agua"_ 
 conducted in 2014 and published in 2016 [ @inegi_panorama_2016 ].  Of all of these, some ~700 could be rightly defined as _"Organismos Operadores"_, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management. 
 
-	>  The service providers *"organismo que presta el servicio de captación, tratamiento y suministro de agua"* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census
+	>  The service providers *"organismo que presta el servicio de captaciÃ³n, tratamiento y suministro de agua"* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census
 
 + JURIDICAL CATEGORY:
-	* 2401 (of 2668) are _servicios del sector público_
-	* 257 (of 2668) are _asociación civil_
+	* 2401 (of 2668) are _servicios del sector pÃºblico_
+	* 257 (of 2668) are _asociaciÃ³n civil_
 	* 30 (of 2668) are _sociedad mercantil con fines de lucro o sociedad cooperativa_
 
 In this project, the classification that we use is mostly derived from a _Nota Tecnica_ prepared by some colleagues of the IADB, WSA division [See @riquelme_lor_2018, pp. 1-3]. This managed to retreive some basic information on **2,252 Prestadores**. 
@@ -132,32 +143,32 @@ In this project, the classification that we use is mostly derived from a _Nota T
 
 + EMPLOYED PERSONNEL:
 	* personal ocupado por sexo; 81.3% con trabajadores hombres y 18.7% mujeres
-	* obreros y técnicos; 76,744 obreros y técnicos (62.5%)/un total de 117 866 puestos de trabajo
+	* obreros y tÃ©cnicos; 76,744 obreros y tÃ©cnicos (62.5%)/un total de 117 866 puestos de trabajo
 	* empleados y directivos; 
 	~~* personal no remunerado~~ 3,764 trabaja- dores no remunerados/un total de 117 866 puestos de trabajo
 	~~* promedio de horas trabajadas~~ 
-	~~* personal no dependiente de la razón social~~ 
+	~~* personal no dependiente de la razÃ³n social~~ 
 	~~* remuneraciones pagadas~~ 
 	~~* prestaciones sociales~~ 
 	~~* pago al personal subcontratado.~~
 
 + INGRESOS POR CONSUMO DE BIENES Y SERVICIOS:
 	* Suministro de agua 69.3%
-	* Derechos de conexión y alcantarillado 2.1%
+	* Derechos de conexiÃ³n y alcantarillado 2.1%
 	* Ingresos por ejercicios anteriores 9.2%
 	* Otros Venta de agua tratada 7.6%
 
 + Tomas de agua por tipo de usuario
- 	* Toma doméstica 92.1%
+ 	* Toma domÃ©stica 92.1%
 	* Toma comercial 6.3 % 
 	* Toma industrial 0.6 %
-	* Toma de servicios públicos 1 % 
+	* Toma de servicios pÃºblicos 1 % 
 	
-+ Distribución porcentual de los ingresos según la venta de agua potable por tipo de usuario
-	* Toma doméstica 60.9 %
++ DistribuciÃ³n porcentual de los ingresos segÃºn la venta de agua potable por tipo de usuario
+	* Toma domÃ©stica 60.9 %
 	* Toma comercial 25.3 %
 	* Toma industrial 8.1 %
-	* Toma de servicios públicos 5.7 %
+	* Toma de servicios pÃºblicos 5.7 %
 	
 #### THE ORGANISMOS OPERADORES IN OUR SAMPLE 
 + + JURIDICAL CATEGORY ("TIPO") refers to the juridical status of the agency: **654** are considered proper "PRESTADORES", whereas 1,557 are not considered as proper utilities in the classification, respectively:  
@@ -260,6 +271,17 @@ The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 --> closely fol
 
 ## (PHASE II) The households served in the respective service areas of the surveyed Water & Sanitation Providers 
 
+### Which households? 
+
+The sample selected is made of *"Viviendas Particulares Habitadas"* (Mexico, INEGI definition) and 
+*"domicilios particulares permanentes"* (as opposed t "improvisado", Brazl)
+
+### How many? 
+
+1) Para o Brasil foi considerada a amostra de *1500 domicilios* com 12 domicilios distribuidos pelos *107 municipios* determinados.
+
+
+
 ### Spatial identification of hh clusters
 
 First of all, let's see where the household clusters are located. 
@@ -280,14 +302,42 @@ First of all, let's see where the household clusters are located.
 ![The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleM.png) 
 </center>
 
+
+
+
 ### Changes occurred between 2000-2010 in areas of interest
 
 Look at Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000
 
 
-......
+```{r CensusVar, echo=FALSE}
+  
+# https://rpubs.com/Xavi/ubiss16d3
+# https://walkerke.github.io/2016/12/rmd-dropdowns/
+load( here( "data", "Census_2yrs_p_lag_pcg.Rdata"))
 
+CensusVars <- colnames(Census_2yrs_p_lag_pcg[9:55])
+UnitOfAn <- c( "Total per municipio","Total per municipio","Total per municipio",
+					  "Total per municipio","Total per municipio", "Lag Total per municipio",
+					"Percentage Change 2010 over 2000", 
+					  "Total per municipio", "Percent per municipio 2000","Percentage Change 2010 over 2000", 
+					  "Total per municipio", "Percent per municipio 2000","Percentage Change 2010 over 2000", 
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)", 
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)", 
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)", 
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)", 
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)", 
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)", 
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)", 
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)",
+					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)",
+					 					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)",					  "Percent per municipio 2010", "Percent per municipio 2000","Percentage Points Change (%2010 - %2000)" )
 
+CensusLegend <- cbind(CensusVars, UnitOfAn)
+colnames(CensusLegend) <- c("Variable Code", "Variable Type")
+knitr::kable(CensusLegend, caption = "Variables - aggreagated at \"municipio\" level - retrieved from Census 2000 2010")
+
+```
 
 
 

@@ -17,6 +17,10 @@ knitr::opts_chunk$set(fig.retina = 2,
 ```
 
 ```{r LOADPCK, echo=FALSE, message=FALSE}
+library(pacman)
+#  p_install_gh("CenterForOpenScience/osfr")
+library(osfr)
+
 library(tidyverse)
 library(stringr)
 library(forcats)
@@ -24,9 +28,8 @@ library(scales)
 library(patchwork)
 library(countrycode)
 library(sf)
-library(here) # OKKIO, I am in /DataMEX, because it contains a file `.here`
 
-library(here)
+library(here) # OKKIO, I am in /DataMEX, because it contains a file `.here`
 here::dr_here(show_reason = T)
 ```
 

@@ -61,9 +61,7 @@ h6 {
 
 <link rel="stylesheet" href="html/fixes.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -181,8 +179,6 @@ $(document).ready(function () {
   menuAnchor.closest('li.dropdown').addClass('active');
 });
 </script>
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
 
@@ -356,6 +352,16 @@ div.tocify {
 
 </style>
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
 <div class="col-xs-12 col-sm-4 col-md-3">
@@ -396,14 +402,14 @@ div.tocify {
 </li>
 <li>
   <a href="descstat.html">
-    <span class="fa fa-table"></span>
+    <span class="fa fa-wrench"></span>
      
     Descriptive Statistics Phase 1
   </a>
 </li>
 <li>
   <a href="descstat2.html">
-    <span class="fa fa-table"></span>
+    <span class="fa fa-home"></span>
      
     Descriptive Statistics Phase 2
   </a>
@@ -461,7 +467,7 @@ div.tocify {
 </div>
 <div id="creators" class="section level3">
 <h3>Creators:</h3>
-<p>This page was created by Luisa Mimmi (<a href="mailto:lmm76@georgetown.edu">lmm76@georgetown.edu</a> or <a href="mailto:lmmimmi@iadb.org">lmmimmi@iadb.org</a>) but builds on data collected by various IADB colleagues and partner organizations. See <a href="http://mexicowatersurvey.lulliter.com/info.html"><strong>Info page</strong></a> for all due credits.</p>
+<p>This page was created by Luisa Mimmi (<a href="mailto:lmm76@georgetown.edu" class="email">lmm76@georgetown.edu</a> or <a href="mailto:lmmimmi@iadb.org" class="email">lmmimmi@iadb.org</a>) but builds on data collected by various IADB colleagues and partner organizations. See <a href="http://mexicowatersurvey.lulliter.com/info.html"><strong>Info page</strong></a> for all due credits.</p>
 </div>
 <div id="warning" class="section level3">
 <h3>WARNING:</h3>
@@ -470,7 +476,7 @@ div.tocify {
 </div>
 
 <div id="rmd-source-code">IyBNZXhpY28gV1NTIE9wZXJhdG9ycyBTdXJ2ZXkgMjAxOC8yMDE5CgojIyMgRGVzY3JpcHRpb24gYW5kIGNvbnRleHQ6IApUaGlzIGlzIGEgc3RhdGljIHdlYnBhZ2UgY3JlYXRlZCB0byB0cmFjayB0aGUgcHJvZ3Jlc3Mgb2YgYSBzdXJ2ZXkgb24gTWV4aWNvIFdTUyBPcGVyYXRvcnMuIFRoZSBzdXJ2ZXkgaXMgcGFydCBvZiBhIGxhcmdlciBlZmZvcnQgdG8gY29sbGVjdCBvcmlnaW5hbCBkYXRhIGluIHByZXBhcmF0aW9uIG9mIHRoZSBwdWJsaWNhdGlvbiAqKiJEZXZlbG9wbWVudCBpbiBBbWVyaWNhIiAyMDIwKiogdGhhdCB3aWxsIGZvY3VzIG9uIEluZnJhc3RydWN0dXJlLiBUaGlzIHNwZWNpZmljIHN1cnZleSBpcyBzcG9uc29yZWQgYnkgdGhlICoqSW50ZXJhbWVyaWNhbiBEZXZlbG9wbWVudCBCYW5rIChJQURCKSoqLCBXYXRlciBEaXZpc2lvbiwgS25vd2xlZGdlIFRlYW0gIFtXU0EgS25vd2xlZGdlXShodHRwczovL2lkYmcuc2hhcmVwb2ludC5jb20vc2l0ZXMvV1NBa25vd2xlZGdlKSwgd2hlcmUgSSB3b3JrIGFzIGEgY29uc3VsdGFudC4gCgojIyMgQ29udGVudDogClRoaXMgd2VicGFnZSBodHRwOi8vbWV4aWNvd2F0ZXJzdXJ2ZXkubHVsbGl0ZXIuY29tLyBoYXMgYmVlbiBidWlsdCBhcyBhbiBgUiBNYXJrZG93biB3ZWJzaXRlYCwgdXNpbmcgYEpla3lsbGAgYXMgYSBzdGF0aWMgc2l0ZSBnZW5lcmF0b3Igd2l0aCBgR2l0SHViIFBhZ2VzYCAtIGFjdHVhbGx5IHJlZGlyZWN0ZWQgdG8gbXkgY3VzdG9tIGRvbWFpbiBvbiBgQVdTYC4gCgpUaGUgY29kZSBmb3IgdGhlIHBhZ2UgaXMgb24gbXkgW0dpdGh1YiByZXBvXShodHRwczovL2dpdGh1Yi5jb20vTHVsbGl0ZXIvTWV4aWNvV2F0ZXJTdXJ2ZXkpLCB3aGljaCBpcyBhY3R1YWxseSBhIHN1ZC1kaXJlY3Rvcnkgb2YgdGhlIHJlc2VhcmNoIHByb2plY3QuIFRoZSBsYXR0ZXIgKG5vdCBwdWJsaWNseSBkaXNjbG9zZWQgYmVjYXVzZSBpbmNsdWRlcyBjb25maWRlbnRpYWwgZGF0YSkgaXMgb24gdGhlIElBREIgY29tcGFueSBPbmVEcml2ZSBjbG91ZC4gCQoKIyMjIENyZWF0b3JzOiAKVGhpcyBwYWdlIHdhcyBjcmVhdGVkIGJ5IEx1aXNhIE1pbW1pIChsbW03NkBnZW9yZ2V0b3duLmVkdSBvciBsbW1pbW1pQGlhZGIub3JnKSBidXQgYnVpbGRzIG9uIGRhdGEgY29sbGVjdGVkIGJ5IHZhcmlvdXMgSUFEQiBjb2xsZWFndWVzIGFuZCBwYXJ0bmVyIG9yZ2FuaXphdGlvbnMuIFNlZSBbKipJbmZvIHBhZ2UqKl0oaHR0cDovL21leGljb3dhdGVyc3VydmV5Lmx1bGxpdGVyLmNvbS9pbmZvLmh0bWwpIGZvciBhbGwgZHVlIGNyZWRpdHMuIAoKIyMjIFdBUk5JTkc6IAo8c3BhbiBzdHlsZT0iY29sb3I6cmVkIj5QbGVhc2Ugbm90ZSwgdGhpcyBpcyBzdGlsbCBhIHdvcmsgaW4gcHJvZ3Jlc3MsIHN1YmplY3QgdG8gY2hhbmdlIGFuZCBub3QgcmVhZHkgZm9yIGRpc3NlbWluYXRpb24uPC9zcGFuPi4KCg==</div>
-<p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Luisa M. Mimmi</a>. 
+<p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Banco Interamericano de Desarrollo (“BID”)</a>. 
 Code available on <a href="https://github.com/Lulliter/MexicoWaterSurvey">GitHub</a>. <br />
 
 <span style="color:red">Work in progress, subject to change and not (yet) ready for dissemination.</span>.
