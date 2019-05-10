@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -23,11 +23,26 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -56,12 +71,8 @@ h6 {
 .table th:not([align]) {
   text-align: left;
 }
-#rmd-source-code {
-  display: none;
-}
 </style>
 
-<link rel="stylesheet" href="html/fixes.css" type="text/css" />
 
 
 
@@ -97,33 +108,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 52px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h2 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .dropdown-submenu {
   position: relative;
@@ -251,15 +262,6 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
-<script>
-$(document).ready(function () {
-  window.initializeSourceEmbed("info.Rmd");
-  window.initializeCodeFolding("show" === "show");
-});
-</script>
 
 
 
@@ -388,6 +390,9 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="index.html">
     <span class="fa fa-home"></span>
@@ -431,42 +436,46 @@ div.tocify {
   </a>
 </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
 <div class="fluid-row" id="header">
 
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-<li role="separator" class="divider"></li>
-<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
-</ul>
-</div>
-
 
 
 <h1 class="title toc-ignore">Info</h1>
+<h4 class="date">Last run: May 10, 2019</h4>
 
 </div>
 
 
-<p>More Info about this research project</p>
+<div id="more-info-about-the-project" class="section level2">
+<h2>MORE INFO ABOUT THE PROJECT</h2>
+<div id="this-static-website" class="section level3">
+<h3>This static website</h3>
+<p>This is a static webpage created to track the progress of a survey on Brazil WSS Operators. Its purpose is to…</p>
+</div>
+<div id="creators" class="section level3">
+<h3>Creators</h3>
+<p>This page was created by Luisa M. Mimmi (Research Fellow - consultant at IADB) but builds on data collected by various IADB colleagues and partner organizations.</p>
+</div>
+</div>
+<div id="acknowledgments" class="section level2">
+<h2>ACKNOWLEDGMENTS</h2>
+<ul>
+<li><p>This survey is sponsored by the <strong>Interamerican Development Bank (IADB)</strong>, Water Division, Knowledge Team <a href="https://idbg.sharepoint.com/sites/WSAknowledge">WSA Knowledge</a>, where I work as a consultant.</p></li>
+<li><p>This survey has been implemented in the field by the is sponsored by the company <strong>PoPa Research</strong>, <a href="http://www.poparesearch.com/">website</a> in partnership with IADB.</p></li>
+<li><p>For the structure of this static webpage, I followed the example of Prof Andrew Heiss <a href="https://stats.andrewheiss.com/donors-ngo-restrictions/index.html">project page</a>, who graciously shares his research work (with code).</p></li>
+</ul>
+<div id="contact" class="section level3">
+<h3>CONTACT</h3>
+<p>Feel free to contact me for questions and/or suggestions (<a href="mailto:lmm76@georgetown.edu" class="email">lmm76@georgetown.edu</a> or <a href="mailto:lmmimmi@iadb.org" class="email">lmmimmi@iadb.org</a>)</p>
+</div>
+</div>
+<div id="bibliography" class="section level2">
+<h2>BIBLIOGRAPHY</h2>
 <p>xcge [see <span class="citation">CONAGUA and Nacional del Agua) (2016)</span>, pp. 33-35; ch. 1].</p>
-<div id="aknowledgements" class="section level1">
-<h1>Aknowledgements</h1>
-<ol style="list-style-type: decimal">
-<li>I shamelessly copied the formatting of this static webpage from one of Prof. <a href="https://www.andrewheiss.com/">Andrew Weiss</a>’ research projects, graciously shared <a href="https://stats.andrewheiss.com/donors-ngo-restrictions/">here</a>.</li>
-</ol>
-</div>
-<div id="consulted-documents" class="section level1 unnumbered">
-<h1>Consulted Documents</h1>
 <div id="refs" class="references">
 <div id="ref-agua.org.mx_organismos_nodate">
 <p>Agua.org.mx. n.d. “Organismos Operadores.” <em>Agua.org.mx</em>. Accessed March 1, 2019. <a href="https://agua.org.mx/organismos-operadores/">https://agua.org.mx/organismos-operadores/</a>.</p>
@@ -513,14 +522,13 @@ div.tocify {
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSW5mbyIKYmlibGlvZ3JhcGh5OiBNWF9XYXRlclN1cnZleS5iaWIKbm9jaXRlOiAnQConICMgQCogaXMgYSB3aWxkY2FyZCBmb3IgYWxsIHJlZmVyZW5jZXMuCiNub2NpdGU6IHwKIyAgQG1pbW1pX3ByZWRpY3RpbmdfMjAxNwotLS0KCgoKTW9yZSBJbmZvIGFib3V0IHRoaXMgcmVzZWFyY2ggcHJvamVjdAoKeGNnZSAgW3NlZSBAY29uYWd1YV9zaXR1YWNpb25fMjAxNiwgcHAuIDMzLTM1OyAgY2guIDFdLgoKIyBBa25vd2xlZGdlbWVudHMKCjEuIEkgc2hhbWVsZXNzbHkgY29waWVkIHRoZSBmb3JtYXR0aW5nIG9mIHRoaXMgc3RhdGljIHdlYnBhZ2UgZnJvbSBvbmUgb2YgUHJvZi4gW0FuZHJldyBXZWlzc10oaHR0cHM6Ly93d3cuYW5kcmV3aGVpc3MuY29tLyknIHJlc2VhcmNoIHByb2plY3RzLCBncmFjaW91c2x5IHNoYXJlZCBbaGVyZV0oaHR0cHM6Ly9zdGF0cy5hbmRyZXdoZWlzcy5jb20vZG9ub3JzLW5nby1yZXN0cmljdGlvbnMvKS4KCiMgQ29uc3VsdGVkIERvY3VtZW50cw==</div>
-<p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Banco Interamericano de Desarrollo (“BID”)</a>. 
-Code available on <a href="https://github.com/Lulliter/MexicoWaterSurvey">GitHub</a>. <br />
-
-<span style="color:red">Work in progress, subject to change and not (yet) ready for dissemination.</span>.
-<!-- Licensed under the  <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/igo/legalcode">CC-IGO BY-NC-ND 3.0 IGO Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivatives	</a>
- -->
- </p>
+<p class="footer">
+	<span style="color:red">Work in progress, not (yet) ready for dissemination.</span>
+<!-- 	Copyright &copy; 2017&ndash;2018 
+	<a href="http://www.suparnachaudhry.com/">Suparna Chaudhry</a> and <a href="https://www.andrewheiss.com/">Andrew Heiss</a>. 
+	Licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/igo/legalcode">CC-IGO BY-NC-ND 3.0 IGO Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivatives</a>. 
+	Code static page available on <a href="https://github.com/Lulliter/BrazilWaterSurvey">GitHub</a>. -->
+</p>
 
 
 </div>

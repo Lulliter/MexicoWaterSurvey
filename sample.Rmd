@@ -93,7 +93,7 @@ file.copy( move2, to = to_dir2 , overwrite = T )
 > UPDATE FROM LAPOP 2019: LAPOP households interviews covered **1,446 IDs** located in **232 clusters**, found in **110 {_BUT, even if the # of municipio is the same, only 105 were actually the same, there are 5 different ones_} municipios**.[^1] 
 
 <center>
-![LAPOP clusters (over mun) of hh interviewed in 2016](./output/Qgis_Lapop2016.png) 
+![LAPOP clusters (over Ent) of hh interviewed in 2016](./output/Qgis_Lapop2016Ent.png) 
 </center>
 ```{r explan, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 # This was created via QGIS {in ./01_rawdata/MEX_fences_2016.qgz} where I added 

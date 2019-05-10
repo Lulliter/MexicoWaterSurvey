@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -23,11 +23,26 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -56,12 +71,8 @@ h6 {
 .table th:not([align]) {
   text-align: left;
 }
-#rmd-source-code {
-  display: none;
-}
 </style>
 
-<link rel="stylesheet" href="html/fixes.css" type="text/css" />
 
 
 
@@ -97,33 +108,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 52px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h2 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .dropdown-submenu {
   position: relative;
@@ -251,15 +262,6 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
-<script>
-$(document).ready(function () {
-  window.initializeSourceEmbed("descstat2.Rmd");
-  window.initializeCodeFolding("show" === "show");
-});
-</script>
 
 
 
@@ -388,6 +390,9 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="index.html">
     <span class="fa fa-home"></span>
@@ -431,24 +436,11 @@ div.tocify {
   </a>
 </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
 <div class="fluid-row" id="header">
-
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-<li role="separator" class="divider"></li>
-<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
-</ul>
-</div>
 
 
 
@@ -462,14 +454,13 @@ div.tocify {
 <h2>REFERENCE</h2>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRGVzY3JpcHRpdmUgU3RhdGlzdGljIG9mIGhvdXNlaG9sZHMiCmJpYmxpb2dyYXBoeTogTVhfV2F0ZXJTdXJ2ZXkuYmliCi0tLQoKTGFzdCB1cGRhdGVkIG9uIGBmb3JtYXQoU3lzLnRpbWUoKSwgJyVkICVCLCAlWScpYAoKYGBge3IgU0VUVVAsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmc9RkFMU0UsIGluY2x1ZGU9RkFMU0UgfQojIEJFTExPICAgaHR0cHM6Ly9ob2x0enkuZ2l0aHViLmlvL1BpbXAtbXktcm1kLyNyZWZlcmVuY2VzCgojIGh0dHBzOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzQzNTQ5OTMwL3BkZi1maWd1cmVzLW5vdC1zaG93bi1pbi1odG1sLWZpbGVzLXByb2R1Y2VkLWJ5LXJtYXJrZG93bi13aGVuLW9wZW4td2l0aC1maXJlZm94CiMgdG8gZml4IGlzc3VlIG9mIHBpY3R1cmUgbm90IHJlbmRlcmluZyBUUlkgCiMgZGV2dG9vbHM6Omluc3RhbGxfZ2l0aHViKCd5aWh1aS9rbml0cicpCgprbml0cjo6b3B0c19jaHVuayRzZXQoZmlnLnJldGluYSA9IDIsCiAgICAgICAgICAgICAgICAgICAgICB0aWR5Lm9wdHMgPSBsaXN0KHdpZHRoLmN1dG9mZiA9IDEyMCksICAjIEZvciBjb2RlCiAgICAgICAgICAgICAgICAgICAgICBvcHRpb25zKHdpZHRoID0gMTIwKSAjIEZvciBvdXRwdXQKCQkJCQkJCSApICAKCiMgIFRoZSBlbmNvZGluZyAoIklTTy04ODU5LTEiKSBpcyBub3QgVVRGLTguIFdlIHdpbGwgb25seSBzdXBwb3J0IFVURi04IGluIHRoZSBmdXR1cmUuIFBsZWFzZSByZS1zYXZlIHlvdXIgZmlsZSAic2FtcGxlLlJtZCIgd2l0aCB0aGUgVVRGLTggZW5jb2RpbmcuCgojIFRvIGdlbmVyYXRlIHRhYmxlcyB1c2luZyBzdW1tYXJ5dG9vbCBzIG93biBodG1sIHJlbmRlcmluZywgdGhlIC5SbWQgZG9jdW1lbnQgcyBjb25maWd1cmF0aW9uIHBhcnQgKHlhbWwpIG11c3QgcG9pbnQgdG8gdGhlIHBhY2thZ2UgcyBzdW1tYXJ5dG9vbHMuY3NzIGZpbGUuCmBgYAoKYGBge3IgTE9BRFBDSywgZWNobz1GQUxTRSwgbWVzc2FnZT1GQUxTRX0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShmb3JjYXRzKQpsaWJyYXJ5KHNjYWxlcykKbGlicmFyeShwYXRjaHdvcmspCmxpYnJhcnkoY291bnRyeWNvZGUpCmxpYnJhcnkoc2YpCmxpYnJhcnkoa2FibGVFeHRyYSkKbGlicmFyeShzdW1tYXJ5dG9vbHMpCmxpYnJhcnkoaGVyZSkjIE9LS0lPLCBJIGFtIGluIC9EYXRhTUVYLCBiZWNhdXNlIGl0IGNvbnRhaW5zIGEgZmlsZSBgLmhlcmVgCmhlcmU6OmRyX2hlcmUoc2hvd19yZWFzb24gPSBUKQpgYGAKCgoKIyMgUkVGRVJFTkNFCgoKCmBgYHtyIGtuaXRBdHRlbXB0LCBlY2hvID0gRiwgZXZhbD1GfQojIGtuaXRyOjprbml0Mmh0bWwoJy4vc2FtcGxlLlJtZCcsZW5jb2RpbmcgPSAnVVRGLTgnLGZvcmNlX3YxID0gVFJVRSkKYGBgCgo=</div>
-<p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Banco Interamericano de Desarrollo (“BID”)</a>. 
-Code available on <a href="https://github.com/Lulliter/MexicoWaterSurvey">GitHub</a>. <br />
-
-<span style="color:red">Work in progress, subject to change and not (yet) ready for dissemination.</span>.
-<!-- Licensed under the  <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/igo/legalcode">CC-IGO BY-NC-ND 3.0 IGO Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivatives	</a>
- -->
- </p>
+<p class="footer">
+	<span style="color:red">Work in progress, not (yet) ready for dissemination.</span>
+<!-- 	Copyright &copy; 2017&ndash;2018 
+	<a href="http://www.suparnachaudhry.com/">Suparna Chaudhry</a> and <a href="https://www.andrewheiss.com/">Andrew Heiss</a>. 
+	Licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/igo/legalcode">CC-IGO BY-NC-ND 3.0 IGO Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivatives</a>. 
+	Code static page available on <a href="https://github.com/Lulliter/BrazilWaterSurvey">GitHub</a>. -->
+</p>
 
 
 </div>

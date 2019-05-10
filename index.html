@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -23,11 +23,26 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -56,12 +71,8 @@ h6 {
 .table th:not([align]) {
   text-align: left;
 }
-#rmd-source-code {
-  display: none;
-}
 </style>
 
-<link rel="stylesheet" href="html/fixes.css" type="text/css" />
 
 
 
@@ -97,33 +108,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 52px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h2 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 57px;
-  margin-top: -57px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .dropdown-submenu {
   position: relative;
@@ -251,15 +262,6 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
-<script>
-$(document).ready(function () {
-  window.initializeSourceEmbed("index.Rmd");
-  window.initializeCodeFolding("show" === "show");
-});
-</script>
 
 
 
@@ -388,6 +390,9 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="index.html">
     <span class="fa fa-home"></span>
@@ -431,58 +436,58 @@ div.tocify {
   </a>
 </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
 <div class="fluid-row" id="header">
 
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-<li role="separator" class="divider"></li>
-<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
-</ul>
-</div>
-
 
 
 <h1 class="title toc-ignore">Home</h1>
+<h4 class="date">Last run: May 10, 2019</h4>
 
 </div>
 
 
-<div id="description-and-context" class="section level3">
-<h3>Description and context</h3>
-<p>This is a static webpage created to track the progress of a survey on Mexico WSS Operators. The survey is part of a larger effort to collect original data in preparation of the publication <strong>“Development in America” 2020</strong> that will focus on Infrastructure. This specific survey is sponsored by the <strong>Interamerican Development Bank (IADB)</strong>, Water Division, Knowledge Team <a href="https://idbg.sharepoint.com/sites/WSAknowledge">WSA Knowledge</a>, where I work as a consultant.</p>
+<div id="project-title" class="section level2">
+<h2>Project title</h2>
+<p>Survey of WSS Suppliers in Mexico</p>
+<div id="purpose-of-the-study" class="section level3">
+<h3>Purpose of the study</h3>
+<p>The survey is part of a larger effort to collect original data in preparation of the publication <strong>“Development in America” 2020</strong> that will focus on Infrastructure (Energy, Water and Transportation) sector in LAC.</p>
 </div>
-<div id="content" class="section level3">
-<h3>Content</h3>
-<p>This webpage <a href="http://mexicowatersurvey.lulliter.com/" class="uri">http://mexicowatersurvey.lulliter.com/</a> has been built as an <code>R Markdown website</code>, using <code>Jekyll</code> as a static site generator with <code>GitHub Pages</code> - actually redirected to my custom domain on <code>AWS</code>.</p>
-<p>The code for the page is on my <a href="https://github.com/Lulliter/MexicoWaterSurvey">Github repo</a>, which is actually a sud-directory of the research project. The latter (not publicly disclosed because includes confidential data) is on the IADB company OneDrive cloud.</p>
+<div id="background-and-significance" class="section level3">
+<h3>Background and significance</h3>
 </div>
-<div id="creators" class="section level3">
-<h3>Creators</h3>
-<p>This page was created by Luisa Mimmi (<a href="mailto:lmm76@georgetown.edu" class="email">lmm76@georgetown.edu</a> or <a href="mailto:lmmimmi@iadb.org" class="email">lmmimmi@iadb.org</a>) but builds on data collected by various IADB colleagues and partner organizations. See <a href="http://mexicowatersurvey.lulliter.com/info.html"><strong>Info page</strong></a> for all due credits.</p>
+<div id="research-questions" class="section level3">
+<h3>Research Question(s)</h3>
 </div>
-<div id="warning" class="section level3">
-<h3>WARNING</h3>
-<p>Please note, as of today <em>(09 May, 2019)</em> this is still a work in progress, subject to change and not ready for dissemination. <!-- <span style="color:red">Please note, this is still a work in progress, subject to change and not ready for dissemination.</span>. --></p>
+<div id="hypotheses" class="section level3">
+<h3>Hypotheses</h3>
+</div>
+<div id="methods-and-analysis" class="section level3">
+<h3>Methods and analysis</h3>
+</div>
+<div id="sampling-and-subject-selection" class="section level3">
+<h3>Sampling and subject selection</h3>
+</div>
+<div id="data-security-and-participant-privacy" class="section level3">
+<h3>Data Security and participant privacy</h3>
+</div>
+<div id="link-to-same-survey-in-brazil" class="section level3">
+<h3>Link to same survey in Brazil</h3>
+<p>…</p>
+</div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG9tZSIKLS0tCgojIyMgRGVzY3JpcHRpb24gYW5kIGNvbnRleHQKVGhpcyBpcyBhIHN0YXRpYyB3ZWJwYWdlIGNyZWF0ZWQgdG8gdHJhY2sgdGhlIHByb2dyZXNzIG9mIGEgc3VydmV5IG9uIE1leGljbyBXU1MgT3BlcmF0b3JzLiBUaGUgc3VydmV5IGlzIHBhcnQgb2YgYSBsYXJnZXIgZWZmb3J0IHRvIGNvbGxlY3Qgb3JpZ2luYWwgZGF0YSBpbiBwcmVwYXJhdGlvbiBvZiB0aGUgcHVibGljYXRpb24gKioiRGV2ZWxvcG1lbnQgaW4gQW1lcmljYSIgMjAyMCoqIHRoYXQgd2lsbCBmb2N1cyBvbiBJbmZyYXN0cnVjdHVyZS4gVGhpcyBzcGVjaWZpYyBzdXJ2ZXkgaXMgc3BvbnNvcmVkIGJ5IHRoZSAqKkludGVyYW1lcmljYW4gRGV2ZWxvcG1lbnQgQmFuayAoSUFEQikqKiwgV2F0ZXIgRGl2aXNpb24sIEtub3dsZWRnZSBUZWFtICBbV1NBIEtub3dsZWRnZV0oaHR0cHM6Ly9pZGJnLnNoYXJlcG9pbnQuY29tL3NpdGVzL1dTQWtub3dsZWRnZSksIHdoZXJlIEkgd29yayBhcyBhIGNvbnN1bHRhbnQuIAoKIyMjIENvbnRlbnQKVGhpcyB3ZWJwYWdlIGh0dHA6Ly9tZXhpY293YXRlcnN1cnZleS5sdWxsaXRlci5jb20vIGhhcyBiZWVuIGJ1aWx0IGFzIGFuIGBSIE1hcmtkb3duIHdlYnNpdGVgLCB1c2luZyBgSmVreWxsYCBhcyBhIHN0YXRpYyBzaXRlIGdlbmVyYXRvciB3aXRoIGBHaXRIdWIgUGFnZXNgIC0gYWN0dWFsbHkgcmVkaXJlY3RlZCB0byBteSBjdXN0b20gZG9tYWluIG9uIGBBV1NgLiAKClRoZSBjb2RlIGZvciB0aGUgcGFnZSBpcyBvbiBteSBbR2l0aHViIHJlcG9dKGh0dHBzOi8vZ2l0aHViLmNvbS9MdWxsaXRlci9NZXhpY29XYXRlclN1cnZleSksIHdoaWNoIGlzIGFjdHVhbGx5IGEgc3VkLWRpcmVjdG9yeSBvZiB0aGUgcmVzZWFyY2ggcHJvamVjdC4gVGhlIGxhdHRlciAobm90IHB1YmxpY2x5IGRpc2Nsb3NlZCBiZWNhdXNlIGluY2x1ZGVzIGNvbmZpZGVudGlhbCBkYXRhKSBpcyBvbiB0aGUgSUFEQiBjb21wYW55IE9uZURyaXZlIGNsb3VkLiAJCgojIyMgQ3JlYXRvcnMKVGhpcyBwYWdlIHdhcyBjcmVhdGVkIGJ5IEx1aXNhIE1pbW1pIChsbW03NkBnZW9yZ2V0b3duLmVkdSBvciBsbW1pbW1pQGlhZGIub3JnKSBidXQgYnVpbGRzIG9uIGRhdGEgY29sbGVjdGVkIGJ5IHZhcmlvdXMgSUFEQiBjb2xsZWFndWVzIGFuZCBwYXJ0bmVyIG9yZ2FuaXphdGlvbnMuIFNlZSBbKipJbmZvIHBhZ2UqKl0oaHR0cDovL21leGljb3dhdGVyc3VydmV5Lmx1bGxpdGVyLmNvbS9pbmZvLmh0bWwpIGZvciBhbGwgZHVlIGNyZWRpdHMuIAoKIyMjIFdBUk5JTkcKUGxlYXNlIG5vdGUsIGFzIG9mIHRvZGF5IF8oYHIgZm9ybWF0KFN5cy50aW1lKCksICclZCAlQiwgJVknKWApXyB0aGlzIGlzIHN0aWxsIGEgd29yayBpbiBwcm9ncmVzcywgc3ViamVjdCB0byBjaGFuZ2UgYW5kIG5vdCByZWFkeSBmb3IgZGlzc2VtaW5hdGlvbi4KPCEtLSA8c3BhbiBzdHlsZT0iY29sb3I6cmVkIj5QbGVhc2Ugbm90ZSwgdGhpcyBpcyBzdGlsbCBhIHdvcmsgaW4gcHJvZ3Jlc3MsIHN1YmplY3QgdG8gY2hhbmdlIGFuZCBub3QgcmVhZHkgZm9yIGRpc3NlbWluYXRpb24uPC9zcGFuPi4gLS0+Cg==</div>
-<p class="footer">Copyright &copy; 2018&ndash;2019 <a href="https://github.com/Lulliter">Banco Interamericano de Desarrollo (“BID”)</a>. 
-Code available on <a href="https://github.com/Lulliter/MexicoWaterSurvey">GitHub</a>. <br />
-
-<span style="color:red">Work in progress, subject to change and not (yet) ready for dissemination.</span>.
-<!-- Licensed under the  <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/igo/legalcode">CC-IGO BY-NC-ND 3.0 IGO Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivatives	</a>
- -->
- </p>
+<p class="footer">
+	<span style="color:red">Work in progress, not (yet) ready for dissemination.</span>
+<!-- 	Copyright &copy; 2017&ndash;2018 
+	<a href="http://www.suparnachaudhry.com/">Suparna Chaudhry</a> and <a href="https://www.andrewheiss.com/">Andrew Heiss</a>. 
+	Licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/igo/legalcode">CC-IGO BY-NC-ND 3.0 IGO Creative Commons IGO 3.0 Attribution-NonCommercial-NoDerivatives</a>. 
+	Code static page available on <a href="https://github.com/Lulliter/BrazilWaterSurvey">GitHub</a>. -->
+</p>
 
 
 </div>

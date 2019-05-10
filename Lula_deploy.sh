@@ -27,7 +27,9 @@ Rscript build_site.R
 git status
 
 # Add ALL changes to git Index.
-git add -A
+# git add -A
+git add -u
+git add output/
 
 # Create Std commit "message"....
 msg="rebuilt on `date`"
@@ -38,7 +40,7 @@ fi
 # ... Commit Those changes.
 git commit -m "$msg"
 
-		# or git commit -m "Not adding  descstat2 tab"
+		# or git commit -m "new QGIS map with fences in sample"
 		# git commit -m "changed to _site"
 		
 # Push source and build repos.

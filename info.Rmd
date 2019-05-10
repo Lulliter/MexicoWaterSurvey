@@ -1,19 +1,32 @@
 ---
 title: "Info"
+date: "Last run: `r format(Sys.time(), '%B %e, %Y')`"
 bibliography: MX_WaterSurvey.bib
 nocite: '@*' # @* is a wildcard for all references.
 #nocite: |
 #  @mimmi_predicting_2017
 ---
 
+## MORE INFO ABOUT THE PROJECT
+
+### This static website
+This is a static webpage created to track the progress of a survey on Brazil WSS Operators. Its purpose is to... 
+
+### Creators
+This page was created by Luisa M. Mimmi (Research Fellow - consultant at IADB) but builds on data collected by various IADB colleagues and partner organizations.  
+
+## ACKNOWLEDGMENTS
++ This survey is sponsored by the **Interamerican Development Bank (IADB)**, Water Division, Knowledge Team  [WSA Knowledge](https://idbg.sharepoint.com/sites/WSAknowledge), where I work as a consultant. 
+
++ This survey has been implemented in the field by the is sponsored by the company **PoPa Research**, [website](http://www.poparesearch.com/) in partnership with IADB. 
+
++ For the structure of this static webpage, I followed the example of Prof Andrew Heiss [project page](https://stats.andrewheiss.com/donors-ngo-restrictions/index.html), who graciously shares his research work (with code).
+
+### CONTACT
+Feel free to contact me for questions and/or suggestions (lmm76@georgetown.edu or lmmimmi@iadb.org)  
 
 
-More Info about this research project
 
+## BIBLIOGRAPHY
 xcge  [see @conagua_situacion_2016, pp. 33-35;  ch. 1].
 
-# Aknowledgements
-
-1. I shamelessly copied the formatting of this static webpage from one of Prof. [Andrew Weiss](https://www.andrewheiss.com/)' research projects, graciously shared [here](https://stats.andrewheiss.com/donors-ngo-restrictions/).
-
-# Consulted Documents
