@@ -1,6 +1,6 @@
 ---
 title: "Descriptive Statistic of households"
-bibliography: MX_WaterSurvey.bib
+bibliography: POPA_WaterSurvey.bib
 ---
 
 Last updated on `format(Sys.time(), '%d %B, %Y')`

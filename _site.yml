@@ -37,7 +37,7 @@ output_dir: "." # _site # default (does not work)
 output:
   html_document:
     theme: simplex #cosmo
-    highlight: textmate #pygments
+    highlight: pygments
     include:
       after_body: html/footer.html
     toc: yes

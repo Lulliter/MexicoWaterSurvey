@@ -1,6 +1,6 @@
 ---
 title: "The sample of Water & Sanitation Providers"
-bibliography: MX_WaterSurvey.bib
+bibliography: POPA_WaterSurvey.bib
 ---
 
 Last updated on `format(Sys.time(), '%d %B, %Y')`

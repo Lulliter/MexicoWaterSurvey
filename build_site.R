@@ -1,7 +1,17 @@
-# ======= https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html
+#==================================================================================================#
+#                             ./MexicoWaterSurvey/build_site.R       
+#								{This is invoked by {MexicoWaterSurvey/Lula_deploy.sh}
+#            										FILE INTENDED 2  
+# ============== 1) list which files will be removed (all ".html(s)" + "site_libs/");
+# ============== 2) actually remove the above files;
+# ============== 3) Render again the ./BrazilWaterSurvey/ public site. 
+#==================================================================================================#
 
-# ======= Set our working directory. 
-# (This helps avoid confusion if our working directory is not our site but the .Rproject.) 
+
+
+#==================================================================================================#
+#          {OKKIO, I am NOT in .Rproject, because the Lula_deploy.sh sets /DataMEX/MEXwatersurvey}
+# ======= Set our working directory  {REDUNDANT: in the .sh file}. 
 # setwd("./MexicoWaterSurvey")
 # getwd()
 

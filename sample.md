@@ -4,7 +4,7 @@ output:
   html_document: 
     # css: /Library/Frameworks/R.framework/Versions/3.5/Resources/library/summarytools/includes/stylesheets
     # css: html/summarytools.css
-bibliography: MX_WaterSurvey.bib
+bibliography: POPA_WaterSurvey.bib
 # nocite: '@*' # @* is a wildcard for all references. (ITEMS NOT MENTIONED THAT I WANT IN THE BIBLIOGRAPHY)
 # nocite: |
 # @riquelme_organismos_2018

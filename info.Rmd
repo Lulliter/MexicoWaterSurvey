@@ -1,7 +1,7 @@
 ---
 title: "Info"
 date: "Last run: `r format(Sys.time(), '%B %e, %Y')`"
-bibliography: MX_WaterSurvey.bib
+bibliography: POPA_WaterSurvey.bib
 nocite: '@*' # @* is a wildcard for all references.
 #nocite: |
 #  @mimmi_predicting_2017

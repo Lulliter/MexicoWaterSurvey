@@ -6,13 +6,10 @@
 
 
 #=========================================== (start) ================================================#
-#================================== Invoke build_site.R FROM SHELL ================================#
-# ======= ./MexicoWaterSurvey/build_site.R DOES THE FOLLWOING: 
-# ============== 1) list which files will be removed (all ".html(s)" + "site_libs/");
-# ============== 2) actually remove the above files;
-# ============== 3) Render again the ./MexicoWaterSurvey/ public site. 
+#================================== Invoke copy_folders.R  & build_site.R FROM SHELL ================================#
 cd ./MexicoWaterSurvey # (build_site.R thinks it is in ./)
 pwd
+Rscript copy_folders.R 
 Rscript build_site.R 
 #=========================================== (end) ================================================#
 
