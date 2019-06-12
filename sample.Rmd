@@ -4,7 +4,7 @@ bibliography: POPA_WaterSurvey.bib
 ---
 
 Last updated on `format(Sys.time(), '%d %B, %Y')`
-How we obtained the Sample WSS Operators Mexico and what it looks like
+Sampling design for the Survey of WSS Suppliers in Mexico
 
 
 ```{r SETUP, message=FALSE, warning=FALSE, include=FALSE }
