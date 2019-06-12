@@ -26,7 +26,7 @@ git status
 # Add ALL changes to git Index.
 # git add -A
 git add -u
-git add output/
+git add copy_folders.R
 
 # Create Std commit "message"....
 msg="rebuilt on `date`"
@@ -38,7 +38,7 @@ fi
 git commit -m "$msg"
 
 		# or git commit -m "new QGIS map with fences in sample"
-		# git commit -m "changed to _site"
+		# git commit -m "POPA_WaterSurvey.bib"
 		
 # Push source and build repos.
 git push origin master
