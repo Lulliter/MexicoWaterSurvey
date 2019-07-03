@@ -23,6 +23,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -246,6 +247,14 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
 
 
 
@@ -426,14 +435,25 @@ div.tocify {
 
 <div class="fluid-row" id="header">
 
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">The sample of Water &amp; Sanitation Providers</h1>
+<h4 class="date">Last run: July 3, 2019</h4>
 
 </div>
 
 
-<p>Last updated on <code>format(Sys.time(), '%d %B, %Y')</code> Sampling design for the Survey of WSS Suppliers in Mexico</p>
+<blockquote>
+<p>FOCUS: Sampling design for the Survey of WSS Suppliers in Mexico</p>
+</blockquote>
 <div id="sampling-design" class="section level2">
 <h2>Sampling design</h2>
 <ol style="list-style-type: decimal">
@@ -443,8 +463,8 @@ div.tocify {
 <ul>
 <li>Entidad (32)</li>
 <li>Municipios (2546)</li>
-<li>Localidades URb( 4525 of 192,217 ) MULTiPOLYGON</li>
-<li>Localidades Rur (187719 of 192,217) points</li>
+<li>Localidades URb( 4525 of 192,217 ) ~ multipolygons</li>
+<li>Localidades Rur (187719 of 192,217) ~ points</li>
 <li>AGEB urb- 56195</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
@@ -459,7 +479,7 @@ div.tocify {
 <p>LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (might be slightly changed in 2018)</p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Based on those, we identified the (expected) clusters for POPA 2018 sample &amp; matched each location with the pertinent WSS Supplier in the area. We arrived to a sample of <strong>96 different suppliers</strong>.</p></li>
-<li><p>This survey encompasses two main goals</p>
+<li><p>This survey encompasses two main goals:</p>
 <ul>
 <li><ol style="list-style-type: upper-roman">
 <li>Survey of WSS suppliers</li>
@@ -476,18 +496,18 @@ div.tocify {
 <div id="the-universe-of-organismos-operadores-in-mexico" class="section level4">
 <h4>THE UNIVERSE OF ORGANISMOS OPERADORES IN MEXICO</h4>
 <p>INEGI has identified a total of <em>2,688 “Organismos Operadores”</em> (OO) in the <em>“Censo de Captacion, Tratamiento y Suministro de Agua”</em> conducted in 2014 and published in 2016 <span class="citation">(INEGI 2016 )</span>. Of all of these, some ~700 could be rightly defined as <em>“Organismos Operadores”</em>, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management.</p>
-<pre><code>&gt;  The service providers *&quot;organismo que presta el servicio de captaciÃ³n, tratamiento y suministro de agua&quot;* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census</code></pre>
+<pre><code>&gt;  The service providers *&quot;organismo que presta el servicio de captaciòn, tratamiento y suministro de agua&quot;* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census</code></pre>
 <ul>
 <li>JURIDICAL CATEGORY:
 <ul>
-<li>2401 (of 2668) are <em>servicios del sector pÃºblico</em></li>
-<li>257 (of 2668) are <em>asociaciÃ³n civil</em></li>
+<li>2401 (of 2668) are <em>servicios del sector publico</em></li>
+<li>257 (of 2668) are <em>asociaciòn civil</em></li>
 <li>30 (of 2668) are <em>sociedad mercantil con fines de lucro o sociedad cooperativa</em></li>
 </ul></li>
 </ul>
 <p>In this project, the classification that we use is mostly derived from a <em>Nota Tecnica</em> prepared by some colleagues of the IADB, WSA division <span class="citation">(See Riquelme and Martinez, n.d., 1–3)</span>. This managed to retreive some basic information on <strong>2,252 Prestadores</strong>.</p>
 <ul>
-<li>GEOGRAPHIC COVERAGE: according to INEGI, the OOs can present different coverage <span class="citation">(INEGI 2016, 16)</span>
+<li>GEOGRAPHIC COVERAGE: according to INEGI, the <strong>OOs</strong> can present different coverage <span class="citation">(INEGI 2016, 16)</span>
 <ul>
 <li>Only the cabecera municipal (1245 out of 2668)</li>
 <li>Cabecera Municipal + some other localidades (892 out of 2668)</li>
@@ -495,13 +515,20 @@ div.tocify {
 <li>Intermunicipal</li>
 <li>Whole Entidad Federativa</li>
 <li>Rural</li>
+<li>Otros (201 of 2668)</li>
 </ul></li>
-<li><p>Otros (201 of 2668)</p></li>
 <li>EMPLOYED PERSONNEL:
 <ul>
 <li>personal ocupado por sexo; 81.3% con trabajadores hombres y 18.7% mujeres</li>
 <li>obreros y tÃ©cnicos; 76,744 obreros y tÃ©cnicos (62.5%)/un total de 117 866 puestos de trabajo</li>
-<li>empleados y directivos; <del>* personal no remunerado</del> 3,764 trabaja- dores no remunerados/un total de 117 866 puestos de trabajo <del>* promedio de horas trabajadas</del> <del>* personal no dependiente de la razÃ³n social</del> <del>* remuneraciones pagadas</del> <del>* prestaciones sociales</del> <del>* pago al personal subcontratado.</del></li>
+<li>empleados y directivos;</li>
+<li><del>personal no remunerado</del> 3,764 trabaja- dores no remunerados/un total de 117 866 puestos de trabaj<br />
+</li>
+<li><del>promedio de horas trabajadas</del></li>
+<li><del>personal no dependiente de la razòn social</del></li>
+<li><del>remuneraciones pagadas</del></li>
+<li><del>prestaciones sociales</del></li>
+<li><del>pago al personal subcontratado.</del></li>
 </ul></li>
 <li>INGRESOS POR CONSUMO DE BIENES Y SERVICIOS:
 <ul>
@@ -512,29 +539,27 @@ div.tocify {
 </ul></li>
 <li>Tomas de agua por tipo de usuario
 <ul>
-<li>Toma domÃ©stica 92.1%</li>
+<li>Toma domestica 92.1%</li>
 <li>Toma comercial 6.3 %</li>
 <li>Toma industrial 0.6 %</li>
 <li>Toma de servicios pÃºblicos 1 %</li>
 </ul></li>
-<li>DistribuciÃ³n porcentual de los ingresos segÃºn la venta de agua potable por tipo de usuario
+<li>DistribuciÃ³n porcentual de los ingresos según la venta de agua potable por tipo de usuario
 <ul>
-<li>Toma domÃ©stica 60.9 %</li>
+<li>Toma domestica 60.9 %</li>
 <li>Toma comercial 25.3 %</li>
 <li>Toma industrial 8.1 %</li>
-<li>Toma de servicios pÃºblicos 5.7 %</li>
+<li>Toma de servicios publicos 5.7 %</li>
 </ul></li>
 </ul>
 </div>
 <div id="the-organismos-operadores-in-our-sample" class="section level4">
 <h4>THE ORGANISMOS OPERADORES IN OUR SAMPLE</h4>
 <ul>
-<li><ul>
-<li>JURIDICAL CATEGORY (“TIPO”) refers to the juridical status of the agency: <strong>654</strong> are considered proper “PRESTADORES”, whereas 1,557 are not considered as proper utilities in the classification, respectively:
+<li><strong>JURIDICAL CATEGORY (“TIPO”)</strong> refers to the juridical status of the agency: <strong>654</strong> are considered proper “PRESTADORES”, whereas 1,557 are not considered as proper utilities in the classification, respectively:
 <ul>
 <li>1,332 are <em>No clasificado</em></li>
 <li>245 are cases in which the municipalities that directly provide water and sanitation services</li>
-</ul></li>
 </ul></li>
 </ul>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -784,130 +809,269 @@ NA
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;font-weight: bold;">
 Total
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;">
 2252
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;">
 100.00
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;">
 100.00
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;">
 100.00
 </td>
-<td style="text-align:right;">
+<td style="text-align:right;font-weight: bold;">
 100.00
 </td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>“RANGO” refers to the size of the populaition served.</li>
+<li><strong>“RANGO”</strong> refers to the size of the populaition served.</li>
 </ul>
-<table>
-<caption>Agencies Providing Water &amp; Sanitation by size of population served (Including when Not properly defined</caption>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Agencies Providing Water &amp; Sanitation by size of population served (Including when Not properly defined
+</caption>
 <thead>
-<tr class="header">
-<th></th>
-<th align="right">Freq</th>
-<th align="right">% Valid</th>
-<th align="right">% Valid Cum.</th>
-<th align="right">% Total</th>
-<th align="right">% Total Cum.</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Freq
+</th>
+<th style="text-align:right;">
+% Valid
+</th>
+<th style="text-align:right;">
+% Valid Cum.
+</th>
+<th style="text-align:right;">
+% Total
+</th>
+<th style="text-align:right;">
+% Total Cum.
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>MuyPequeno &lt;10k</td>
-<td align="right">1044</td>
-<td align="right">46.36</td>
-<td align="right">46.36</td>
-<td align="right">46.36</td>
-<td align="right">46.36</td>
+<tr>
+<td style="text-align:left;">
+MuyPequeno &lt;10k
+</td>
+<td style="text-align:right;">
+1044
+</td>
+<td style="text-align:right;">
+46.4
+</td>
+<td style="text-align:right;">
+46.4
+</td>
+<td style="text-align:right;">
+46.4
+</td>
+<td style="text-align:right;">
+46.4
+</td>
 </tr>
-<tr class="even">
-<td>Pequeno 10-50k</td>
-<td align="right">931</td>
-<td align="right">41.34</td>
-<td align="right">87.70</td>
-<td align="right">41.34</td>
-<td align="right">87.70</td>
+<tr>
+<td style="text-align:left;">
+Pequeno 10-50k
+</td>
+<td style="text-align:right;">
+931
+</td>
+<td style="text-align:right;">
+41.3
+</td>
+<td style="text-align:right;">
+87.7
+</td>
+<td style="text-align:right;">
+41.3
+</td>
+<td style="text-align:right;">
+87.7
+</td>
 </tr>
-<tr class="odd">
-<td>Mediano 50-100k</td>
-<td align="right">134</td>
-<td align="right">5.95</td>
-<td align="right">93.65</td>
-<td align="right">5.95</td>
-<td align="right">93.65</td>
+<tr>
+<td style="text-align:left;">
+Mediano 50-100k
+</td>
+<td style="text-align:right;">
+134
+</td>
+<td style="text-align:right;">
+6.0
+</td>
+<td style="text-align:right;">
+93.7
+</td>
+<td style="text-align:right;">
+6.0
+</td>
+<td style="text-align:right;">
+93.7
+</td>
 </tr>
-<tr class="even">
-<td>Mediano 100-200k</td>
-<td align="right">53</td>
-<td align="right">2.35</td>
-<td align="right">96.00</td>
-<td align="right">2.35</td>
-<td align="right">96.00</td>
+<tr>
+<td style="text-align:left;">
+Mediano 100-200k
+</td>
+<td style="text-align:right;">
+53
+</td>
+<td style="text-align:right;">
+2.4
+</td>
+<td style="text-align:right;">
+96.0
+</td>
+<td style="text-align:right;">
+2.4
+</td>
+<td style="text-align:right;">
+96.0
+</td>
 </tr>
-<tr class="odd">
-<td>Grande 500-900k</td>
-<td align="right">32</td>
-<td align="right">1.42</td>
-<td align="right">97.42</td>
-<td align="right">1.42</td>
-<td align="right">97.42</td>
+<tr>
+<td style="text-align:left;">
+Grande 500-900k
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+97.4
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+97.4
+</td>
 </tr>
-<tr class="even">
-<td>Mediano 200-300k</td>
-<td align="right">22</td>
-<td align="right">0.98</td>
-<td align="right">98.40</td>
-<td align="right">0.98</td>
-<td align="right">98.40</td>
+<tr>
+<td style="text-align:left;">
+Mediano 200-300k
+</td>
+<td style="text-align:right;">
+22
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+98.4
+</td>
+<td style="text-align:right;">
+1.0
+</td>
+<td style="text-align:right;">
+98.4
+</td>
 </tr>
-<tr class="odd">
-<td>Mediano 300-500k</td>
-<td align="right">19</td>
-<td align="right">0.84</td>
-<td align="right">99.25</td>
-<td align="right">0.84</td>
-<td align="right">99.25</td>
+<tr>
+<td style="text-align:left;">
+Mediano 300-500k
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+0.8
+</td>
+<td style="text-align:right;">
+99.2
+</td>
+<td style="text-align:right;">
+0.8
+</td>
+<td style="text-align:right;">
+99.2
+</td>
 </tr>
-<tr class="even">
-<td>Muy grande &gt;900k</td>
-<td align="right">17</td>
-<td align="right">0.75</td>
-<td align="right">100.00</td>
-<td align="right">0.75</td>
-<td align="right">100.00</td>
+<tr>
+<td style="text-align:left;">
+Muy grande &gt;900k
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+0.8
+</td>
+<td style="text-align:right;">
+100.0
+</td>
+<td style="text-align:right;">
+0.8
+</td>
+<td style="text-align:right;">
+100.0
+</td>
 </tr>
-<tr class="odd">
-<td><NA></td>
-<td align="right">0</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-<td align="right">0.00</td>
-<td align="right">100.00</td>
+<tr>
+<td style="text-align:left;">
+&lt;NA&gt;
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+0.0
+</td>
+<td style="text-align:right;">
+100.0
+</td>
 </tr>
-<tr class="even">
-<td>Total</td>
-<td align="right">2252</td>
-<td align="right">100.00</td>
-<td align="right">100.00</td>
-<td align="right">100.00</td>
-<td align="right">100.00</td>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Total
+</td>
+<td style="text-align:right;font-weight: bold;">
+2252
+</td>
+<td style="text-align:right;font-weight: bold;">
+100.0
+</td>
+<td style="text-align:right;font-weight: bold;">
+100.0
+</td>
+<td style="text-align:right;font-weight: bold;">
+100.0
+</td>
+<td style="text-align:right;font-weight: bold;">
+100.0
+</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="which-entidades-and-municipios" class="section level2">
-<h2>Which Entidades and Municipios</h2>
-<p>The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 –&gt; closely followed in 2018) –&gt; saved POPA Cluster size by Admin Bound in –&gt; saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences)</p>
+<div id="entidades-and-municipios-in-sample" class="section level2">
+<h2>Entidades and Municipios in Sample</h2>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>…… MUST REVISE….</p>
+</blockquote>
+</blockquote>
+</blockquote>
 </div>
 <div id="phase-ii-the-households-served-in-the-respective-service-areas-of-the-surveyed-water-sanitation-providers" class="section level2">
 <h2>(PHASE II) The households served in the respective service areas of the surveyed Water &amp; Sanitation Providers</h2>
@@ -918,12 +1082,12 @@ Total
 <div id="how-many" class="section level3">
 <h3>How many?</h3>
 <ol style="list-style-type: decimal">
-<li>Para o Brasil foi considerada a amostra de <em>1500 domicilios</em> com 12 domicilios distribuidos pelos <em>107 municipios</em> determinados.</li>
+<li>For MExico, the survey has been conducted on a sample of <em>1535 households</em> with about 15 households in each of teh <em>96 municipios</em> covered.</li>
 </ol>
 </div>
 <div id="spatial-identification-of-hh-clusters" class="section level3">
 <h3>Spatial identification of hh clusters</h3>
-<p>First of all, let’s see where the household clusters are located.</p>
+<p>The maps below show where the surveyed household clusters are located.</p>
 <center>
 <img src="output/01_tmap_PopaSampleE.png" alt="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016" />
 </center>
@@ -933,6 +1097,13 @@ Total
 </div>
 <div id="changes-occurred-between-2000-2010-in-areas-of-interest" class="section level3">
 <h3>Changes occurred between 2000-2010 in areas of interest</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>…… MUST REVISE….</p>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>Look at Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000</p>
 <pre><code>## Warning in cbind(CensusVars, UnitOfAn): number of rows of result is not a multiple of vector length (arg 2)</code></pre>
 <table>

@@ -1,10 +1,14 @@
 ---
 title: "The sample of Water & Sanitation Providers"
+date: "Last run: `r format(Sys.time(), '%B %e, %Y')`"
+output: 
+  html_document:
+    code_folding: show
 bibliography: POPA_WaterSurvey.bib
 ---
 
-Last updated on `format(Sys.time(), '%d %B, %Y')`
-Sampling design for the Survey of WSS Suppliers in Mexico
+ 
+> FOCUS: Sampling design for the Survey of WSS Suppliers in Mexico
 
 
 ```{r SETUP, message=FALSE, warning=FALSE, include=FALSE }
@@ -25,22 +29,23 @@ knitr::opts_chunk$set(fig.retina = 2, # will ensure crisp display on retina scre
 ```
 
 ```{r LOADPCK, message=FALSE, warning=FALSE, include=FALSE}
-library(tidyverse)
-library(stringr)
-library(forcats)
-library(scales)
-library(patchwork)
-library(countrycode)
-library(sf)
-library(here)
-library(kableExtra)
-library(summarytools)
+if (!require("pacman")) {
+	install.packages('pacman' )
+}
 
+
+library(pacman) # for loading packages
+p_load(tidyverse,
+		 stringr,
+		 forcats,
+		 scales,
+		 patchwork,
+		 countrycode,
+		 sf,
+		 here,
+		 kableExtra,
+		 summarytools) 
 ```
-
-
-
-
 
 
 ```{r COPYOUTPimage, message=FALSE, include=FALSE}
@@ -84,8 +89,8 @@ file.copy( move2, to = to_dir2 , overwrite = T )
 1. In order to match our sample to official Mexico admin boundaries  (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for  
 + Entidad (32) 
 + Municipios (2546)
-+ Localidades URb( 4525 of 192,217 ) MULTiPOLYGON
-+ Localidades Rur (187719 of 192,217) points 
++ Localidades URb( 4525 of 192,217 ) ~ multipolygons
++ Localidades Rur (187719 of 192,217) ~ points 
 + AGEB urb- 56195 
 
 2. The sample for the survey is mutuated from the sampling design of LAPOP  because the goal is to survey the WSSS providers in the _same_ areas where LAPOP was interviewing households. LAPOP households interviews covered **1,563 IDs** located in **260 clusters**, found in **110 municipios**.[^1] 
@@ -95,6 +100,7 @@ file.copy( move2, to = to_dir2 , overwrite = T )
 <center>
 ![LAPOP clusters (over Ent) of hh interviewed in 2016](./output/Qgis_Lapop2016Ent.png) 
 </center>
+
 ```{r explan, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 # This was created via QGIS {in ./01_rawdata/MEX_fences_2016.qgz} where I added 
 # 1. the LAPOP TRacks and waypoints from 2016 (I guess taken from Google Earth)
@@ -108,7 +114,7 @@ LAPOP provided a file with geofences that indicate a circle containing each clus
 3. Based on those, we identified the (expected) clusters for POPA 2018 sample & matched each location with the pertinent WSS Supplier in the area. 
 We arrived to a sample of **96 different suppliers**.  
 
-4. This survey encompasses two main goals
+4. This survey encompasses two main goals:
 
 	+ I) Survey of WSS suppliers 
 	+ II) Survey of small samples of househods served by the above suppliers (also a chance to validate the LAPOP hh survey in the same areas)
@@ -120,37 +126,36 @@ What follow is a preliminary analysis of the 2 respective samples.
 
 #### THE UNIVERSE OF ORGANISMOS OPERADORES IN MEXICO 
 
-INEGI has identified a total of _2,688  "Organismos Operadores"_ (OO) in the _"Censo de Captacion, Tratamiento y Suministro de Agua"_ 
-conducted in 2014 and published in 2016 [ @inegi_panorama_2016 ].  Of all of these, some ~700 could be rightly defined as _"Organismos Operadores"_, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management. 
+INEGI has identified a total of _2,688  "Organismos Operadores"_ (OO) in the _"Censo de Captacion, Tratamiento y Suministro de Agua"_  conducted in 2014 and published in 2016 [ @inegi_panorama_2016 ].  Of all of these, some ~700 could be rightly defined as _"Organismos Operadores"_, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management. 
 
-	>  The service providers *"organismo que presta el servicio de captaciÃ³n, tratamiento y suministro de agua"* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census
+	>  The service providers *"organismo que presta el servicio de captaciòn, tratamiento y suministro de agua"* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census
 
 + JURIDICAL CATEGORY:
-	* 2401 (of 2668) are _servicios del sector pÃºblico_
-	* 257 (of 2668) are _asociaciÃ³n civil_
+	* 2401 (of 2668) are _servicios del sector publico_
+	* 257 (of 2668) are _asociaciòn civil_
 	* 30 (of 2668) are _sociedad mercantil con fines de lucro o sociedad cooperativa_
 
 In this project, the classification that we use is mostly derived from a _Nota Tecnica_ prepared by some colleagues of the IADB, WSA division [See @riquelme_lor_2018, pp. 1-3]. This managed to retreive some basic information on **2,252 Prestadores**. 
 
-+ GEOGRAPHIC COVERAGE: according to INEGI, the OOs can present different coverage  [@inegi_panorama_2016, p. 16]
++ GEOGRAPHIC COVERAGE: according to INEGI, the **OOs** can present different coverage  [@inegi_panorama_2016, p. 16]
 	* Only the cabecera municipal (1245 out of  2668)
 	* Cabecera Municipal + some other localidades (892 out of  2668)
 	* Whole Municipio (350 out of  2668)
 	* Intermunicipal 
 	* Whole Entidad Federativa
 	* Rural 
-* Otros (201 of 2668)
+	* Otros (201 of 2668)
 
 + EMPLOYED PERSONNEL:
 	* personal ocupado por sexo; 81.3% con trabajadores hombres y 18.7% mujeres
 	* obreros y tÃ©cnicos; 76,744 obreros y tÃ©cnicos (62.5%)/un total de 117 866 puestos de trabajo
 	* empleados y directivos; 
-	~~* personal no remunerado~~ 3,764 trabaja- dores no remunerados/un total de 117 866 puestos de trabajo
-	~~* promedio de horas trabajadas~~ 
-	~~* personal no dependiente de la razÃ³n social~~ 
-	~~* remuneraciones pagadas~~ 
-	~~* prestaciones sociales~~ 
-	~~* pago al personal subcontratado.~~
+	* ~~personal no remunerado~~ 3,764 trabaja- dores no remunerados/un total de 117 866 puestos de trabaj	 
+	* ~~promedio de horas trabajadas~~ 
+	* ~~personal no dependiente de la razòn social~~ 
+	* ~~remuneraciones pagadas~~ 
+	* ~~prestaciones sociales~~ 
+	* ~~pago al personal subcontratado.~~
 
 + INGRESOS POR CONSUMO DE BIENES Y SERVICIOS:
 	* Suministro de agua 69.3%
@@ -159,19 +164,21 @@ In this project, the classification that we use is mostly derived from a _Nota T
 	* Otros Venta de agua tratada 7.6%
 
 + Tomas de agua por tipo de usuario
- 	* Toma domÃ©stica 92.1%
+ 	* Toma domestica 92.1%
 	* Toma comercial 6.3 % 
 	* Toma industrial 0.6 %
 	* Toma de servicios pÃºblicos 1 % 
 	
-+ DistribuciÃ³n porcentual de los ingresos segÃºn la venta de agua potable por tipo de usuario
-	* Toma domÃ©stica 60.9 %
++ DistribuciÃ³n porcentual de los ingresos según la venta de agua potable por tipo de usuario
+	* Toma domestica 60.9 %
 	* Toma comercial 25.3 %
 	* Toma industrial 8.1 %
-	* Toma de servicios pÃºblicos 5.7 %
+	* Toma de servicios publicos 5.7 %
+	
 	
 #### THE ORGANISMOS OPERADORES IN OUR SAMPLE 
-+ + JURIDICAL CATEGORY ("TIPO") refers to the juridical status of the agency: **654** are considered proper "PRESTADORES", whereas 1,557 are not considered as proper utilities in the classification, respectively:  
+
++ **JURIDICAL CATEGORY ("TIPO")** refers to the juridical status of the agency: **654** are considered proper "PRESTADORES", whereas 1,557 are not considered as proper utilities in the classification, respectively:  
 	* 1,332 are *No clasificado*
 	* 245 are cases in which the municipalities that directly provide water and sanitation services
 
@@ -179,16 +186,16 @@ In this project, the classification that we use is mostly derived from a _Nota T
 	
 ```{r OperTIPO, echo=FALSE, message=FALSE, results = 'asis'}
 
-load( here( "data", "prestadores_Popa_UTF.Rdata"))
+load( here::here( "data", "prestadores_Popa.Rdata"))
 
 # https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
 library(summarytools)
-Freq_Tipo <- summarytools::freq(prestadores_Popa_UTF$Tipo_lbl , 
-			  report.nas = FALSE, 
-			round.digits = 2, # default 2
-			order = "freq", #  
-			style = 'rmarkdown', #  
-			 omit.headings = T
+Freq_Tipo <- summarytools::freq(prestadores_Popa$Tipo_lbl , 
+										  report.nas = FALSE, 
+										  round.digits = 2, # default 2
+										  order = "freq", #  
+										  style = 'rmarkdown', #  
+										  omit.headings = T
 			) 
 
 # ======= DOES NOT RENDER IN SITE 
@@ -209,26 +216,25 @@ Freq_Tipo <- summarytools::freq(prestadores_Popa_UTF$Tipo_lbl ,
 				 caption = "Agencies Providing Water & Sanitation by Type (Including when Not properly defined") %>%
 	kable_styling("striped", full_width = F) %>%
 	row_spec(1, bold = T, color = "white", background = "#D7261E") %>%
-	row_spec(5, bold = T,   background = "#FFC1C1")%>%
-	row_spec(9, bold = T,  background = "#FFC1C1")
+	row_spec(5, bold = T,   background = "#FFC1C1") %>%
+	row_spec(9, bold = T,  background = "#FFC1C1") %>%
+	row_spec(12, bold = T )
 ```
 
-+ "RANGO" refers to the size of the populaition served.  
-
-
++ **"RANGO"** refers to the size of the populaition served.  
 
 ```{r OperRANGO, echo=FALSE, message=FALSE, results = 'asis'}
 
-load( here( "data", "prestadores_Popa_UTF.Rdata"))
+load( here( "data", "prestadores_Popa.Rdata"))
 
 # https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html
 library(summarytools)
-Freq_Rango <- summarytools::freq(prestadores_Popa_UTF$Rango_lbl , 
-			 report.nas = FALSE, 
-			round.digits = 2, # default 2
-			order = "freq", #  
-			 style = 'rmarkdown', #  
-			 omit.headings = T
+Freq_Rango <- summarytools::freq(prestadores_Popa$Rango_lbl , 
+											report.nas = FALSE, 
+											round.digits = 1, # default 2
+											order = "freq", #  
+											style = 'rmarkdown', #  
+											omit.headings = T
 			) 
 
 # ======= DOES NOT RENDER IN SITE 
@@ -245,28 +251,24 @@ Freq_Rango <- summarytools::freq(prestadores_Popa_UTF$Rango_lbl ,
 
 # ======= WORKS BUT WIHT EXTRA COLUMNS I DONT WANT
 knitr::kable(Freq_Rango,
-				 format = "pandoc",
-				 digits = 2,
-				 caption = "Agencies Providing Water & Sanitation by size of population served (Including when Not properly defined")
-
-# st_options()
+				 format = "html",
+				 digits = 1,
+				 caption = "Agencies Providing Water & Sanitation by size of population served (Including when Not properly defined") %>%
+	kable_styling("striped", full_width = F) %>%
+	row_spec(10, bold = T )
+ 
 ```
 
 
-## Which Entidades and Municipios
+## Entidades and Municipios in Sample
 
-The ENTIDADES and MUNICIPIOS INCLUDING LAPOP/POPA clusters (2016 --> closely followed in 2018)
-	--> saved POPA Cluster size by Admin Bound in 
-	--> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
-	 
+>>>...... MUST REVISE....
 
-```{r,  echo=FALSE, fig.cap="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
-
-# knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleE.png"))   # NOT RENDERING 
-
-### #list.files(path = to_dir)
+```{r explan2, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+# The ENTIDADES and MUNICIPIOS INCLUDEDE in the LAPOP/POPA clusters (2016 --> closely followed in 2018)
+	# --> saved POPA Cluster size by Admin Bound in 
+	# --> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
 ```	
-	
 
 
 ## (PHASE II) The households served in the respective service areas of the surveyed Water & Sanitation Providers 
@@ -278,13 +280,13 @@ The sample selected is made of *"Viviendas Particulares Habitadas"* (Mexico, INE
 
 ### How many? 
 
-1) Para o Brasil foi considerada a amostra de *1500 domicilios* com 12 domicilios distribuidos pelos *107 municipios* determinados.
+1) For MExico, the survey has been conducted on a sample of *1535 households* with about 15 households in each of teh *96 municipios* covered.
 
 
 
 ### Spatial identification of hh clusters
 
-First of all, let's see where the household clusters are located. 
+The maps below show where the surveyed household clusters are located. 
 
 <center>
 ![The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016](./output/01_tmap_PopaSampleE.png) 
@@ -307,11 +309,11 @@ First of all, let's see where the household clusters are located.
 
 ### Changes occurred between 2000-2010 in areas of interest
 
+>>>...... MUST REVISE....
+
 Look at Changes in ENTIDADES and MUNICIPIOS covered by LAPOP/POPA clusters according to census 2010 compared to census 2000
 
-
 ```{r CensusVar, echo=FALSE}
-  
 # https://rpubs.com/Xavi/ubiss16d3
 # https://walkerke.github.io/2016/12/rmd-dropdowns/
 load( here( "data", "Census_2yrs_p_lag_pcg.Rdata"))
@@ -338,9 +340,6 @@ colnames(CensusLegend) <- c("Variable Code", "Variable Type")
 knitr::kable(CensusLegend, caption = "Variables - aggreagated at \"municipio\" level - retrieved from Census 2000 2010")
 
 ```
-
-
-
 
 
 
