@@ -49,53 +49,50 @@ p_load(tidyverse,
 
 
 ```{r COPYOUTPimage, message=FALSE, include=FALSE}
-# OKKIO, I am in /DataMEX, because it contains a file `.here`
-library(here)
-here::dr_here(show_reason = T)
-
-from_dir <- here("07_output")
-to_dir <- here("MexicoWaterSurvey", "output")
-
-files <- list.files(path = from_dir , full.names = TRUE) #,  pattern = ".png$" )
-move <- files[sapply(files, file.size) < 100000000] # < 100 MB or Github will get stuck
-
-# --- SYNTAX
-# file.copy(list.of.files, new.folder)
-
-file.copy( move, to = to_dir , overwrite = T )
-# if I had listed with full.names = F
-# file.copy( file.path(from_dir, move), to = to_dir  )
+# # OKKIO, I am in /DataMEX, because it contains a file `.here`
+# library(here)
+# here::dr_here(show_reason = T)
+# 
+# from_dir <- here("07_output")
+# to_dir <- here("MexicoWaterSurvey", "output")
+# 
+# files <- list.files(path = from_dir , full.names = TRUE) #,  pattern = ".png$" )
+# move <- files[sapply(files, file.size) < 100000000] # < 100 MB or Github will get stuck
+# 
+# # --- SYNTAX
+# # file.copy(list.of.files, new.folder)
+# 
+# file.copy( move, to = to_dir , overwrite = T )
+# # if I had listed with full.names = F
+# # file.copy( file.path(from_dir, move), to = to_dir  )
 ```
 
 ```{r COPYOUTPdata, message=FALSE, include=FALSE}
-library(here)
-here::dr_here(show_reason = T)
-
-from_dir2 <- here("03_cleandata")
-to_dir2 <- here("MexicoWaterSurvey", "data")
-
-files2 <- list.files(path = from_dir2 , full.names = TRUE,  pattern =  "(^oper|^pres|^Census).*\\.Rdata$") 
-move2 <- files2[sapply(files2, file.size) < 100000000] # < 100 MB or Github will get stuck
-
-# --- SYNTAX
-# file.copy(list.of.files, new.folder)
-file.copy( move2, to = to_dir2 , overwrite = T )
+# library(here)
+# here::dr_here(show_reason = T)
+# 
+# from_dir2 <- here("03_cleandata")
+# to_dir2 <- here("MexicoWaterSurvey", "data")
+# 
+# files2 <- list.files(path = from_dir2 , full.names = TRUE,  pattern =  "(^oper|^pres|^Census).*\\.Rdata$") 
+# move2 <- files2[sapply(files2, file.size) < 100000000] # < 100 MB or Github will get stuck
+# 
+# # --- SYNTAX
+# # file.copy(list.of.files, new.folder)
+# file.copy( move2, to = to_dir2 , overwrite = T )
 ```
 
 
 
 ## Sampling design
 
-1. In order to match our sample to official Mexico admin boundaries  (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for  
-+ Entidad (32) 
-+ Municipios (2546)
-+ Localidades URb( 4525 of 192,217 ) ~ multipolygons
-+ Localidades Rur (187719 of 192,217) ~ points 
-+ AGEB urb- 56195 
+1.  The sample for the survey is mutuated from the sampling design of LAPOP  because the goal is to survey the WSSS providers in the _same_ areas where LAPOP was interviewing households. LAPOP households interviews covered **1,563 IDs** located in **260 clusters**, found in **110 municipios**.[^1] 
 
-2. The sample for the survey is mutuated from the sampling design of LAPOP  because the goal is to survey the WSSS providers in the _same_ areas where LAPOP was interviewing households. LAPOP households interviews covered **1,563 IDs** located in **260 clusters**, found in **110 municipios**.[^1] 
+	+ UPDATE FROM LAPOP 2019: LAPOP households interviews covered **1,446 IDs** located in **232 clusters**, found in **110 {_BUT, even if the # of municipio is the same, only 105 were actually the same, there are 5 different ones_} municipios**.[^1] 
 
-> UPDATE FROM LAPOP 2019: LAPOP households interviews covered **1,446 IDs** located in **232 clusters**, found in **110 {_BUT, even if the # of municipio is the same, only 105 were actually the same, there are 5 different ones_} municipios**.[^1] 
+[^1]: This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62)). 
+
+LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (might be slightly changed in 2018) 
 
 <center>
 ![LAPOP clusters (over Ent) of hh interviewed in 2016](./output/Qgis_Lapop2016Ent.png) 
@@ -107,12 +104,42 @@ file.copy( move2, to = to_dir2 , overwrite = T )
 # 2. The INEGI ENT  and munic shp (2010 censim )
 ```
 
-[^1]: This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 & 62)). 
-
-LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (might be slightly changed in 2018) 
- 
-3. Based on those, we identified the (expected) clusters for POPA 2018 sample & matched each location with the pertinent WSS Supplier in the area. 
+2. Based on those, we identified the (expected) clusters for POPA 2018 sample & matched each location with the pertinent WSS Supplier in the area. 
 We arrived to a sample of **96 different suppliers**.  
+
+3. We asked to the suppliers interviewed to confirm the list of municipios they serve, so that to have a precise understanding of the respective area of coverage. 
+```{r explan2, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+#  In order to match our sample to official Mexico admin boundaries  (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for  
+# + Entidad (32) 
+# + Municipios (2546)
+# + Localidades URb( 4525 of 192,217 ) ~ multipolygons
+# + Localidades Rur (187719 of 192,217) ~ points 
+# + AGEB urb- 56195 
+```
+
+### Which States (Entidades) and Municipios are covered by the Sample
+
+> The States (Entidades) _currently_ covered by the sample are **??** (all)  
+	 
+
+```{r,  echo=FALSE, fig.cap="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016", out.width = '100%', results='asis'}
+
+# knitr::include_graphics(paste0(to_dir,"/01_tmap_PopaSampleE.png"))   # NOT RENDERING 
+
+### #list.files(path = to_dir)
+```	
+	
+<center>
+![Mexico Entidades in Sample](./output/01_tmap_PopaSampleE.png)
+</center>
+
+> The Municipios _currently_ covered by the sample are **???? **  (out of 2456) 
+
+<center>
+![MExico municipios in sample](./output/01_tmap_PopaSampleM.png)
+</center>
+
+
 
 4. This survey encompasses two main goals:
 
@@ -124,7 +151,7 @@ What follow is a preliminary analysis of the 2 respective samples.
 
 ## (PHASE I) The Water & Sanitation Providers 
 
-#### THE UNIVERSE OF ORGANISMOS OPERADORES IN MEXICO 
+#### The universe of WSS suppliers in Mexico 
 
 INEGI has identified a total of _2,688  "Organismos Operadores"_ (OO) in the _"Censo de Captacion, Tratamiento y Suministro de Agua"_  conducted in 2014 and published in 2016 [ @inegi_panorama_2016 ].  Of all of these, some ~700 could be rightly defined as _"Organismos Operadores"_, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management. 
 
@@ -260,17 +287,7 @@ knitr::kable(Freq_Rango,
 ```
 
 
-## Entidades and Municipios in Sample
-
->>>...... MUST REVISE....
-
-```{r explan2, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-# The ENTIDADES and MUNICIPIOS INCLUDEDE in the LAPOP/POPA clusters (2016 --> closely followed in 2018)
-	# --> saved POPA Cluster size by Admin Bound in 
-	# --> saved SPJOIN RESULTS LAPOP FENCES intersected with Mun (Centroids and fences) 
-```	
-
-
+ 
 ## (PHASE II) The households served in the respective service areas of the surveyed Water & Sanitation Providers 
 
 ### Which households? 

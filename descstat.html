@@ -11,9 +11,9 @@
 
 
 
-<title>Descriptive Statistics of WSS Providers</title>
+<title>Descriptive Statistics of Survey WSS Operators Mexico</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -23,10 +23,131 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.6/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/jszip-1.10.16/jszip.min.js"></script>
+<script src="site_libs/pdfmake-1.10.16/pdfmake.min.js"></script>
+<script src="site_libs/pdfmake-1.10.16/vfs_fonts.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
+<link href="site_libs/dt-plugin-searchhighlight-1.10.16/dataTables.searchHighlight.css" rel="stylesheet" />
+<script src="site_libs/dt-plugin-searchhighlight-1.10.16/dataTables.searchHighlight.min.js"></script>
+<script src="site_libs/dt-plugin-searchhighlight-1.10.16/jquery.highlight.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+.sourceCode .row {
+  width: 100%;
+}
+.sourceCode {
+  overflow-x: auto;
+}
+.code-folding-btn {
+  margin-right: -30px;
+}
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -245,6 +366,14 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 
 
@@ -425,21 +554,800 @@ div.tocify {
 
 <div class="fluid-row" id="header">
 
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">Descriptive Statistics of WSS Providers</h1>
+
+<h1 class="title toc-ignore">Descriptive Statistics of Survey WSS Operators Mexico</h1>
+<h4 class="date">Last run: July 23, 2019</h4>
 
 </div>
 
 
-<p>Last updated on <code>format(Sys.time(), '%d %B, %Y')</code></p>
-<p>Descriptive Statistics of Survey WSS Operators Mexico</p>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.5.2</code></pre>
-<pre><code>## Warning: package &#39;tibble&#39; was built under R version 3.5.2</code></pre>
-<pre><code>## Warning: package &#39;purrr&#39; was built under R version 3.5.2</code></pre>
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.5.2</code></pre>
-<pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.5.2</code></pre>
-<pre><code>## Warning: package &#39;forcats&#39; was built under R version 3.5.2</code></pre>
+<div id="exploratory-data-analysis-of-wss-operators-sample-in-mexico" class="section level2">
+<h2>Exploratory Data Analysis of WSS Operators Sample in Mexico</h2>
+<p>The observation of survey outcomes will compare across potential relevant features:</p>
+<ul>
+<li><strong>Ownership/type</strong> and</li>
+<li><strong>Size of covered area</strong></li>
+<li><strong>Service mix</strong> (W/S/W+S)</li>
+<li>(possibly) <strong>Prevalence of urban vs rural coverage vs</strong></li>
+<li>(<strong>Age</strong>)</li>
+<li>(<strong>State</strong>)</li>
+</ul>
+<p>Here is a very basic distribution of our sampled Suppliers in Mexico, by state, ownership and size of Coverage reach.</p>
+<blockquote>
+<p>The vaste majority of operators is public, while there is more variation in size of covered area.</p>
+</blockquote>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_uf_own_cov.Rdata&quot;</span>))</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># class(tbl_uf_own_cov)</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">caption &lt;-<span class="st"> &quot;Sampled Suppliers in Mexico, by State, Ownership Type and size of Coverage reach&quot;</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">covtable &lt;-<span class="st"> </span><span class="kw">pandoc.table.return</span>(tbl_uf_own_cov, </a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">                                          <span class="dt">keep.line.breaks =</span> F, </a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">                                          <span class="dt">style =</span> <span class="st">&quot;multiline&quot;</span>, </a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">                                          <span class="dt">justify =</span> <span class="st">&quot;lcrr&quot;</span>, </a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">                                          <span class="dt">caption =</span> caption</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">                                          )</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw">cat</span>(covtable)</a></code></pre></div>
+<table style="width:88%;">
+<caption>Sampled Suppliers in Mexico, by State, Ownership Type and size of Coverage reach</caption>
+<colgroup>
+<col width="26%" />
+<col width="26%" />
+<col width="27%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">entidad</th>
+<th align="center">Q1_ownership_lbl</th>
+<th align="right">Cov_pop_rango_lbl</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Chihuahua</td>
+<td align="center">Public</td>
+<td align="right">Small 10-50k</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Ciudad de México</td>
+<td align="center">Public</td>
+<td align="right">Large 1m-10m</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Coahuila</td>
+<td align="center">Public</td>
+<td align="right">Small 10-50k</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Coahuila</td>
+<td align="center">Public</td>
+<td align="right">Medium 300-500k</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Guanajuato</td>
+<td align="center">Public</td>
+<td align="right">Medium 100-200k</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Guanajuato</td>
+<td align="center">Public</td>
+<td align="right">Medium 300-500k</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Guanajuato</td>
+<td align="center">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Guerrero</td>
+<td align="center">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Hidalgo</td>
+<td align="center">Public</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">México</td>
+<td align="center">Public</td>
+<td align="right">Large 500k-1m</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">México</td>
+<td align="center">Public</td>
+<td align="right">Large 1m-10m</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">México</td>
+<td align="center">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Puebla</td>
+<td align="center">Public</td>
+<td align="right">Very Small &lt;10k</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Puebla</td>
+<td align="center">Public</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Querétaro</td>
+<td align="center">Public</td>
+<td align="right">Large 1m-10m</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">San Luis Potosí</td>
+<td align="center">Public</td>
+<td align="right">Medium 50-100k</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">San Luis Potosí</td>
+<td align="center">NA</td>
+<td align="right">Large 1m-10m</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Sonora</td>
+<td align="center">Public</td>
+<td align="right">Small 10-50k</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Tabasco</td>
+<td align="center">Public</td>
+<td align="right">Large 1m-10m</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Veracruz</td>
+<td align="center">Public</td>
+<td align="right">Large 500k-1m</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="center">-</td>
+<td align="right">-</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="legislative-context" class="section level2">
+<h2>Legislative Context</h2>
+<ol style="list-style-type: decimal">
+<li>Overall, the majority of the Suppliers declare they operate in a context where there is legislation for key operational aspects such as:
+<ul>
+<li>Coverage Areas</li>
+<li>Service</li>
+<li>Quality</li>
+<li>Tariffs</li>
+</ul></li>
+</ol>
+<center>
+<img src="output/Plot_CountByRango.png" title="Plot_CountByRango.png" alt="Plot_CountByLawOwnersh.png" />
+</center>
+<center>
+<img src="output/Plot_CountByLawOwnersh.png" title="Plot_CountByLawOwnersh.png" alt="Plot_CountByLawOwnersh.png" />
+</center>
+</div>
+<div id="coverage-service" class="section level2">
+<h2>1) COVERAGE &amp; SERVICE</h2>
+<div id="summary-of-key-coverage-numeric-variable" class="section level3">
+<h3>Summary of key coverage numeric variable</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_descstat_cov.Rdata&quot;</span>))</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co"># class(tbl_descstat_cov)</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">caption &lt;-<span class="st"> &quot;Summary of Coverage variables&quot;</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">var.summary &lt;-<span class="st"> </span><span class="kw">pandoc.table.return</span>(tbl_descstat_cov , </a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">                                              <span class="dt">keep.line.breaks =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">                                              <span class="dt">round =</span> <span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">                                              <span class="dt">big.mark =</span> <span class="st">&quot;,&quot;</span>,</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">                                              <span class="dt">justify =</span> <span class="st">&quot;llrrrrrr&quot;</span>, <span class="co"># OKKIO AL # DI COLONNE</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">                                              <span class="dt">caption =</span> caption, <span class="dt">style =</span> <span class="st">&quot;multiline&quot;</span>,</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">                                              <span class="dt">split.table =</span> <span class="ot">Inf</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">                                              )</a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="kw">cat</span>(var.summary)</a></code></pre></div>
+<table style="width:100%;">
+<caption>Summary of Coverage variables</caption>
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="4%" />
+<col width="10%" />
+<col width="10%" />
+<col width="8%" />
+<col width="6%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">unit_of_analysis</th>
+<th align="right">N</th>
+<th align="right">Mean</th>
+<th align="right">Std. Dev.</th>
+<th align="right">Median</th>
+<th align="right">Min</th>
+<th align="right">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">N_cov_states</td>
+<td align="left">NA</td>
+<td align="right">15</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">N_cov_mun</td>
+<td align="left">Num of Municipio covered (Annex)</td>
+<td align="right">15</td>
+<td align="right">4.4</td>
+<td align="right">5.77</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">Q2_CovMun_decl</td>
+<td align="left">Num of Municipio covered (Respondent)</td>
+<td align="right">20</td>
+<td align="right">3.55</td>
+<td align="right">5.2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">17</td>
+</tr>
+<tr class="even">
+<td align="left">totpop2018</td>
+<td align="left">Tot Pop in covered Mun (IBGE2018)</td>
+<td align="right">15</td>
+<td align="right">1,151,679</td>
+<td align="right">2,235,863</td>
+<td align="right">494,304</td>
+<td align="right">1,379</td>
+<td align="right">8,918,653</td>
+</tr>
+<tr class="odd">
+<td align="left">Q44_Past12m_Interr_RespTime</td>
+<td align="left">NA</td>
+<td align="right">12</td>
+<td align="right">18.17</td>
+<td align="right">51.16</td>
+<td align="right">1.5</td>
+<td align="right">0</td>
+<td align="right">180</td>
+</tr>
+<tr class="even">
+<td align="left">Q5a_Urb_Perc2</td>
+<td align="left">NA</td>
+<td align="right">13</td>
+<td align="right">73.54</td>
+<td align="right">24.02</td>
+<td align="right">80</td>
+<td align="right">1</td>
+<td align="right">95</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The WSS suppliers in the sample - as of July 23, 2019 - cover an average of <strong>3.55 municipios</strong> (almost always in one State), corresponding to a mean <strong>covered population of 1151679.07</strong>.</li>
+<li>The suppliers on average serve localities that are <strong>73.54 urban</strong>.</li>
+</ul>
+</div>
+<div id="areas-covered-vs.service" class="section level3">
+<h3>Area(s) covered vs. service</h3>
+<blockquote>
+<p>Is there any difference between the Product MIX <code>Q9a_d_Mix_comb</code> across the URB-RUR type of coverage of the supplier <code>Q4_UrbRur_Mix</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>?</p>
+</blockquote>
+<p>Suppliers serving exclusively rural areas do not provide sanitation. Otherwise, the majority of suppliers provide all 4 services accounted for: + Water generation + Water Distribution + Sanitation + Wastewater Treatment</p>
+<center>
+<img src="output/Plot_CountByProdMix.png" title="Plot_CountByProdMix.png" alt="Plot_CountByProdMix.png" />
+</center>
+<blockquote>
+<p>NEXT:… (?) Is the urbanization process (size, local distribution, rate) causing the lack (access, quality, affordability ) to service in the region (controlling for physical assets / hydrological condition, pop #, etc) ? ??</p>
+</blockquote>
+</div>
+<div id="summary-of-key-service-charateristics" class="section level3">
+<h3>Summary of key service charateristics</h3>
+<p>Observations on the WSS suppliers surveyed as of July 23, 2019, …</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_descstat_covserv.Rdata&quot;</span>))</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co"># class(tbl_descstat_cov)</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">caption &lt;-<span class="st"> &quot;Summary of Service variables&quot;</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">var.summary &lt;-<span class="st"> </span><span class="kw">pandoc.table.return</span>(tbl_descstat_covserv , </a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">                                              <span class="dt">keep.line.breaks =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">                                              <span class="dt">round =</span> <span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">                                              <span class="dt">big.mark =</span> <span class="st">&quot;,&quot;</span>,</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">                                              <span class="dt">justify =</span> <span class="st">&quot;llrrrrrr&quot;</span>, <span class="co"># OKKIO AL # DI COLONNE</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">                                              <span class="dt">caption =</span> caption, <span class="dt">style =</span> <span class="st">&quot;multiline&quot;</span>,</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">                                              <span class="dt">split.table =</span> <span class="ot">Inf</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">                                              )</a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="kw">cat</span>(var.summary)</a></code></pre></div>
+<table style="width:100%;">
+<caption>Summary of Service variables</caption>
+<colgroup>
+<col width="23%" />
+<col width="23%" />
+<col width="3%" />
+<col width="10%" />
+<col width="11%" />
+<col width="9%" />
+<col width="6%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">unit_of_analysis</th>
+<th align="right">N</th>
+<th align="right">Mean</th>
+<th align="right">Std. Dev.</th>
+<th align="right">Median</th>
+<th align="right">Min</th>
+<th align="right">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Q7a_Volume_Res_Perc</td>
+<td align="left">% of m3</td>
+<td align="right">20</td>
+<td align="right">84.58</td>
+<td align="right">12.81</td>
+<td align="right">90</td>
+<td align="right">45</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="left">Q7b_Volume_Com_Perc</td>
+<td align="left">% of m3</td>
+<td align="right">17</td>
+<td align="right">7.96</td>
+<td align="right">6.55</td>
+<td align="right">5.27</td>
+<td align="right">2</td>
+<td align="right">26</td>
+</tr>
+<tr class="odd">
+<td align="left">Q7c_Volume_Ind_Perc</td>
+<td align="left">% of m3</td>
+<td align="right">17</td>
+<td align="right">3.87</td>
+<td align="right">3.13</td>
+<td align="right">3.2</td>
+<td align="right">0.3</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">Q7d_Volume_Inst_Perc</td>
+<td align="left">% of m3</td>
+<td align="right">14</td>
+<td align="right">7.66</td>
+<td align="right">8.71</td>
+<td align="right">3.79</td>
+<td align="right">1</td>
+<td align="right">30</td>
+</tr>
+<tr class="odd">
+<td align="left">Q10a_Wconn_Res</td>
+<td align="left">Num connections water</td>
+<td align="right">20</td>
+<td align="right">180,361</td>
+<td align="right">417,839</td>
+<td align="right">45,382</td>
+<td align="right">500</td>
+<td align="right">1,887,829</td>
+</tr>
+<tr class="even">
+<td align="left">Q10b_Wconn_Tot</td>
+<td align="left">Num connections water</td>
+<td align="right">20</td>
+<td align="right">209,213</td>
+<td align="right">479,771</td>
+<td align="right">53,210</td>
+<td align="right">500</td>
+<td align="right">2,173,417</td>
+</tr>
+<tr class="odd">
+<td align="left">Q10c_Wconn_Act</td>
+<td align="left">Num connections water</td>
+<td align="right">20</td>
+<td align="right">205,351</td>
+<td align="right">478,746</td>
+<td align="right">53,210</td>
+<td align="right">500</td>
+<td align="right">2,173,417</td>
+</tr>
+<tr class="even">
+<td align="left">Q11a_Sconn_Res</td>
+<td align="left">Num connections sanitation</td>
+<td align="right">17</td>
+<td align="right">166,927</td>
+<td align="right">395,225</td>
+<td align="right">77,281</td>
+<td align="right">7,882</td>
+<td align="right">1,679,527</td>
+</tr>
+<tr class="odd">
+<td align="left">Q11b_Sconn_Tot</td>
+<td align="left">Num connections sanitation</td>
+<td align="right">17</td>
+<td align="right">204,987</td>
+<td align="right">443,316</td>
+<td align="right">83,446</td>
+<td align="right">99</td>
+<td align="right">1,880,150</td>
+</tr>
+<tr class="even">
+<td align="left">Q11c_Sconn_Act</td>
+<td align="left">Num connections sanitation</td>
+<td align="right">17</td>
+<td align="right">201,982</td>
+<td align="right">442,489</td>
+<td align="right">83,446</td>
+<td align="right">99</td>
+<td align="right">1,880,150</td>
+</tr>
+<tr class="odd">
+<td align="left">Q12a_m3_In_Res</td>
+<td align="left">m3 water entering system</td>
+<td align="right">20</td>
+<td align="right">60,159,128</td>
+<td align="right">183,875,962</td>
+<td align="right">7,184,228</td>
+<td align="right">99</td>
+<td align="right">834,782,976</td>
+</tr>
+<tr class="even">
+<td align="left">Q12b_m3_In_Tot</td>
+<td align="left">m3 water entering system</td>
+<td align="right">20</td>
+<td align="right">84,431,024</td>
+<td align="right">211,190,346</td>
+<td align="right">17,652,926</td>
+<td align="right">99</td>
+<td align="right">959,662,080</td>
+</tr>
+<tr class="odd">
+<td align="left">Q13_m3_Fatt_Tot</td>
+<td align="left">m3 water billed</td>
+<td align="right">20</td>
+<td align="right">41,137,280</td>
+<td align="right">109,402,103</td>
+<td align="right">10,227,746</td>
+<td align="right">99</td>
+<td align="right">498,771,165</td>
+</tr>
+<tr class="even">
+<td align="left">Q13a_m3_Fatt_Res_Perc</td>
+<td align="left">% of m3 water billed</td>
+<td align="right">20</td>
+<td align="right">261.3</td>
+<td align="right">378.6</td>
+<td align="right">80</td>
+<td align="right">43</td>
+<td align="right">999</td>
+</tr>
+<tr class="odd">
+<td align="left">Q13b_ReaisFatt_Tot</td>
+<td align="left">Revenue in Reais</td>
+<td align="right">20</td>
+<td align="right">720,175,454</td>
+<td align="right">1,967,337,969</td>
+<td align="right">57,998,678</td>
+<td align="right">35,000</td>
+<td align="right">8,835,781,124</td>
+</tr>
+<tr class="even">
+<td align="left">Q13c_ReaisFatt_Res_Perc</td>
+<td align="left">% Residential of revenue in Reais</td>
+<td align="right">20</td>
+<td align="right">164.6</td>
+<td align="right">286</td>
+<td align="right">77</td>
+<td align="right">20</td>
+<td align="right">999</td>
+</tr>
+<tr class="odd">
+<td align="left">NRWm3_pct</td>
+<td align="left">% of m3 Water (in the system) NOT billed</td>
+<td align="right">16</td>
+<td align="right">16.3</td>
+<td align="right">145.5</td>
+<td align="right">48.73</td>
+<td align="right">-519.4</td>
+<td align="right">94.32</td>
+</tr>
+<tr class="even">
+<td align="left">Q23_Network_km</td>
+<td align="left">km</td>
+<td align="right">20</td>
+<td align="right">84,763</td>
+<td align="right">371,702</td>
+<td align="right">400</td>
+<td align="right">9</td>
+<td align="right">1,663,894</td>
+</tr>
+<tr class="odd">
+<td align="left">Q27_IndivMeter_Perc</td>
+<td align="left">% of connections</td>
+<td align="right">15</td>
+<td align="right">60.92</td>
+<td align="right">31.63</td>
+<td align="right">65.3</td>
+<td align="right">0</td>
+<td align="right">100</td>
+</tr>
+<tr class="even">
+<td align="left">Q40_NetworkYrlyInspected_Perc</td>
+<td align="left">% of network</td>
+<td align="right">12</td>
+<td align="right">61.75</td>
+<td align="right">39.83</td>
+<td align="right">80</td>
+<td align="right">2</td>
+<td align="right">100</td>
+</tr>
+<tr class="odd">
+<td align="left">Q43_Past12m_Interr_PercAff</td>
+<td align="left">%</td>
+<td align="right">12</td>
+<td align="right">34.71</td>
+<td align="right">26.75</td>
+<td align="right">40</td>
+<td align="right">0.01</td>
+<td align="right">80</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="nrw-levels" class="section level3">
+<h3>NRW % levels</h3>
+<blockquote>
+<p>Lit Input: Some key determinants of high NRW are: 1. The cost of implementing counter-measures 2. A political cost associated with the control of unauthorized consumption in marginalized ares 3. A cost to those people who benefit from corruption 4. Technical cost of shortening leakage detection time &amp; improving pressure management (especially when the cost of pumping more raw water is 0 or low) [see <span class="citation">González-Gómez, García-Rubio, and Guardiola (2011)</span>, pp. 33-35; ch. 1].</p>
+</blockquote>
+<p>Based on the information collected via the survey, we can estimate NRW as per International Water Association’s (IWA) definition: NRW is defined as water that is placed into a water distribution system that is not billed to customers. Our derived indicator is <strong><code>NRWm3_pct</code></strong> { = (<code>Q12b_m3_In_Tot</code> - <code>Q13_m3_Fatt_Tot</code>) / <code>Q12b_m3_In_Tot</code> *100 }</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;MX_NRW.Rdata&quot;</span>))</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">library</span>(DT)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># class(tbl_descstat_cov)</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co"># SIMPLE TABLE WITH FILTER</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">MX_NRW <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>M1_oper_id, <span class="op">-</span>Q12b_m3_In_Tot, <span class="op">-</span>Q13_m3_Fatt_Tot) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="st">    </span><span class="co"># dplyr::arrange(entidad) %&gt;% </span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="st">  </span>DT<span class="op">::</span><span class="kw">datatable</span>(.,</a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    <span class="dt">elementId =</span> <span class="ot">NULL</span>,</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">    <span class="co"># filter = &#39;top&#39;,  # Problem if there are empty cells !!!</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">    <span class="dt">extensions =</span> <span class="st">&quot;Buttons&quot;</span>,</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13">    <span class="dt">options =</span> <span class="kw">list</span>(<span class="dt">pageLength =</span> <span class="dv">50</span>, <span class="dt">searchHighlight =</span> <span class="ot">TRUE</span>, <span class="dt">dom =</span> <span class="st">&quot;Bfrtip&quot;</span>, <span class="dt">buttons =</span> <span class="kw">c</span>(<span class="st">&quot;csv&quot;</span>, <span class="st">&quot;excel&quot;</span>, <span class="st">&quot;pdf&quot;</span>))</a>
+<a class="sourceLine" id="cb4-14" data-line-number="14">  ) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="st">  </span><span class="co"># helper functions</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatRound</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dt">backgroundColor =</span> <span class="st">&quot;yellow&quot;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dt">color =</span> <span class="kw">styleInterval</span>(<span class="dv">50</span>, <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>)))</a></code></pre></div>
+<div id="htmlwidget-7dc0ff3b81fe9431f025" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7dc0ff3b81fe9431f025">{"x":{"filter":"none","extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],["Guanajuato","Guanajuato","Sonora","Ciudad de México","San Luis Potosí","Veracruz","Puebla","Querétaro","Coahuila","San Luis Potosí","Coahuila","Chihuahua","Tabasco","México","México","México","Puebla","Guerrero","Guanajuato","Hidalgo"],["Public","Public","Public","Public","Public","Public","Public","Public","Public",null,"Public","Public","Public","Public","Public",null,"Public",null,null,"Public"],["Urb-Rur","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Rural","Urb-Rur","Urban","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Rural","Urban","Urb-Rur","Urb-Rur"],["Medium 300-500k","Medium 100-200k","Small 10-50k","Large 1m-10m","Medium 50-100k","Large 500k-1m","Very Small &lt;10k","Large 1m-10m","Small 10-50k","Large 1m-10m","Medium 300-500k","Small 10-50k","Large 1m-10m","Large 1m-10m","Large 500k-1m",null,null,null,null,null],[90,75,72,71.2,79.3,80,999,85,80,43,64,90,999,65,90,75,999,999,90,80],[5,89.9972079217307,null,48.02637559671,49.435005767617,63.0927473074958,null,94.3172996249485,57.2135416666667,40,32.7041266663683,32.6039745090856,85.6645930927576,25.512104283054,11.6666666666667,54.5454545454545,null,null,-519.370792455323,90.3898562741846]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>entidad<\/th>\n      <th>Q1_ownership_lbl<\/th>\n      <th>Q4_UrbRur_Mix<\/th>\n      <th>Cov_pop_rango_lbl<\/th>\n      <th>Q13a_m3_Fatt_Res_Perc<\/th>\n      <th>NRWm3_pct<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"searchHighlight":true,"dom":"Bfrtip","buttons":["csv","excel","pdf"],"columnDefs":[{"className":"dt-right","targets":[5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 6, 1, 3, ',', '.');\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background-color':'yellow'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50.000000 ? 'black' : 'red'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>must check huge outliers messing up things</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Initial exploration shows that:</p>
+<ol style="list-style-type: decimal">
+<li>On average, the % NWR varies quite dramatically across different ownership types (PUBLIC-owned ??% &lt; Other ??% &lt; Private ??% (more dispersed))</li>
+<li>Mean % NWR is lower for suppliers exclusively serving urban areas (??%) than for suppliers servin mixed-urb-rur (??%) … but sems quite disperserd.</li>
+<li>On average, the size of served population, is also a great source of variation in the %NRW - highest found in 500-900k size (58%) and smallest in 10-50k size (7%)</li>
+</ol>
+<center>
+<img src="output/Plot_DensNRW_byOwn.png" title="Plot_DensNRW_byOwn.png" alt="Plot_DensNRW_byOwn.png" />
+</center>
+<center>
+<img src="output/Plot_DensNRW_byLOC.png" title="Plot_DensNRW_byLOC.png" alt="Plot_DensNRW_byLOC.png" />
+</center>
+<center>
+<img src="output/Plot_DensNRW_bySIZE.png" title="Plot_DensNRW_bySIZE.png" alt="Plot_DensNRW_bySIZE.png" />
+</center>
+</div>
+<div id="nrw-correlation-with-suspected-determinant-factors" class="section level3">
+<h3>NRW correlation with “suspected” determinant factors</h3>
+<p>Visually explore whether the <strong>% of NRW</strong> shows any type of correlation with some variables that could be relevant:</p>
+<ol style="list-style-type: decimal">
+<li><strong><code>Q27_IndivMeter_Perc</code></strong> –&gt; no stryking connection</li>
+</ol>
+<center>
+<img src="output/Plot_grid_NWR_IndMetBY4.png" title="Plot_grid_NWR_IndMetBY4.png" alt="Plot_grid_NWR_IndMetBY4.png" />
+</center>
+<ol start="2" style="list-style-type: decimal">
+<li><strong><code>Q40_NetworkYrlyInspected_Perc</code></strong> –&gt; no stryking connection</li>
+</ol>
+<center>
+<img src="output/Plot_grid_NWR_NetInpsBY4.png" title="Plot_grid_NWR_NetInpsBY4.png" alt="Plot_grid_NWR_NetInpsBY4.png" />
+</center>
+<hr />
+<ol start="3" style="list-style-type: decimal">
+<li><strong><code>Q24_VolLossMech_Has</code></strong> –&gt; most suppliers say “Yes” (have a system to record VOLUME LOSSES)</li>
+</ol>
+<center>
+<img src="output/Plot_BOXNWR_VolLoss.png" title="Plot_BOXNWR_VolLoss.png" alt="Plot_BOXNWR_VolLoss.png" />
+</center>
+<ol start="4" style="list-style-type: decimal">
+<li><strong><code>Q39_LeaksDetection_Analyzed</code></strong> –&gt; most suppliers say “Yes” (have a systematic campaign to detect ruptures and LEAKS) and those cases show a somewhat lower NRW</li>
+</ol>
+<center>
+<img src="output/Plot_BOXNWR_Leaks.png" title="Plot_BOXNWR_Leaks.png" alt="Plot_BOXNWR_Leaks.png" />
+</center>
+<ol start="5" style="list-style-type: decimal">
+<li><strong><code>Q41_ClandConn_Analyzed</code></strong> –&gt; the vast majority suppliers say “Yes” (have a system) and those cases show a significantly lower NRW (for now the NO sub-sample is too small to further analyze)</li>
+</ol>
+<center>
+<img src="output/Plot_BOXNWR_Cland.png" title="Plot_BOXNWR_Cland.png" alt="Plot_BOXNWR_Cland.png" />
+</center>
+<blockquote>
+<blockquote>
+<p>NEXT … Further exploration ….. + Exist procedim for estimation of vol loss/ (Q24)<br />
+* (?) Is the year of operation anywhere connected with efficiency?<br />
+* (?) Is thestack of laws connected with efficiency (Expected inverse relation)?? <code>Q8a_c_Leg_comb</code> <code>Q8a_LegInst_Cover</code> <code>Q8b_LegInst_DirServ</code> “<code>Q8c_LegInst_DirQual</code> <code>Q8d_LegInst_Tarif</code>”,</p>
+</blockquote>
+</blockquote>
+</div>
+<div id="reliability-of-the-service-interruptions" class="section level3">
+<h3>Reliability of the service (Interruptions)</h3>
+<blockquote>
+<p>Lit Input: Performance can improve with: 1) carefully designed private sector participation in service provision 2) regulatory agencies that are transparent, accountable, and free of political interference, 3) strong accountability mechanisms for SOE. <span class="citation">(see Andrés, Schwartz, and Guasch 2013 )</span>.</p>
+</blockquote>
+<p>Y + Reliability = Q4… Q45 interruptions X + location + size + age? Q6 + Quality regulation (q8c) + SWIT penetration ? + % eng in staff + % IT in staff?</p>
+<p>The table below shows responses related to the incidence of service interruptions in the past 12 months.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;MX_REL.Rdata&quot;</span>))</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">library</span>(DT)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># class(tbl_descstat_cov)</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co"># SIMPLE TABLE WITH FILTER </span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#datatable(data= MX_REL  , filter = &#39;top&#39;)</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">DT<span class="op">::</span><span class="kw">datatable</span>(MX_REL, </a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">                  <span class="dt">elementId =</span> <span class="ot">NULL</span>, </a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">                  <span class="co">#filter = &#39;top&#39;,  </span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">                  <span class="dt">extensions =</span> <span class="st">&#39;Buttons&#39;</span>, </a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">                  <span class="dt">options =</span> <span class="kw">list</span>( <span class="dt">pageLength =</span> <span class="dv">50</span>,  <span class="dt">dom =</span> <span class="st">&#39;Bfrtip&#39;</span>, <span class="dt">buttons =</span> <span class="kw">c</span>( <span class="st">&#39;csv&#39;</span>, <span class="st">&#39;excel&#39;</span>)),</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">                  <span class="dt">caption =</span> <span class="st">&#39;Individual Supplier</span><span class="ch">\&#39;</span><span class="st">s Responses about Service Interruptions&#39;</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="st">    </span><span class="kw">formatRound</span>(<span class="st">&quot;Perc of network affected&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="st">    </span><span class="kw">formatRound</span>(<span class="st">&quot;Avg # days of interruption&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="st">        </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;Perc of network affected&quot;</span>, <span class="dt">color =</span> <span class="kw">styleInterval</span>( <span class="dv">50</span>, <span class="kw">c</span>(<span class="st">&#39;black&#39;</span>, <span class="st">&#39;red&#39;</span>)) )</a></code></pre></div>
+<div id="htmlwidget-aaa10feb92ee682c6d70" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aaa10feb92ee682c6d70">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption>Individual Supplier's Responses about Service Interruptions<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],["10545659240","10545659241","10545659243","10545659244","10545659245","10545659246","10545659247","10545659248","10545659249","10545659250","10545659251","10545659252","10545659253","10545659254","10545659255","10545659256","10545659257","10545659258","10545659259","10545659260"],["No","No","Yes","Yes","Yes","No","No","No","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","No","Yes","Yes","No"],[null,null,"80","40","0.5",null,null,null,"50","0.01","1","70","40","40",null,"40",null,"45","10",null],[null,null,"2","7","0",null,null,null,"1","5","0","0","0","7",null,"15",null,"180","1",null],[null,null,"IssueMaint","PlanMaint","IssueEnergy",null,null,null,"IssueEnergy","IssueMaint-Cleaning","BreakAdduct-Cleaning","IssueEnergy","IssueEnergy","PlanMaint",null,"IssueMaint",null,"PlanMaint-PlanStop","IssueEnergy",null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>M1_oper_id<\/th>\n      <th>Had Interruption past12m<\/th>\n      <th>Perc of network affected<\/th>\n      <th>Avg # days of interruption<\/th>\n      <th>Reason(s)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"dom":"Bfrtip","buttons":["csv","excel"],"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 3, 1, 3, ',', '.');\nDTWidget.formatRound(this, row, data, 4, 1, 3, ',', '.');\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50.000000 ? 'black' : 'red'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p>The chart below shows the most frequent causes for service interruption p</p>
+<center>
+<img src="output/ggInterrRes.png" alt="InterruptReasons" />
+</center>
+</div>
+</div>
+<div id="swit" class="section level2">
+<h2>2) SWIT</h2>
+<p>Use of SWIT still not widespread for various barriers: + high capital investments + slow cost recovery + limited technical capacity, particularly for small utilities, + lack of integration between different technologies</p>
+<div id="summary-of-swit-adoption-in-the-mexico-sample" class="section level3">
+<h3>Summary of SWIT adoption in the Mexico sample</h3>
+<p>The table belows shows to what degree the WSS suppliers in the sample <code>nrow(MX_REL)</code> already adopt various types of Smart Water Management: dedicated R&amp;D and IT departments, Network Management systems, GIS, Hidraulic Models, DMA &amp; pressure management, and Smart meters.</p>
+<p>The % of adoption (albeit Count includes when tools are still “in construction”) appear quite high.</p>
+<blockquote>
+<p>NOTES + Some of the respondents are actually large companies comglomerate, so will have to understand better their distribution by size and ownership…. + Even when companies say “yes” to the adoption (e.g. smart meter) it may be just a pilot…</p>
+</blockquote>
+<center>
+<img src="./output/TblSWIT_tbl.png" title="TblSWIT_tbl.png" alt="TblSWIT_tbl.png" />
+</center>
+<p>Below is a different graph to show the degree of adoption of various types of technologies.</p>
+<center>
+<img src="./output/ggSWITbar.png" title="ggSWITbar.png" alt="ggSWITbar.png" />
+</center>
+</div>
+</div>
+<div id="corporate-governance" class="section level2">
+<h2>3) CORPORATE GOVERNANCE</h2>
+<!-- Y + Index of regulation (Q8a....Q8d) cumulative -->
+<!--    +  -->
+<p>We learned from the survey who is entitled to hire &amp; fire the CEO / President of the agency, his/her remuneration the Sr. Directors.</p>
+<div id="appointment-of-ceopresidentsr-directors-in-the-mexico-sample" class="section level3">
+<h3>Appointment of CEO/President/Sr Directors in the Mexico sample</h3>
+<p>The plots below compare the above across types of ownership and size of the covered area.</p>
+<ul>
+<li>It would appear that the “Prefeito/Gobernador” is in charge in most of the public agencies</li>
+<li>In privately owned suppliers, the Board seems the have the responsability monst cases</li>
+</ul>
+<center>
+<img src="./output/Q46hireCEO_own_plot.png" title="Q46hireCEO_own_plot.png" alt="Q46hireCEO_own_plot.png" />
+</center>
+<center>
+<img src="./output/Q49fireCEO_own_plot.png" title="Q49fireCEO_own_plot.png" alt="Q49fireCEO_own_plot.png" />
+</center>
+<center>
+<img src="./output/Q46hireCEO_size_plot.png" alt="Q46hireCEO_size_plot.png" />
+</center>
+<center>
+<img src="./output/Q49fireCEO_size_plot.png" alt="Q49fireCEO_size_plot.png" />
+</center>
+<hr />
+<center>
+<img src="./output/Q48Dir_own_plot.png" alt="Q48Dir_own_plot.png" />
+</center>
+<center>
+<img src="./output/Q48Dir_size_plot.png" alt="Q48Dir_size_plot.png" />
+</center>
+</div>
+</div>
+<div id="finance" class="section level2">
+<h2>4) FINANCE</h2>
+<blockquote>
+<p>Lit Input: 1) under-investment + dilapidated infrastructure –&gt; INEFFICIENCIES <span class="citation">(see Arniella 2018 )</span> 2) Energy consumption much of O&amp;M costs <span class="citation">(see Lackey and Fillmore 2017)</span></p>
+</blockquote>
+</div>
+<div id="tariffs" class="section level2">
+<h2>5) TARIFFS</h2>
+<blockquote>
+<p>IADB (?): we have no idea if tariffs are low or high in LAC (people say are too low, but in fact they are not showing in the Database)</p>
+</blockquote>
+</div>
+<div id="reference" class="section level2 unnumbered">
+<h2>REFERENCE</h2>
+<div id="refs" class="references">
+<div id="ref-andres_uncovering_2013">
+<p>Andrés, Luis A., Jordan Schwartz, and J. Luis Guasch. 2013. <em>Uncovering the Drivers of Utility Performance: Lessons from Latin America and the Caribbean on the Role of the Private Sector, Regulation, and Governance in the Power, Water, and Telecommunication Sectors</em>. The World Bank. <a href="https://doi.org/10.1596/978-0-8213-9660-5">https://doi.org/10.1596/978-0-8213-9660-5</a>.</p>
+</div>
+<div id="ref-arniella_can_2018">
+<p>Arniella, Elio. 2018. “CAN SMART TECHNOLOGIES IMPROVE EFFICIENCY IN THE WATER AND SANITATION SECTOR? Pressure Management Case Studies.” Nota Tecnica. IADB.</p>
+</div>
+<div id="ref-gonzalez-gomez_why_2011">
+<p>González-Gómez, Francisco, Miguel A. García-Rubio, and Jorge Guardiola. 2011. “Why Is Non-Revenue Water so High in so Many Cities?” <em>International Journal of Water Resources Development</em> 27 (2): 345–60. <a href="https://doi.org/10.1080/07900627.2010.548317">https://doi.org/10.1080/07900627.2010.548317</a>.</p>
+</div>
+<div id="ref-lackey_energy_2017">
+<p>Lackey, Katy, and Lauren Fillmore. 2017. “Energy Management for Water Utilities in Latin America and the Caribbean - Exploring Energy Efficiency and Energy Recovery Potential in Wastewater Treatment Plants.” Water Environment &amp; Reuse Foundation (WE&amp;RF) for World Bank Group.</p>
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Later on, I would like to explore if <em>(?) Is the urbanization process (size, local distribution, rate) causing the lack (access, quality, affordability ) to service in the region (controlling for physical assets / hydrological condition, pop #, etc) ? ??</em><a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
 
 <p class="footer">
 	<span style="color:red">Work in progress, not (yet) ready for dissemination.</span>

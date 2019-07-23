@@ -23,10 +23,10 @@ Rscript build_site.R
 # check status
 git status
 
-# Add ALL changes to git Index.
-# git add -A
+	# Add ALL changes to git Index.
+	# git add -A
 git add -u
-git add copy_folders.R
+	# git add output/*
 
 # Create Std commit "message"....
 msg="rebuilt on `date`"

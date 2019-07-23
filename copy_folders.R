@@ -2,12 +2,12 @@
 #                                 ./BrazilWaterSurvey/copy_folders.R    
 #     FILE INTENDED TO COPY THE OUTPUT (png, etc) from the .Rproj Dir, to the same in website 
 #
-#				             {This is invoked by {MexicoWaterSurvey.Lula_deploy.sh}
+#				             {This is invoked by {BrazilWaterSurvey.Lula_deploy.sh}
 #==================================================================================================#
 
 
 #==================================================================================================#
-#          {OKKIO, I am NOT in .Rproject, because the Lula_deploy.sh sets /DataMEX/MexicoWaterSurvey}
+#          {OKKIO, I am NOT in .Rproject, because the Lula_deploy.sh sets /DataMEX/MEXwatersurvey}
 #======= Copy [[OUTPUT]] FILES FROM PRIVATE WD to website corresp FOLDERS. 
 #dr_here()
 

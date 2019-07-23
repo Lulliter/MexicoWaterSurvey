@@ -446,7 +446,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">The sample of Water &amp; Sanitation Providers</h1>
-<h4 class="date">Last run: July 3, 2019</h4>
+<h4 class="date">Last run: July 23, 2019</h4>
 
 </div>
 
@@ -457,28 +457,34 @@ div.tocify {
 <div id="sampling-design" class="section level2">
 <h2>Sampling design</h2>
 <ol style="list-style-type: decimal">
-<li>In order to match our sample to official Mexico admin boundaries (as in Census 2010), I downloaded from INEGI the ID keys and shapefiles (polygons) for<br />
-</li>
-</ol>
+<li><p>The sample for the survey is mutuated from the sampling design of LAPOP because the goal is to survey the WSSS providers in the <em>same</em> areas where LAPOP was interviewing households. LAPOP households interviews covered <strong>1,563 IDs</strong> located in <strong>260 clusters</strong>, found in <strong>110 municipios</strong>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <ul>
-<li>Entidad (32)</li>
-<li>Municipios (2546)</li>
-<li>Localidades URb( 4525 of 192,217 ) ~ multipolygons</li>
-<li>Localidades Rur (187719 of 192,217) ~ points</li>
-<li>AGEB urb- 56195</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>The sample for the survey is mutuated from the sampling design of LAPOP because the goal is to survey the WSSS providers in the <em>same</em> areas where LAPOP was interviewing households. LAPOP households interviews covered <strong>1,563 IDs</strong> located in <strong>260 clusters</strong>, found in <strong>110 municipios</strong>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></li>
+<li>UPDATE FROM LAPOP 2019: LAPOP households interviews covered <strong>1,446 IDs</strong> located in <strong>232 clusters</strong>, found in <strong>110 {<em>BUT, even if the # of municipio is the same, only 105 were actually the same, there are 5 different ones</em>} municipios</strong>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+</ul></li>
 </ol>
-<blockquote>
-<p>UPDATE FROM LAPOP 2019: LAPOP households interviews covered <strong>1,446 IDs</strong> located in <strong>232 clusters</strong>, found in <strong>110 {<em>BUT, even if the # of municipio is the same, only 105 were actually the same, there are 5 different ones</em>} municipios</strong>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-</blockquote>
+<p>LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (might be slightly changed in 2018)</p>
 <center>
 <img src="output/Qgis_Lapop2016Ent.png" alt="LAPOP clusters (over Ent) of hh interviewed in 2016" />
 </center>
-<p>LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (might be slightly changed in 2018)</p>
-<ol start="3" style="list-style-type: decimal">
+<ol start="2" style="list-style-type: decimal">
 <li><p>Based on those, we identified the (expected) clusters for POPA 2018 sample &amp; matched each location with the pertinent WSS Supplier in the area. We arrived to a sample of <strong>96 different suppliers</strong>.</p></li>
+<li><p>We asked to the suppliers interviewed to confirm the list of municipios they serve, so that to have a precise understanding of the respective area of coverage.</p></li>
+</ol>
+<div id="which-states-entidades-and-municipios-are-covered-by-the-sample" class="section level3">
+<h3>Which States (Entidades) and Municipios are covered by the Sample</h3>
+<blockquote>
+<p>The States (Entidades) <em>currently</em> covered by the sample are <strong>??</strong> (all)</p>
+</blockquote>
+<center>
+<img src="output/01_tmap_PopaSampleE.png" alt="Mexico Entidades in Sample" />
+</center>
+<blockquote>
+<p>The Municipios <em>currently</em> covered by the sample are <strong>???? </strong> (out of 2456)</p>
+</blockquote>
+<center>
+<img src="output/01_tmap_PopaSampleM.png" alt="MExico municipios in sample" />
+</center>
+<ol start="4" style="list-style-type: decimal">
 <li><p>This survey encompasses two main goals:</p>
 <ul>
 <li><ol style="list-style-type: upper-roman">
@@ -491,10 +497,11 @@ div.tocify {
 </ol>
 <p>What follow is a preliminary analysis of the 2 respective samples.</p>
 </div>
+</div>
 <div id="phase-i-the-water-sanitation-providers" class="section level2">
 <h2>(PHASE I) The Water &amp; Sanitation Providers</h2>
-<div id="the-universe-of-organismos-operadores-in-mexico" class="section level4">
-<h4>THE UNIVERSE OF ORGANISMOS OPERADORES IN MEXICO</h4>
+<div id="the-universe-of-wss-suppliers-in-mexico" class="section level4">
+<h4>The universe of WSS suppliers in Mexico</h4>
 <p>INEGI has identified a total of <em>2,688 “Organismos Operadores”</em> (OO) in the <em>“Censo de Captacion, Tratamiento y Suministro de Agua”</em> conducted in 2014 and published in 2016 <span class="citation">(INEGI 2016 )</span>. Of all of these, some ~700 could be rightly defined as <em>“Organismos Operadores”</em>, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management.</p>
 <pre><code>&gt;  The service providers *&quot;organismo que presta el servicio de captaciòn, tratamiento y suministro de agua&quot;* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census</code></pre>
 <ul>
@@ -599,13 +606,13 @@ No clasificado
 59.15
 </td>
 <td style="text-align:right;font-weight: bold;color: white;background-color: #D7261E;">
-59.15
+59
 </td>
 <td style="text-align:right;font-weight: bold;color: white;background-color: #D7261E;">
 59.15
 </td>
 <td style="text-align:right;font-weight: bold;color: white;background-color: #D7261E;">
-59.15
+59
 </td>
 </tr>
 <tr>
@@ -619,13 +626,13 @@ OPD paramunicipal
 26.38
 </td>
 <td style="text-align:right;">
-85.52
+86
 </td>
 <td style="text-align:right;">
 26.38
 </td>
 <td style="text-align:right;">
-85.52
+86
 </td>
 </tr>
 <tr>
@@ -639,13 +646,13 @@ Servicio Centralizado del Municipio
 10.88
 </td>
 <td style="text-align:right;">
-96.40
+96
 </td>
 <td style="text-align:right;">
 10.88
 </td>
 <td style="text-align:right;">
-96.40
+96
 </td>
 </tr>
 <tr>
@@ -659,13 +666,13 @@ OPD paraestatal
 2.62
 </td>
 <td style="text-align:right;">
-99.02
+99
 </td>
 <td style="text-align:right;">
 2.62
 </td>
 <td style="text-align:right;">
-99.02
+99
 </td>
 </tr>
 <tr>
@@ -679,13 +686,13 @@ Concesionario privado
 0.44
 </td>
 <td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
-99.47
+99
 </td>
 <td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
 0.44
 </td>
 <td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
-99.47
+99
 </td>
 </tr>
 <tr>
@@ -699,13 +706,13 @@ Organismo Desconcentrado del ayuntamiento
 0.31
 </td>
 <td style="text-align:right;">
-99.78
+100
 </td>
 <td style="text-align:right;">
 0.31
 </td>
 <td style="text-align:right;">
-99.78
+100
 </td>
 </tr>
 <tr>
@@ -719,13 +726,13 @@ Organismo Desconcentrado de la entidad
 0.09
 </td>
 <td style="text-align:right;">
-99.87
+100
 </td>
 <td style="text-align:right;">
 0.09
 </td>
 <td style="text-align:right;">
-99.87
+100
 </td>
 </tr>
 <tr>
@@ -739,13 +746,13 @@ Operador federal
 0.09
 </td>
 <td style="text-align:right;">
-99.96
+100
 </td>
 <td style="text-align:right;">
 0.09
 </td>
 <td style="text-align:right;">
-99.96
+100
 </td>
 </tr>
 <tr>
@@ -759,13 +766,13 @@ Empresa publico-privada
 0.04
 </td>
 <td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
-100.00
+100
 </td>
 <td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
 0.04
 </td>
 <td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
-100.00
+100
 </td>
 </tr>
 <tr>
@@ -779,13 +786,13 @@ Todos los tipos
 0.00
 </td>
 <td style="text-align:right;">
-100.00
+100
 </td>
 <td style="text-align:right;">
 0.00
 </td>
 <td style="text-align:right;">
-100.00
+100
 </td>
 </tr>
 <tr>
@@ -805,7 +812,7 @@ NA
 0.00
 </td>
 <td style="text-align:right;">
-100.00
+100
 </td>
 </tr>
 <tr>
@@ -819,13 +826,13 @@ Total
 100.00
 </td>
 <td style="text-align:right;font-weight: bold;">
-100.00
+100
 </td>
 <td style="text-align:right;font-weight: bold;">
 100.00
 </td>
 <td style="text-align:right;font-weight: bold;">
-100.00
+100
 </td>
 </tr>
 </tbody>
@@ -870,13 +877,13 @@ MuyPequeno &lt;10k
 46.4
 </td>
 <td style="text-align:right;">
-46.4
+46
 </td>
 <td style="text-align:right;">
 46.4
 </td>
 <td style="text-align:right;">
-46.4
+46
 </td>
 </tr>
 <tr>
@@ -890,13 +897,13 @@ Pequeno 10-50k
 41.3
 </td>
 <td style="text-align:right;">
-87.7
+88
 </td>
 <td style="text-align:right;">
 41.3
 </td>
 <td style="text-align:right;">
-87.7
+88
 </td>
 </tr>
 <tr>
@@ -910,13 +917,13 @@ Mediano 50-100k
 6.0
 </td>
 <td style="text-align:right;">
-93.7
+94
 </td>
 <td style="text-align:right;">
 6.0
 </td>
 <td style="text-align:right;">
-93.7
+94
 </td>
 </tr>
 <tr>
@@ -930,13 +937,13 @@ Mediano 100-200k
 2.4
 </td>
 <td style="text-align:right;">
-96.0
+96
 </td>
 <td style="text-align:right;">
 2.4
 </td>
 <td style="text-align:right;">
-96.0
+96
 </td>
 </tr>
 <tr>
@@ -950,13 +957,13 @@ Grande 500-900k
 1.4
 </td>
 <td style="text-align:right;">
-97.4
+97
 </td>
 <td style="text-align:right;">
 1.4
 </td>
 <td style="text-align:right;">
-97.4
+97
 </td>
 </tr>
 <tr>
@@ -970,13 +977,13 @@ Mediano 200-300k
 1.0
 </td>
 <td style="text-align:right;">
-98.4
+98
 </td>
 <td style="text-align:right;">
 1.0
 </td>
 <td style="text-align:right;">
-98.4
+98
 </td>
 </tr>
 <tr>
@@ -990,13 +997,13 @@ Mediano 300-500k
 0.8
 </td>
 <td style="text-align:right;">
-99.2
+99
 </td>
 <td style="text-align:right;">
 0.8
 </td>
 <td style="text-align:right;">
-99.2
+99
 </td>
 </tr>
 <tr>
@@ -1010,13 +1017,13 @@ Muy grande &gt;900k
 0.8
 </td>
 <td style="text-align:right;">
-100.0
+100
 </td>
 <td style="text-align:right;">
 0.8
 </td>
 <td style="text-align:right;">
-100.0
+100
 </td>
 </tr>
 <tr>
@@ -1036,7 +1043,7 @@ NA
 0.0
 </td>
 <td style="text-align:right;">
-100.0
+100
 </td>
 </tr>
 <tr>
@@ -1050,28 +1057,18 @@ Total
 100.0
 </td>
 <td style="text-align:right;font-weight: bold;">
-100.0
+100
 </td>
 <td style="text-align:right;font-weight: bold;">
 100.0
 </td>
 <td style="text-align:right;font-weight: bold;">
-100.0
+100
 </td>
 </tr>
 </tbody>
 </table>
 </div>
-</div>
-<div id="entidades-and-municipios-in-sample" class="section level2">
-<h2>Entidades and Municipios in Sample</h2>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>…… MUST REVISE….</p>
-</blockquote>
-</blockquote>
-</blockquote>
 </div>
 <div id="phase-ii-the-households-served-in-the-respective-service-areas-of-the-surveyed-water-sanitation-providers" class="section level2">
 <h2>(PHASE II) The households served in the respective service areas of the surveyed Water &amp; Sanitation Providers</h2>

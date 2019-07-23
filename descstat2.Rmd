@@ -1,5 +1,9 @@
 ---
 title: "Descriptive Statistic of households"
+date: "Last run: `r format(Sys.time(), '%B %e, %Y')`"
+output: 
+  html_document:
+    code_folding: show
 bibliography: POPA_WaterSurvey.bib
 ---
 
@@ -22,18 +26,23 @@ knitr::opts_chunk$set(fig.retina = 2,
 # To generate tables using summarytool s own html rendering, the .Rmd document s configuration part (yaml) must point to the package s summarytools.css file.
 ```
 
-```{r LOADPCK, echo=FALSE, message=FALSE}
-library(tidyverse)
-library(stringr)
-library(forcats)
-library(scales)
-library(patchwork)
-library(countrycode)
-library(sf)
-library(kableExtra)
-library(summarytools)
-library(here)# OKKIO, I am in /DataMEX, because it contains a file `.here`
-here::dr_here(show_reason = T)
+```{r LOADPCK, message=FALSE, warning=FALSE, include=FALSE}
+if (!require("pacman")) {
+	install.packages('pacman' )
+}
+
+
+library(pacman) # for loading packages
+p_load(tidyverse,
+		 stringr,
+		 forcats,
+		 scales,
+		 patchwork,
+		 countrycode,
+		 sf,
+		 here,
+		 kableExtra,
+		 summarytools) 
 ```
 
 
