@@ -37,8 +37,9 @@ p_load(tidyverse,
 		 here,
 		 kableExtra,
 		 summarytools,
-		 pander, 
-		 DT) 
+		 pander,
+		 DT,
+		 memisc) # now needed 
 ```
 
 

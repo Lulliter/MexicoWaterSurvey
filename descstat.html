@@ -565,7 +565,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Descriptive Statistics of Survey WSS Operators Mexico</h1>
-<h4 class="date">Last run: July 23, 2019</h4>
+<h4 class="date">Last run: July 24, 2019</h4>
 
 </div>
 
@@ -866,7 +866,7 @@ div.tocify {
 </tbody>
 </table>
 <ul>
-<li>The WSS suppliers in the sample - as of July 23, 2019 - cover an average of <strong>3.55 municipios</strong> (almost always in one State), corresponding to a mean <strong>covered population of 1151679.07</strong>.</li>
+<li>The WSS suppliers in the sample - as of July 24, 2019 - cover an average of <strong>3.55 municipios</strong> (almost always in one State), corresponding to a mean <strong>covered population of 1151679.07</strong>.</li>
 <li>The suppliers on average serve localities that are <strong>73.54 urban</strong>.</li>
 </ul>
 </div>
@@ -885,7 +885,7 @@ div.tocify {
 </div>
 <div id="summary-of-key-service-charateristics" class="section level3">
 <h3>Summary of key service charateristics</h3>
-<p>Observations on the WSS suppliers surveyed as of July 23, 2019, …</p>
+<p>Observations on the WSS suppliers surveyed as of July 24, 2019, …</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_descstat_covserv.Rdata&quot;</span>))</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co"># class(tbl_descstat_cov)</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"></a>
@@ -1162,8 +1162,8 @@ div.tocify {
 <a class="sourceLine" id="cb4-16" data-line-number="16"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatRound</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-17" data-line-number="17"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dt">backgroundColor =</span> <span class="st">&quot;yellow&quot;</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-18" data-line-number="18"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dt">color =</span> <span class="kw">styleInterval</span>(<span class="dv">50</span>, <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>)))</a></code></pre></div>
-<div id="htmlwidget-0c6f852db6ab7fc9f5f0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0c6f852db6ab7fc9f5f0">{"x":{"filter":"none","extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],["Guanajuato","Guanajuato","Sonora","Ciudad de México","San Luis Potosí","Veracruz","Puebla","Querétaro","Coahuila","San Luis Potosí","Coahuila","Chihuahua","Tabasco","México","México","México","Puebla","Guerrero","Guanajuato","Hidalgo"],["Public","Public","Public","Public","Public","Public","Public","Public","Public",null,"Public","Public","Public","Public","Public",null,"Public",null,null,"Public"],["Urb-Rur","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Rural","Urb-Rur","Urban","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Rural","Urban","Urb-Rur","Urb-Rur"],["Medium 300-500k","Medium 100-200k","Small 10-50k","Large 1m-10m","Medium 50-100k","Large 500k-1m","Very Small &lt;10k","Large 1m-10m","Small 10-50k","Large 1m-10m","Medium 300-500k","Small 10-50k","Large 1m-10m","Large 1m-10m","Large 500k-1m",null,null,null,null,null],[90,75,72,71.2,79.3,80,999,85,80,43,64,90,999,65,90,75,999,999,90,80],[5,89.9972079217307,null,48.02637559671,49.435005767617,63.0927473074958,null,94.3172996249485,57.2135416666667,40,32.7041266663683,32.6039745090856,85.6645930927576,25.512104283054,11.6666666666667,54.5454545454545,null,null,-519.370792455323,90.3898562741846]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>entidad<\/th>\n      <th>Q1_ownership_lbl<\/th>\n      <th>Q4_UrbRur_Mix<\/th>\n      <th>Cov_pop_rango_lbl<\/th>\n      <th>Q13a_m3_Fatt_Res_Perc<\/th>\n      <th>NRWm3_pct<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"searchHighlight":true,"dom":"Bfrtip","buttons":["csv","excel","pdf"],"columnDefs":[{"className":"dt-right","targets":[5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 6, 1, 3, ',', '.');\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background-color':'yellow'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50.000000 ? 'black' : 'red'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-ab9e4fcf504f3dfe438f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ab9e4fcf504f3dfe438f">{"x":{"filter":"none","extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],["Guanajuato","Guanajuato","Sonora","Ciudad de México","San Luis Potosí","Veracruz","Puebla","Querétaro","Coahuila","San Luis Potosí","Coahuila","Chihuahua","Tabasco","México","México","México","Puebla","Guerrero","Guanajuato","Hidalgo"],["Public","Public","Public","Public","Public","Public","Public","Public","Public",null,"Public","Public","Public","Public","Public",null,"Public",null,null,"Public"],["Urb-Rur","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Rural","Urb-Rur","Urban","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Rural","Urban","Urb-Rur","Urb-Rur"],["Medium 300-500k","Medium 100-200k","Small 10-50k","Large 1m-10m","Medium 50-100k","Large 500k-1m","Very Small &lt;10k","Large 1m-10m","Small 10-50k","Large 1m-10m","Medium 300-500k","Small 10-50k","Large 1m-10m","Large 1m-10m","Large 500k-1m",null,null,null,null,null],[90,75,72,71.2,79.3,80,999,85,80,43,64,90,999,65,90,75,999,999,90,80],[5,89.9972079217307,null,48.02637559671,49.435005767617,63.0927473074958,null,94.3172996249485,57.2135416666667,40,32.7041266663683,32.6039745090856,85.6645930927576,25.512104283054,11.6666666666667,54.5454545454545,null,null,-519.370792455323,90.3898562741846]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>entidad<\/th>\n      <th>Q1_ownership_lbl<\/th>\n      <th>Q4_UrbRur_Mix<\/th>\n      <th>Cov_pop_rango_lbl<\/th>\n      <th>Q13a_m3_Fatt_Res_Perc<\/th>\n      <th>NRWm3_pct<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"searchHighlight":true,"dom":"Bfrtip","buttons":["csv","excel","pdf"],"columnDefs":[{"className":"dt-right","targets":[5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 6, 1, 3, ',', '.');\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background-color':'yellow'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50.000000 ? 'black' : 'red'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -1253,8 +1253,8 @@ div.tocify {
 <a class="sourceLine" id="cb5-13" data-line-number="13"><span class="st">    </span><span class="kw">formatRound</span>(<span class="st">&quot;Perc of network affected&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb5-14" data-line-number="14"><span class="st">    </span><span class="kw">formatRound</span>(<span class="st">&quot;Avg # days of interruption&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb5-15" data-line-number="15"><span class="st">        </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;Perc of network affected&quot;</span>, <span class="dt">color =</span> <span class="kw">styleInterval</span>( <span class="dv">50</span>, <span class="kw">c</span>(<span class="st">&#39;black&#39;</span>, <span class="st">&#39;red&#39;</span>)) )</a></code></pre></div>
-<div id="htmlwidget-c4f920722962e6b314cc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c4f920722962e6b314cc">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption>Individual Supplier's Responses about Service Interruptions<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],["10545659240","10545659241","10545659243","10545659244","10545659245","10545659246","10545659247","10545659248","10545659249","10545659250","10545659251","10545659252","10545659253","10545659254","10545659255","10545659256","10545659257","10545659258","10545659259","10545659260"],["No","No","Yes","Yes","Yes","No","No","No","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","No","Yes","Yes","No"],[null,null,"80","40","0.5",null,null,null,"50","0.01","1","70","40","40",null,"40",null,"45","10",null],[null,null,"2","7","0",null,null,null,"1","5","0","0","0","7",null,"15",null,"180","1",null],[null,null,"IssueMaint","PlanMaint","IssueEnergy",null,null,null,"IssueEnergy","IssueMaint-Cleaning","BreakAdduct-Cleaning","IssueEnergy","IssueEnergy","PlanMaint",null,"IssueMaint",null,"PlanMaint-PlanStop","IssueEnergy",null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>M1_oper_id<\/th>\n      <th>Had Interruption past12m<\/th>\n      <th>Perc of network affected<\/th>\n      <th>Avg # days of interruption<\/th>\n      <th>Reason(s)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"dom":"Bfrtip","buttons":["csv","excel"],"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 3, 1, 3, ',', '.');\nDTWidget.formatRound(this, row, data, 4, 1, 3, ',', '.');\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50.000000 ? 'black' : 'red'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-4a7eca0575152672f1f3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4a7eca0575152672f1f3">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption>Individual Supplier's Responses about Service Interruptions<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],["10545659240","10545659241","10545659243","10545659244","10545659245","10545659246","10545659247","10545659248","10545659249","10545659250","10545659251","10545659252","10545659253","10545659254","10545659255","10545659256","10545659257","10545659258","10545659259","10545659260"],["No","No","Yes","Yes","Yes","No","No","No","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","No","Yes","Yes","No"],[null,null,"80","40","0.5",null,null,null,"50","0.01","1","70","40","40",null,"40",null,"45","10",null],[null,null,"2","7","0",null,null,null,"1","5","0","0","0","7",null,"15",null,"180","1",null],[null,null,"IssueMaint","PlanMaint","IssueEnergy",null,null,null,"IssueEnergy","IssueMaint-Cleaning","BreakAdduct-Cleaning","IssueEnergy","IssueEnergy","PlanMaint",null,"IssueMaint",null,"PlanMaint-PlanStop","IssueEnergy",null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>M1_oper_id<\/th>\n      <th>Had Interruption past12m<\/th>\n      <th>Perc of network affected<\/th>\n      <th>Avg # days of interruption<\/th>\n      <th>Reason(s)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"dom":"Bfrtip","buttons":["csv","excel"],"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 3, 1, 3, ',', '.');\nDTWidget.formatRound(this, row, data, 4, 1, 3, ',', '.');\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50.000000 ? 'black' : 'red'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p>The chart below shows the most frequent causes for service interruption p</p>
 <center>
 <img src="output/ggInterrRes.png" alt="InterruptReasons" />
@@ -1293,23 +1293,23 @@ div.tocify {
 <li>In privately owned suppliers, the Board seems the have the responsability monst cases</li>
 </ul>
 <center>
-<img src="./output/Q46hireCEO_own_plot.png" title="Q46hireCEO_own_plot.png" alt="Q46hireCEO_own_plot.png" />
+<img src="output/Q46hireCEO_own_plot.png" title="Q46hireCEO_own_plot.png" alt="Q46hireCEO_own_plot.png" />
 </center>
 <center>
-<img src="./output/Q49fireCEO_own_plot.png" title="Q49fireCEO_own_plot.png" alt="Q49fireCEO_own_plot.png" />
+<img src="output/Q49fireCEO_own_plot.png" title="Q49fireCEO_own_plot.png" alt="Q49fireCEO_own_plot.png" />
 </center>
 <center>
-<img src="./output/Q46hireCEO_size_plot.png" alt="Q46hireCEO_size_plot.png" />
+<img src="output/Q46hireCEO_size_plot.png" alt="Q46hireCEO_size_plot.png" />
 </center>
 <center>
-<img src="./output/Q49fireCEO_size_plot.png" alt="Q49fireCEO_size_plot.png" />
+<img src="output/Q49fireCEO_size_plot.png" alt="Q49fireCEO_size_plot.png" />
 </center>
 <hr />
 <center>
-<img src="./output/Q48Dir_own_plot.png" alt="Q48Dir_own_plot.png" />
+<img src="output/Q48Dir_own_plot.png" alt="Q48Dir_own_plot.png" />
 </center>
 <center>
-<img src="./output/Q48Dir_size_plot.png" alt="Q48Dir_size_plot.png" />
+<img src="output/Q48Dir_size_plot.png" alt="Q48Dir_size_plot.png" />
 </center>
 </div>
 </div>

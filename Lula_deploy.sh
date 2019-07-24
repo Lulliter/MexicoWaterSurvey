@@ -38,7 +38,7 @@ fi
 git commit -m "$msg"
 
 		# or git commit -m "new QGIS map with fences in sample"
-		# git commit -m "drafted Desc"
+		# git commit -m "drafted Desc- COV + SWIT"
 		
 # Push source and build repos.
 git push origin master
