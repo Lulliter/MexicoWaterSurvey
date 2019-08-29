@@ -37,7 +37,7 @@ fi
 # ... Commit Those changes.
 git commit -m "$msg"
 
-		# or git commit -m "new QGIS map with fences in sample"
+		# or git commit -m "a pari w / BRA  fino a Gov"
 		# git commit -m "drafted Desc- COV + SWIT"
 		
 # Push source and build repos.
