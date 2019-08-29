@@ -37,7 +37,7 @@ fi
 # ... Commit Those changes.
 git commit -m "$msg"
 
-		# or git commit -m "a pari w / BRA  fino a Gov"
+		# or git commit -m "No AWS -- Switched to Githubpage"
 		# git commit -m "drafted Desc- COV + SWIT"
 		
 # Push source and build repos.
