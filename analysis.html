@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -71,7 +72,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -232,48 +232,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3,h4",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -322,8 +283,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -435,10 +394,10 @@ div.tocify {
 <p>Analysis of Survey WSS Operators Mexico</p>
 <div id="some-hypothesis" class="section level1">
 <h1>some hypothesis</h1>
-<p>• p.9 “digital water / smart metering could reduce costs of identifying leakage, but these savings are actually small compared to the cost of fixing the leakages (huge)”! o we are trying to assess where operators stand but is it really effective? (should this be priority to push)? • p.10 water reuse saving cold be also huge, but adoption will be slow… (except in places with such shortage of fresh water that it would be important) • p.35 urbanization is associated to higher consumption per capita (-) / as well as could reduce unit cost of networks (+) —&gt; hence the effects are mixed</p>
+<p>â¢ p.9 âdigital water / smart metering could reduce costs of identifying leakage, but these savings are actually small compared to the cost of fixing the leakages (huge)â! o we are trying to assess where operators stand but is it really effective? (should this be priority to push)? â¢ p.10 water reuse saving cold be also huge, but adoption will be slow… (except in places with such shortage of fresh water that it would be important) â¢ p.35 urbanization is associated to higher consumption per capita (-) / as well as could reduce unit cost of networks (+) â&gt; hence the effects are mixed</p>
 <ul>
 <li>we have no idea if tariffs are low or high in LAC (people say are too low, but in fact they are not showing in the Database)</li>
-<li>or maybe it is that metering is not widespread … and there are leakages</li>
+<li>or maybe it is that metering is not widespread â¦ and there are leakages</li>
 </ul>
 </div>
 
@@ -467,6 +426,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

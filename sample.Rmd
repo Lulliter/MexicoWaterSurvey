@@ -36,12 +36,12 @@ if (!require("pacman")) {
 
 library(pacman) # for loading packages
 p_load(tidyverse,
-		 stringr,
-		 forcats,
-		 scales,
-		 patchwork,
-		 countrycode,
-		 sf,
+		 # stringr,
+		 # forcats,
+		 # scales,
+		 # patchwork,
+		 # countrycode,
+		 # sf,
 		 here,
 		 kableExtra,
 		 summarytools) 
@@ -155,11 +155,11 @@ What follow is a preliminary analysis of the 2 respective samples.
 
 INEGI has identified a total of _2,688  "Organismos Operadores"_ (OO) in the _"Censo de Captacion, Tratamiento y Suministro de Agua"_  conducted in 2014 and published in 2016 [ @inegi_panorama_2016 ].  Of all of these, some ~700 could be rightly defined as _"Organismos Operadores"_, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management. 
 
-	>  The service providers *"organismo que presta el servicio de captaciòn, tratamiento y suministro de agua"* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census
+	>  The service providers *"organismo que presta el servicio de captaciÃÂ²n, tratamiento y suministro de agua"* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census
 
 + JURIDICAL CATEGORY:
 	* 2401 (of 2668) are _servicios del sector publico_
-	* 257 (of 2668) are _asociaciòn civil_
+	* 257 (of 2668) are _asociaciÃÂ²n civil_
 	* 30 (of 2668) are _sociedad mercantil con fines de lucro o sociedad cooperativa_
 
 In this project, the classification that we use is mostly derived from a _Nota Tecnica_ prepared by some colleagues of the IADB, WSA division [See @riquelme_lor_2018, pp. 1-3]. This managed to retreive some basic information on **2,252 Prestadores**. 
@@ -175,18 +175,18 @@ In this project, the classification that we use is mostly derived from a _Nota T
 
 + EMPLOYED PERSONNEL:
 	* personal ocupado por sexo; 81.3% con trabajadores hombres y 18.7% mujeres
-	* obreros y tÃ©cnicos; 76,744 obreros y tÃ©cnicos (62.5%)/un total de 117 866 puestos de trabajo
+	* obreros y tÃÂÃÂ©cnicos; 76,744 obreros y tÃÂÃÂ©cnicos (62.5%)/un total de 117 866 puestos de trabajo
 	* empleados y directivos; 
 	* ~~personal no remunerado~~ 3,764 trabaja- dores no remunerados/un total de 117 866 puestos de trabaj	 
 	* ~~promedio de horas trabajadas~~ 
-	* ~~personal no dependiente de la razòn social~~ 
+	* ~~personal no dependiente de la razÃÂ²n social~~ 
 	* ~~remuneraciones pagadas~~ 
 	* ~~prestaciones sociales~~ 
 	* ~~pago al personal subcontratado.~~
 
 + INGRESOS POR CONSUMO DE BIENES Y SERVICIOS:
 	* Suministro de agua 69.3%
-	* Derechos de conexiÃ³n y alcantarillado 2.1%
+	* Derechos de conexiÃÂÃÂ³n y alcantarillado 2.1%
 	* Ingresos por ejercicios anteriores 9.2%
 	* Otros Venta de agua tratada 7.6%
 
@@ -194,9 +194,9 @@ In this project, the classification that we use is mostly derived from a _Nota T
  	* Toma domestica 92.1%
 	* Toma comercial 6.3 % 
 	* Toma industrial 0.6 %
-	* Toma de servicios pÃºblicos 1 % 
+	* Toma de servicios pÃÂÃÂºblicos 1 % 
 	
-+ DistribuciÃ³n porcentual de los ingresos según la venta de agua potable por tipo de usuario
++ DistribuciÃÂÃÂ³n porcentual de los ingresos segÃÂºn la venta de agua potable por tipo de usuario
 	* Toma domestica 60.9 %
 	* Toma comercial 25.3 %
 	* Toma industrial 8.1 %
@@ -222,7 +222,7 @@ Freq_Tipo <- summarytools::freq(prestadores_Popa$Tipo_lbl ,
 										  round.digits = 2, # default 2
 										  order = "freq", #  
 										  style = 'rmarkdown', #  
-										  omit.headings = T
+										   headings = T #omit.headings = T # deprecated 
 			) 
 
 # ======= DOES NOT RENDER IN SITE 
@@ -261,7 +261,7 @@ Freq_Rango <- summarytools::freq(prestadores_Popa$Rango_lbl ,
 											round.digits = 1, # default 2
 											order = "freq", #  
 											style = 'rmarkdown', #  
-											omit.headings = T
+											headings = T# omit.headings = T
 			) 
 
 # ======= DOES NOT RENDER IN SITE 

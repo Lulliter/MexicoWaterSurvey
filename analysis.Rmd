@@ -8,10 +8,10 @@ Analysis of Survey WSS Operators Mexico
 # some hypothesis 
 
 
-•	p.9 “digital water / smart metering could reduce costs of identifying leakage, but these savings are actually small compared to the cost of fixing the leakages (huge)”!
+â¢	p.9 âdigital water / smart metering could reduce costs of identifying leakage, but these savings are actually small compared to the cost of fixing the leakages (huge)â!
 o	we are trying to assess where operators stand but is it really effective? (should this be priority to push)?
-•	p.10 water reuse saving cold be also huge, but adoption will be slow... (except in places with such shortage of fresh water that it would be important) 
-•	p.35 urbanization is associated to higher consumption per capita (-) / as well as could reduce unit cost of networks (+) —> hence the effects are mixed
+â¢	p.10 water reuse saving cold be also huge, but adoption will be slow... (except in places with such shortage of fresh water that it would be important) 
+â¢	p.35 urbanization is associated to higher consumption per capita (-) / as well as could reduce unit cost of networks (+) â> hence the effects are mixed
 
 * we have no idea if tariffs are low or high in LAC (people say are too low, but in fact they are not showing in the Database) 
-* or maybe it is that metering is not widespread … and there are leakages 
+* or maybe it is that metering is not widespread â¦ and there are leakages 

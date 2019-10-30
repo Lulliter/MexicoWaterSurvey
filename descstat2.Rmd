@@ -34,12 +34,12 @@ if (!require("pacman")) {
 
 library(pacman) # for loading packages
 p_load(tidyverse,
-		 stringr,
-		 forcats,
-		 scales,
-		 patchwork,
-		 countrycode,
-		 sf,
+		 # stringr,
+		 # forcats,
+		 # scales,
+		 # patchwork,
+		 # countrycode,
+		 # sf,
 		 here,
 		 kableExtra,
 		 summarytools) 

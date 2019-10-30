@@ -28,18 +28,20 @@ if (!require("pacman")) {
 
 library(pacman) # for loading packages
 p_load(tidyverse,
-		 stringr,
-		 forcats,
-		 scales,
-		 patchwork,
-		 countrycode,
-		 sf,
+		 magrittr,
+		 # stringr,
+		 # forcats,
+		 # scales,
+		 # #patchwork,
+		 # countrycode,
+		 # sf,
 		 here,
 		 kableExtra,
 		 summarytools,
 		 pander,
-		 DT,
-		 memisc) # now needed 
+		 DT
+		 #memisc
+		 ) # now needed 
 ```
 
 
@@ -185,7 +187,7 @@ Based on the information collected via the survey, we can estimate NRW as per In
 Our derived indicator is **`NRWm3_pct`** { = (`Q12b_m3_In_Tot` - `Q13_m3_Fatt_Tot`) / `Q12b_m3_In_Tot` *100 }
 
 
-```{r tblNRWrecap, , message=FALSE, warning=FALSE, warning=FALSE}
+```{r tblNRWrecap, message=FALSE, warning=FALSE, warning=FALSE}
 load(here::here("output", "MX_NRW.Rdata"))
 library(DT)
 # class(tbl_descstat_cov)

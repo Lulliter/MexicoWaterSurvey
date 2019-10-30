@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -73,7 +74,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -234,56 +234,12 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 <style type="text/css">
 .code-folding-btn { margin-bottom: 4px; }
 </style>
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("show" === "show");
-});
-</script>
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3,h4",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -332,8 +288,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -446,7 +400,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">The sample of Water &amp; Sanitation Providers</h1>
-<h4 class="date">Last run: August 29, 2019</h4>
+<h4 class="date">Last run: October 30, 2019</h4>
 
 </div>
 
@@ -503,12 +457,12 @@ div.tocify {
 <div id="the-universe-of-wss-suppliers-in-mexico" class="section level4">
 <h4>The universe of WSS suppliers in Mexico</h4>
 <p>INEGI has identified a total of <em>2,688 “Organismos Operadores”</em> (OO) in the <em>“Censo de Captacion, Tratamiento y Suministro de Agua”</em> conducted in 2014 and published in 2016 <span class="citation">(INEGI 2016 )</span>. Of all of these, some ~700 could be rightly defined as <em>“Organismos Operadores”</em>, i.e. entities specialized in the provision of the services of water and sanitation (regardless of their degree of autonomy in their decision making and financial management.</p>
-<pre><code>&gt;  The service providers *&quot;organismo que presta el servicio de captaciòn, tratamiento y suministro de agua&quot;* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census</code></pre>
+<pre><code>&gt;  The service providers *&quot;organismo que presta el servicio de captaciÃÂ²n, tratamiento y suministro de agua&quot;* in Mexico are extremely heterogeneous in nature and conditions. Here are some key information from the Economic Census</code></pre>
 <ul>
 <li>JURIDICAL CATEGORY:
 <ul>
 <li>2401 (of 2668) are <em>servicios del sector publico</em></li>
-<li>257 (of 2668) are <em>asociaciòn civil</em></li>
+<li>257 (of 2668) are <em>asociaciÃÂ²n civil</em></li>
 <li>30 (of 2668) are <em>sociedad mercantil con fines de lucro o sociedad cooperativa</em></li>
 </ul></li>
 </ul>
@@ -527,12 +481,12 @@ div.tocify {
 <li>EMPLOYED PERSONNEL:
 <ul>
 <li>personal ocupado por sexo; 81.3% con trabajadores hombres y 18.7% mujeres</li>
-<li>obreros y tÃ©cnicos; 76,744 obreros y tÃ©cnicos (62.5%)/un total de 117 866 puestos de trabajo</li>
+<li>obreros y tÃÂÃÂ©cnicos; 76,744 obreros y tÃÂÃÂ©cnicos (62.5%)/un total de 117 866 puestos de trabajo</li>
 <li>empleados y directivos;</li>
 <li><del>personal no remunerado</del> 3,764 trabaja- dores no remunerados/un total de 117 866 puestos de trabaj<br />
 </li>
 <li><del>promedio de horas trabajadas</del></li>
-<li><del>personal no dependiente de la razòn social</del></li>
+<li><del>personal no dependiente de la razÃÂ²n social</del></li>
 <li><del>remuneraciones pagadas</del></li>
 <li><del>prestaciones sociales</del></li>
 <li><del>pago al personal subcontratado.</del></li>
@@ -540,7 +494,7 @@ div.tocify {
 <li>INGRESOS POR CONSUMO DE BIENES Y SERVICIOS:
 <ul>
 <li>Suministro de agua 69.3%</li>
-<li>Derechos de conexiÃ³n y alcantarillado 2.1%</li>
+<li>Derechos de conexiÃÂÃÂ³n y alcantarillado 2.1%</li>
 <li>Ingresos por ejercicios anteriores 9.2%</li>
 <li>Otros Venta de agua tratada 7.6%</li>
 </ul></li>
@@ -549,9 +503,9 @@ div.tocify {
 <li>Toma domestica 92.1%</li>
 <li>Toma comercial 6.3 %</li>
 <li>Toma industrial 0.6 %</li>
-<li>Toma de servicios pÃºblicos 1 %</li>
+<li>Toma de servicios pÃÂÃÂºblicos 1 %</li>
 </ul></li>
-<li>DistribuciÃ³n porcentual de los ingresos según la venta de agua potable por tipo de usuario
+<li>DistribuciÃÂÃÂ³n porcentual de los ingresos segÃÂºn la venta de agua potable por tipo de usuario
 <ul>
 <li>Toma domestica 60.9 %</li>
 <li>Toma comercial 25.3 %</li>
@@ -596,22 +550,22 @@ Freq
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 No clasificado
 </td>
-<td style="text-align:right;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 1332
 </td>
-<td style="text-align:right;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 59.15
 </td>
-<td style="text-align:right;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 59
 </td>
-<td style="text-align:right;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 59.15
 </td>
-<td style="text-align:right;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:right;font-weight: bold;color: white !important;background-color: #D7261E !important;">
 59
 </td>
 </tr>
@@ -676,22 +630,22 @@ OPD paraestatal
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:left;font-weight: bold;background-color: #FFC1C1 !important;">
 Concesionario privado
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 10
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 0.44
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 99
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 0.44
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 99
 </td>
 </tr>
@@ -756,22 +710,22 @@ Operador federal
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:left;font-weight: bold;background-color: #FFC1C1 !important;">
 Empresa publico-privada
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 1
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 0.04
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 100
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 0.04
 </td>
-<td style="text-align:right;font-weight: bold;background-color: #FFC1C1;">
+<td style="text-align:right;font-weight: bold;background-color: #FFC1C1 !important;">
 100
 </td>
 </tr>
@@ -1542,6 +1496,54 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
