@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -14,48 +13,66 @@
 
 <title>The sample of Water &amp; Sanitation Providers</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
 
 
 
 
 <style type="text/css">
-h1 {
-  font-size: 34px;
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-h1.title {
-  font-size: 38px;
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-h2 {
-  font-size: 30px;
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-h3 {
-  font-size: 24px;
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
 }
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -67,10 +84,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -87,40 +100,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 41px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h2 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h3 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h4 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h5 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h6 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -148,7 +137,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -160,7 +149,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -171,10 +160,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -186,7 +188,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -222,6 +223,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -253,6 +255,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -314,7 +322,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -328,7 +336,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -387,11 +395,11 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
 </ul>
@@ -400,7 +408,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">The sample of Water &amp; Sanitation Providers</h1>
-<h4 class="date">Last run: October 30, 2019</h4>
+<h4 class="date">Last run: April 21, 2022</h4>
 
 </div>
 
@@ -418,7 +426,7 @@ div.tocify {
 </ol>
 <p>LAPOP provided a file with geofences that indicate a circle containing each cluster in 2016 (might be slightly changed in 2018)</p>
 <center>
-<img src="output/Qgis_Lapop2016Ent.png" alt="LAPOP clusters (over Ent) of hh interviewed in 2016" />
+<img src="output/Qgis_Lapop2016Ent.png" title="fig:" alt="LAPOP clusters (over Ent) of hh interviewed in 2016" />
 </center>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Based on those, we identified the (expected) clusters for POPA 2018 sample &amp; matched each location with the pertinent WSS Supplier in the area. We arrived to a sample of <strong>96 different suppliers</strong>.</p></li>
@@ -430,13 +438,13 @@ div.tocify {
 <p>The States (Entidades) <em>currently</em> covered by the sample are <strong>??</strong> (all)</p>
 </blockquote>
 <center>
-<img src="output/01_tmap_PopaSampleE.png" alt="Mexico Entidades in Sample" />
+<img src="output/01_tmap_PopaSampleE.png" title="fig:" alt="Mexico Entidades in Sample" />
 </center>
 <blockquote>
 <p>The Municipios <em>currently</em> covered by the sample are <strong>???? </strong> (out of 2456)</p>
 </blockquote>
 <center>
-<img src="output/01_tmap_PopaSampleM.png" alt="MExico municipios in sample" />
+<img src="output/01_tmap_PopaSampleM.png" title="fig:" alt="MExico municipios in sample" />
 </center>
 <ol start="4" style="list-style-type: decimal">
 <li><p>This survey encompasses two main goals:</p>
@@ -466,7 +474,7 @@ div.tocify {
 <li>30 (of 2668) are <em>sociedad mercantil con fines de lucro o sociedad cooperativa</em></li>
 </ul></li>
 </ul>
-<p>In this project, the classification that we use is mostly derived from a <em>Nota Tecnica</em> prepared by some colleagues of the IADB, WSA division <span class="citation">(See Riquelme and Martinez, n.d., 1–3)</span>. This managed to retreive some basic information on <strong>2,252 Prestadores</strong>.</p>
+<p>In this project, the classification that we use is mostly derived from a <em>Nota Tecnica</em> prepared by some colleagues of the IADB, WSA division <span class="citation">(See Riquelme and Martinez December 2018 (forthcoming), 1–3)</span>. This managed to retreive some basic information on <strong>2,252 Prestadores</strong>.</p>
 <ul>
 <li>GEOGRAPHIC COVERAGE: according to INEGI, the <strong>OOs</strong> can present different coverage <span class="citation">(INEGI 2016, 16)</span>
 <ul>
@@ -517,7 +525,7 @@ div.tocify {
 <div id="the-organismos-operadores-in-our-sample" class="section level4">
 <h4>THE ORGANISMOS OPERADORES IN OUR SAMPLE</h4>
 <ul>
-<li><strong>JURIDICAL CATEGORY (“TIPO”)</strong> refers to the juridical status of the agency: <strong>654</strong> are considered proper “PRESTADORES”, whereas 1,557 are not considered as proper utilities in the classification, respectively:
+<li><strong>JURIDICAL CATEGORY (“TIPO”)</strong> refers to the juridical status of the agency: <strong>654</strong> are considered proper “PRESTADORES,” whereas 1,557 are not considered as proper utilities in the classification, respectively:
 <ul>
 <li>1,332 are <em>No clasificado</em></li>
 <li>245 are cases in which the municipalities that directly provide water and sanitation services</li>
@@ -1028,7 +1036,7 @@ Total
 <h2>(PHASE II) The households served in the respective service areas of the surveyed Water &amp; Sanitation Providers</h2>
 <div id="which-households" class="section level3">
 <h3>Which households?</h3>
-<p>The sample selected is made of <em>“Viviendas Particulares Habitadas”</em> (Mexico, INEGI definition) and <em>“domicilios particulares permanentes”</em> (as opposed t “improvisado”, Brazl)</p>
+<p>The sample selected is made of <em>“Viviendas Particulares Habitadas”</em> (Mexico, INEGI definition) and <em>“domicilios particulares permanentes”</em> (as opposed t “improvisado,” Brazl)</p>
 </div>
 <div id="how-many" class="section level3">
 <h3>How many?</h3>
@@ -1040,10 +1048,10 @@ Total
 <h3>Spatial identification of hh clusters</h3>
 <p>The maps below show where the surveyed household clusters are located.</p>
 <center>
-<img src="output/01_tmap_PopaSampleE.png" alt="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016" />
+<img src="output/01_tmap_PopaSampleE.png" title="fig:" alt="The ENTIDADES which include LAPOP clusters by # of hh interviewed in 2016" />
 </center>
 <center>
-<img src="output/01_tmap_PopaSampleM.png" alt="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016" />
+<img src="output/01_tmap_PopaSampleM.png" title="fig:" alt="The MUNICIPIOS which include LAPOP clusters by # of hh interviewed in 2016" />
 </center>
 </div>
 <div id="changes-occurred-between-2000-2010-in-areas-of-interest" class="section level3">
@@ -1453,21 +1461,21 @@ Total per municipio
 </div>
 </div>
 <div id="reference" class="section level2 unnumbered">
-<h2>REFERENCE</h2>
-<div id="refs" class="references">
-<div id="ref-inegi_panorama_2016">
-<p>INEGI. 2016. “Panorama censal de los organismos operadores de agua en México. Censos Económicos 2014,” 46.</p>
+<h2 class="unnumbered">REFERENCE</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-inegi_panorama_2016" class="csl-entry">
+INEGI. 2016. <span>“<span class="nocase">Panorama censal de los organismos operadores de agua en M<span class="nocase">é</span>xico. Censos Econ<span class="nocase">ó</span>micos 2014</span>,”</span> 46.
 </div>
-<div id="ref-riquelme_lor_2018">
-<p>Riquelme, Rodrigo, and Ricardo Martinez. n.d. “Lor Organismos Operadores de Agua Y Saneamiento En México (Documento En Preparación).” CDMX, Mexico.</p>
+<div id="ref-riquelme_lor_2018" class="csl-entry">
+Riquelme, Rodrigo, and Ricardo Martinez. December 2018 (forthcoming). <span>“Lor <span>Organismos Operadores</span> de <span>Agua</span> y <span>Saneamiento</span> En <span class="nocase">M<span class="nocase">é</span>xico</span> (Documento En Preparaci<span>ó</span>n).”</span> <span>CDMX, Mexico</span>.
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 &amp; 62)).<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 &amp; 62)).<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 &amp; 62)).<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>This information was retrieved from the STATA files with the sample of MX 2016 - (since samples are proportional to the size of the population, larger municipios have more than one PSU (es Tijuana has 61 &amp; 62)).<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
@@ -1489,7 +1497,7 @@ Total per municipio
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -1507,7 +1515,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -1522,6 +1530,9 @@ $(document).ready(function () {
 <script>
 $(document).ready(function ()  {
 
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
         .removeClass('toc-ignore')
@@ -1533,7 +1544,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -14,63 +13,91 @@
 
 <title>Descriptive Statistics of Survey WSS Operators Mexico</title>
 
-<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="site_libs/datatables-binding-0.9/datatables.js"></script>
-<link href="site_libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="site_libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="site_libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="site_libs/jszip-1.10.19/jszip.min.js"></script>
-<script src="site_libs/pdfmake-1.10.19/pdfmake.min.js"></script>
-<script src="site_libs/pdfmake-1.10.19/vfs_fonts.js"></script>
-<link href="site_libs/dt-ext-buttons-1.10.19/css/buttons.dataTables.min.css" rel="stylesheet" />
-<script src="site_libs/dt-ext-buttons-1.10.19/js/dataTables.buttons.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.flash.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.html5.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.colVis.min.js"></script>
-<script src="site_libs/dt-ext-buttons-1.10.19/js/buttons.print.min.js"></script>
-<link href="site_libs/dt-plugin-searchhighlight-1.10.19/dataTables.searchHighlight.css" rel="stylesheet" />
-<script src="site_libs/dt-plugin-searchhighlight-1.10.19/dataTables.searchHighlight.min.js"></script>
-<script src="site_libs/dt-plugin-searchhighlight-1.10.19/jquery.highlight.js"></script>
-<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
-<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+<script src="site_libs/datatables-binding-0.22/datatables.js"></script>
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/jszip-1.11.3/jszip.min.js"></script>
+<script src="site_libs/pdfmake-1.11.3/pdfmake.js"></script>
+<script src="site_libs/pdfmake-1.11.3/vfs_fonts.js"></script>
+<link href="site_libs/dt-ext-buttons-1.11.3/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.11.3/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.11.3/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.11.3/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.11.3/js/buttons.print.min.js"></script>
+<link href="site_libs/dt-plugin-searchhighlight-1.11.3/source.css" rel="stylesheet" />
+<script src="site_libs/dt-plugin-searchhighlight-1.11.3/jquery.highlight.js"></script>
+<script src="site_libs/dt-plugin-searchhighlight-1.11.3/source.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
-<style type="text/css">code{white-space: pre;}</style>
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +106,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -144,37 +171,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 })();
 </script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+
 
 
 <style type="text/css">
-h1 {
-  font-size: 34px;
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-h1.title {
-  font-size: 38px;
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-h2 {
-  font-size: 30px;
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-h3 {
-  font-size: 24px;
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
 }
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -186,10 +205,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -206,40 +221,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 41px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h2 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h3 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h4 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h5 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h6 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -267,7 +258,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -279,7 +270,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -290,10 +281,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -305,7 +309,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -341,6 +344,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -372,6 +376,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -433,7 +443,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -447,7 +457,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -506,11 +516,11 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
 </ul>
@@ -519,7 +529,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Descriptive Statistics of Survey WSS Operators Mexico</h1>
-<h4 class="date">Last run: October 30, 2019</h4>
+<h4 class="date">Last run: April 21, 2022</h4>
 
 </div>
 
@@ -539,17 +549,17 @@ div.tocify {
 <blockquote>
 <p>The vaste majority of operators is public, while there is more variation in size of covered area.</p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_uf_own_cov.Rdata&quot;</span>))</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># class(tbl_uf_own_cov)</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">caption &lt;-<span class="st"> &quot;Sampled Suppliers in Mexico, by State, Ownership Type and size of Coverage reach&quot;</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">covtable &lt;-<span class="st"> </span><span class="kw">pandoc.table.return</span>(tbl_uf_own_cov, </a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">                                          <span class="dt">keep.line.breaks =</span> F, </a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">                                          <span class="dt">style =</span> <span class="st">&quot;multiline&quot;</span>, </a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">                                          <span class="dt">justify =</span> <span class="st">&quot;lcrr&quot;</span>, </a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">                                          <span class="dt">caption =</span> caption</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">                                          )</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw">cat</span>(covtable)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_uf_own_cov.Rdata&quot;</span>))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># class(tbl_uf_own_cov)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>caption <span class="ot">&lt;-</span> <span class="st">&quot;Sampled Suppliers in Mexico, by State, Ownership Type and size of Coverage reach&quot;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>covtable <span class="ot">&lt;-</span> <span class="fu">pandoc.table.return</span>(tbl_uf_own_cov, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">keep.line.breaks =</span> F, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">style =</span> <span class="st">&quot;multiline&quot;</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">justify =</span> <span class="st">&quot;lcrr&quot;</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                                          <span class="at">caption =</span> caption</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                                          )</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(covtable)</span></code></pre></div>
 <table style="width:92%;">
 <caption>Sampled Suppliers in Mexico, by State, Ownership Type and size of Coverage reach</caption>
 <colgroup>
@@ -810,30 +820,30 @@ div.tocify {
 </ul></li>
 </ol>
 <center>
-<img src="output/Plot_CountByRango.png" title="Plot_CountByRango.png" alt="Plot_CountByLawOwnersh.png" />
+<img src="output/Plot_CountByRango.png" title="fig:Plot_CountByRango.png" alt="Plot_CountByLawOwnersh.png" />
 </center>
 <center>
-<img src="output/Plot_CountByLawOwnersh.png" title="Plot_CountByLawOwnersh.png" alt="Plot_CountByLawOwnersh.png" />
+<img src="output/Plot_CountByLawOwnersh.png" title="fig:Plot_CountByLawOwnersh.png" alt="Plot_CountByLawOwnersh.png" />
 </center>
 </div>
 <div id="coverage-service" class="section level2">
 <h2>1) COVERAGE &amp; SERVICE</h2>
 <div id="summary-of-key-coverage-numeric-variable" class="section level3">
 <h3>Summary of key coverage numeric variable</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_descstat_cov.Rdata&quot;</span>))</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co"># class(tbl_descstat_cov)</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">caption &lt;-<span class="st"> &quot;Summary of Coverage variables&quot;</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">var.summary &lt;-<span class="st"> </span><span class="kw">pandoc.table.return</span>(tbl_descstat_cov , </a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">                                              <span class="dt">keep.line.breaks =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">                                              <span class="dt">round =</span> <span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">                                              <span class="dt">big.mark =</span> <span class="st">&quot;,&quot;</span>,</a>
-<a class="sourceLine" id="cb2-9" data-line-number="9">                                              <span class="dt">justify =</span> <span class="st">&quot;llrrrrrr&quot;</span>, <span class="co"># OKKIO AL # DI COLONNE</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10">                                              <span class="dt">caption =</span> caption, <span class="dt">style =</span> <span class="st">&quot;multiline&quot;</span>,</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11">                                              <span class="dt">split.table =</span> <span class="ot">Inf</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12">                                              )</a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="kw">cat</span>(var.summary)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_descstat_cov.Rdata&quot;</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># class(tbl_descstat_cov)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>caption <span class="ot">&lt;-</span> <span class="st">&quot;Summary of Coverage variables&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>var.summary <span class="ot">&lt;-</span> <span class="fu">pandoc.table.return</span>(tbl_descstat_cov , </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">keep.line.breaks =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">round =</span> <span class="dv">2</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">justify =</span> <span class="st">&quot;llrrrrrr&quot;</span>, <span class="co"># OKKIO AL # DI COLONNE</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">caption =</span> caption, <span class="at">style =</span> <span class="st">&quot;multiline&quot;</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">split.table =</span> <span class="cn">Inf</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                                              )</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(var.summary)</span></code></pre></div>
 <table style="width:100%;">
 <caption>Summary of Coverage variables</caption>
 <colgroup>
@@ -922,18 +932,18 @@ div.tocify {
 </tbody>
 </table>
 <ul>
-<li>The WSS suppliers in the sample - as of October 30, 2019 - cover an average of <strong>5.23 municipios</strong> (almost always in one State), corresponding to a mean <strong>covered population of 740600.97</strong>.</li>
+<li>The WSS suppliers in the sample - as of April 21, 2022 - cover an average of <strong>5.23 municipios</strong> (almost always in one State), corresponding to a mean <strong>covered population of 740600.97</strong>.</li>
 <li>The suppliers on average serve localities that are <strong>72.22 urban</strong>.</li>
 </ul>
 </div>
-<div id="areas-covered-vs.service" class="section level3">
+<div id="areas-covered-vs.-service" class="section level3">
 <h3>Area(s) covered vs. service</h3>
 <blockquote>
 <p>Is there any difference between the Product MIX <code>Q9a_d_Mix_comb</code> across the URB-RUR type of coverage of the supplier <code>Q4_UrbRur_Mix</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>?</p>
 </blockquote>
 <p>Suppliers serving exclusively rural areas do not provide sanitation. Otherwise, the majority of suppliers provide all 4 services accounted for: + Water generation + Water Distribution + Sanitation + Wastewater Treatment</p>
 <center>
-<img src="output/Plot_CountByProdMix.png" title="Plot_CountByProdMix.png" alt="Plot_CountByProdMix.png" />
+<img src="output/Plot_CountByProdMix.png" title="fig:Plot_CountByProdMix.png" alt="Plot_CountByProdMix.png" />
 </center>
 <blockquote>
 <p>NEXT:… (?) Is the urbanization process (size, local distribution, rate) causing the lack (access, quality, affordability ) to service in the region (controlling for physical assets / hydrological condition, pop #, etc) ? ??</p>
@@ -941,21 +951,21 @@ div.tocify {
 </div>
 <div id="summary-of-key-service-charateristics" class="section level3">
 <h3>Summary of key service charateristics</h3>
-<p>Observations on the WSS suppliers surveyed as of October 30, 2019, …</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_descstat_covserv.Rdata&quot;</span>))</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co"># class(tbl_descstat_cov)</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">caption &lt;-<span class="st"> &quot;Summary of Service variables&quot;</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">var.summary &lt;-<span class="st"> </span><span class="kw">pandoc.table.return</span>(tbl_descstat_covserv , </a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">                                              <span class="dt">keep.line.breaks =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">                                              <span class="dt">round =</span> <span class="dv">2</span>,</a>
-<a class="sourceLine" id="cb3-8" data-line-number="8">                                              <span class="dt">big.mark =</span> <span class="st">&quot;,&quot;</span>,</a>
-<a class="sourceLine" id="cb3-9" data-line-number="9">                                              <span class="dt">justify =</span> <span class="st">&quot;llrrrrrr&quot;</span>, <span class="co"># OKKIO AL # DI COLONNE</span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10">                                              <span class="dt">caption =</span> caption, <span class="dt">style =</span> <span class="st">&quot;multiline&quot;</span>,</a>
-<a class="sourceLine" id="cb3-11" data-line-number="11">                                              <span class="dt">split.table =</span> <span class="ot">Inf</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12">                                              )</a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="kw">cat</span>(var.summary)</a></code></pre></div>
+<p>Observations on the WSS suppliers surveyed as of April 21, 2022, …</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;tbl_descstat_covserv.Rdata&quot;</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># class(tbl_descstat_cov)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>caption <span class="ot">&lt;-</span> <span class="st">&quot;Summary of Service variables&quot;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>var.summary <span class="ot">&lt;-</span> <span class="fu">pandoc.table.return</span>(tbl_descstat_covserv , </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">keep.line.breaks =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">round =</span> <span class="dv">2</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">big.mark =</span> <span class="st">&quot;,&quot;</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">justify =</span> <span class="st">&quot;llrrrrrr&quot;</span>, <span class="co"># OKKIO AL # DI COLONNE</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">caption =</span> caption, <span class="at">style =</span> <span class="st">&quot;multiline&quot;</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                                              <span class="at">split.table =</span> <span class="cn">Inf</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                                              )</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(var.summary)</span></code></pre></div>
 <table style="width:100%;">
 <caption>Summary of Service variables</caption>
 <colgroup>
@@ -997,7 +1007,7 @@ div.tocify {
 <td align="right">36</td>
 <td align="right">10.29</td>
 <td align="right">7.44</td>
-<td align="right">8.21</td>
+<td align="right">8.2</td>
 <td align="right">2</td>
 <td align="right">29</td>
 </tr>
@@ -1200,26 +1210,26 @@ div.tocify {
 <p>Lit Input: Some key determinants of high NRW are: 1. The cost of implementing counter-measures 2. A political cost associated with the control of unauthorized consumption in marginalized ares 3. A cost to those people who benefit from corruption 4. Technical cost of shortening leakage detection time &amp; improving pressure management (especially when the cost of pumping more raw water is 0 or low) [see <span class="citation">González-Gómez, García-Rubio, and Guardiola (2011)</span>, pp. 33-35; ch. 1].</p>
 </blockquote>
 <p>Based on the information collected via the survey, we can estimate NRW as per International Water Association’s (IWA) definition: NRW is defined as water that is placed into a water distribution system that is not billed to customers. Our derived indicator is <strong><code>NRWm3_pct</code></strong> { = (<code>Q12b_m3_In_Tot</code> - <code>Q13_m3_Fatt_Tot</code>) / <code>Q12b_m3_In_Tot</code> *100 }</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;MX_NRW.Rdata&quot;</span>))</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">library</span>(DT)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># class(tbl_descstat_cov)</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co"># SIMPLE TABLE WITH FILTER</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">MX_NRW <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="op">-</span>M1_oper_id, <span class="op">-</span>Q12b_m3_In_Tot, <span class="op">-</span>Q13_m3_Fatt_Tot) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="st">    </span><span class="co"># dplyr::arrange(entidad) %&gt;% </span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="st">  </span>DT<span class="op">::</span><span class="kw">datatable</span>(.,</a>
-<a class="sourceLine" id="cb4-10" data-line-number="10">    <span class="dt">elementId =</span> <span class="ot">NULL</span>,</a>
-<a class="sourceLine" id="cb4-11" data-line-number="11">    <span class="co"># filter = &#39;top&#39;,  # Problem if there are empty cells !!!</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12">    <span class="dt">extensions =</span> <span class="st">&quot;Buttons&quot;</span>,</a>
-<a class="sourceLine" id="cb4-13" data-line-number="13">    <span class="dt">options =</span> <span class="kw">list</span>(<span class="dt">pageLength =</span> <span class="dv">50</span>, <span class="dt">searchHighlight =</span> <span class="ot">TRUE</span>, <span class="dt">dom =</span> <span class="st">&quot;Bfrtip&quot;</span>, <span class="dt">buttons =</span> <span class="kw">c</span>(<span class="st">&quot;csv&quot;</span>, <span class="st">&quot;excel&quot;</span>, <span class="st">&quot;pdf&quot;</span>))</a>
-<a class="sourceLine" id="cb4-14" data-line-number="14">  ) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="st">  </span><span class="co"># helper functions</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatRound</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dt">backgroundColor =</span> <span class="st">&quot;yellow&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="st">  </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dt">color =</span> <span class="kw">styleInterval</span>(<span class="dv">50</span>, <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>)))</a></code></pre></div>
-<div id="htmlwidget-f6047db4d72e8063b1bf" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f6047db4d72e8063b1bf">{"x":{"filter":"none","extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39"],["Guanajuato","Guanajuato","Sonora","Ciudad de México","San Luis Potosí","Veracruz","Puebla","Querétaro","Coahuila","San Luis Potosí","Coahuila","Chihuahua","Tabasco","México","México","México","Guerrero","Guanajuato","Hidalgo","Puebla","Oaxaca","Veracruz","Sinaloa","Michoacán","Nayarit","Nayarit","Puebla","Veracruz","Baja California Sur","Guerrero","Hidalgo","Tamaulipas","Sonora","Michoacán","Chihuahua","Jalisco","Quintana Roo",null,null],["Public","Public","Public","Public","Public","Public","Public","Public","Public","Other","Public","Public","Public","Public","Public","Other","Other","Other","Public","Public","Public","Public","Public","Public","Public","Public","PPP","Public","Public","Public","Public","Public","Public","Public","Other","Public","Public","Public","Public"],["Urb-Rur","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Rural","Urb-Rur","Urban","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Urb-Rur","Urb-Rur","Rural","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Urban","Urban","Urban","Urban","Urb-Rur","Urban","Urb-Rur","Urban","Urb-Rur","Urban","Urban","Urb-Rur","Urb-Rur","Urban","Urb-Rur"],["Medium 300-500k","Medium 100-200k","Medium 200-300k","Large 1m-10m","Medium 50-100k","Large 500k-1m","Very Small &lt;10k","Large 1m-10m","Small 10-50k","Large 500k-1m","Medium 300-500k","Small 10-50k","Large 1m-10m","Large 1m-10m","Large 500k-1m","Large 500k-1m","Medium 50-100k","Medium 50-100k","Small 10-50k","Very Small &lt;10k","Small 10-50k","Large 1m-10m","Small 10-50k","Large 500k-1m","Small 10-50k","Medium 300-500k","Large 1m-10m","Small 10-50k","Medium 200-300k","Medium 100-200k","Small 10-50k","Large 500k-1m","Medium 100-200k","Medium 50-100k","Small 10-50k","Medium 100-200k","Large 500k-1m","Large 500k-1m","Medium 50-100k"],[90,75,72,71.2,79.3,80,null,85,80,43,64,90,null,65,90,75,null,90,80,null,null,80,0,80.77,80,85,null,10,62,70,null,87,91,80,95,80,null,null,90],[5,0,null,48.02637559671,49.435005767617,63.0927473074958,null,94.3172996249485,57.2135416666667,40,32.7041266663683,32.6039745090856,null,25.512104283054,11.6666666666667,54.5454545454545,null,-519.370792455323,90.3898562741846,null,null,26.2498879832744,44.0814368274848,56.6001661479023,null,48.2685153342433,null,39.9641577060932,33.0992482352604,51.2829255817918,null,33.3334925521739,17.4493986169202,30.3292857142857,null,33.852140077821,64.6947256967514,null,45.6649471563695]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>entidad<\/th>\n      <th>Q1_ownership_lbl<\/th>\n      <th>Q4_UrbRur_Mix<\/th>\n      <th>Cov_pop_rango_lbl<\/th>\n      <th>Q13a_m3_Fatt_Res_Perc<\/th>\n      <th>NRWm3_pct<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"searchHighlight":true,"dom":"Bfrtip","buttons":["csv","excel","pdf"],"columnDefs":[{"className":"dt-right","targets":[5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 6, 1, 3, \",\", \".\");\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background-color':'yellow'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50 ? \"black\" : \"red\"});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;MX_NRW.Rdata&quot;</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># class(tbl_descstat_cov)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># SIMPLE TABLE WITH FILTER</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>MX_NRW <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>M1_oper_id, <span class="sc">-</span>Q12b_m3_In_Tot, <span class="sc">-</span>Q13_m3_Fatt_Tot) <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># dplyr::arrange(entidad) %&gt;% </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  DT<span class="sc">::</span><span class="fu">datatable</span>(.,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">elementId =</span> <span class="cn">NULL</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># filter = &#39;top&#39;,  # Problem if there are empty cells !!!</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">extensions =</span> <span class="st">&quot;Buttons&quot;</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">50</span>, <span class="at">searchHighlight =</span> <span class="cn">TRUE</span>, <span class="at">dom =</span> <span class="st">&quot;Bfrtip&quot;</span>, <span class="at">buttons =</span> <span class="fu">c</span>(<span class="st">&quot;csv&quot;</span>, <span class="st">&quot;excel&quot;</span>, <span class="st">&quot;pdf&quot;</span>))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># helper functions</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  DT<span class="sc">::</span><span class="fu">formatRound</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  DT<span class="sc">::</span><span class="fu">formatStyle</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="at">backgroundColor =</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  DT<span class="sc">::</span><span class="fu">formatStyle</span>(<span class="st">&quot;NRWm3_pct&quot;</span>, <span class="at">color =</span> <span class="fu">styleInterval</span>(<span class="dv">50</span>, <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>)))</span></code></pre></div>
+<div id="htmlwidget-c98bf6bc16513421ecb9" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c98bf6bc16513421ecb9">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39"],["Guanajuato","Guanajuato","Sonora","Ciudad de México","San Luis Potosí","Veracruz","Puebla","Querétaro","Coahuila","San Luis Potosí","Coahuila","Chihuahua","Tabasco","México","México","México","Guerrero","Guanajuato","Hidalgo","Puebla","Oaxaca","Veracruz","Sinaloa","Michoacán","Nayarit","Nayarit","Puebla","Veracruz","Baja California Sur","Guerrero","Hidalgo","Tamaulipas","Sonora","Michoacán","Chihuahua","Jalisco","Quintana Roo",null,null],["Public","Public","Public","Public","Public","Public","Public","Public","Public","Other","Public","Public","Public","Public","Public","Other","Other","Other","Public","Public","Public","Public","Public","Public","Public","Public","PPP","Public","Public","Public","Public","Public","Public","Public","Other","Public","Public","Public","Public"],["Urb-Rur","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Rural","Urb-Rur","Urban","Urban","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Urb-Rur","Urb-Rur","Rural","Urb-Rur","Urb-Rur","Urb-Rur","Urban","Urban","Urban","Urban","Urban","Urb-Rur","Urban","Urb-Rur","Urban","Urb-Rur","Urban","Urban","Urb-Rur","Urb-Rur","Urban","Urb-Rur"],["Medium 300-500k","Medium 100-200k","Medium 200-300k","Large 1m-10m","Medium 50-100k","Large 500k-1m","Very Small &lt;10k","Large 1m-10m","Small 10-50k","Large 500k-1m","Medium 300-500k","Small 10-50k","Large 1m-10m","Large 1m-10m","Large 500k-1m","Large 500k-1m","Medium 50-100k","Medium 50-100k","Small 10-50k","Very Small &lt;10k","Small 10-50k","Large 1m-10m","Small 10-50k","Large 500k-1m","Small 10-50k","Medium 300-500k","Large 1m-10m","Small 10-50k","Medium 200-300k","Medium 100-200k","Small 10-50k","Large 500k-1m","Medium 100-200k","Medium 50-100k","Small 10-50k","Medium 100-200k","Large 500k-1m","Large 500k-1m","Medium 50-100k"],[90,75,72,71.2,79.3,80,null,85,80,43,64,90,null,65,90,75,null,90,80,null,null,80,0,80.77,80,85,null,10,62,70,null,87,91,80,95,80,null,null,90],[5,0,null,48.02637559671,49.435005767617,63.0927473074958,null,94.3172996249485,57.2135416666667,40,32.7041266663683,32.6039745090856,null,25.512104283054,11.6666666666667,54.5454545454545,null,-519.370792455323,90.3898562741846,null,null,26.2498879832744,44.0814368274848,56.6001661479023,null,48.2685153342433,null,39.9641577060932,33.0992482352604,51.2829255817918,null,33.3334925521739,17.4493986169202,30.3292857142857,null,33.852140077821,64.6947256967514,null,45.6649471563695]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>entidad<\/th>\n      <th>Q1_ownership_lbl<\/th>\n      <th>Q4_UrbRur_Mix<\/th>\n      <th>Cov_pop_rango_lbl<\/th>\n      <th>Q13a_m3_Fatt_Res_Perc<\/th>\n      <th>NRWm3_pct<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"searchHighlight":true,"dom":"Bfrtip","buttons":["csv","excel","pdf"],"columnDefs":[{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'background-color':'yellow'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50 ? \"black\" : \"red\"});\n}"}},"evals":["options.columnDefs.0.render","options.rowCallback"],"jsHooks":[]}</script>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -1236,13 +1246,13 @@ div.tocify {
 <li>On average, the size of served population, is also a great source of variation in the %NRW - highest found in 500-900k size (58%) and smallest in 10-50k size (7%)</li>
 </ol>
 <center>
-<img src="output/Plot_DensNRW_byOwn.png" title="Plot_DensNRW_byOwn.png" alt="Plot_DensNRW_byOwn.png" />
+<img src="output/Plot_DensNRW_byOwn.png" title="fig:Plot_DensNRW_byOwn.png" alt="Plot_DensNRW_byOwn.png" />
 </center>
 <center>
-<img src="output/Plot_DensNRW_byLOC.png" title="Plot_DensNRW_byLOC.png" alt="Plot_DensNRW_byLOC.png" />
+<img src="output/Plot_DensNRW_byLOC.png" title="fig:Plot_DensNRW_byLOC.png" alt="Plot_DensNRW_byLOC.png" />
 </center>
 <center>
-<img src="output/Plot_DensNRW_bySIZE.png" title="Plot_DensNRW_bySIZE.png" alt="Plot_DensNRW_bySIZE.png" />
+<img src="output/Plot_DensNRW_bySIZE.png" title="fig:Plot_DensNRW_bySIZE.png" alt="Plot_DensNRW_bySIZE.png" />
 </center>
 </div>
 <div id="nrw-correlation-with-suspected-determinant-factors" class="section level3">
@@ -1252,38 +1262,38 @@ div.tocify {
 <li><strong><code>Q27_IndivMeter_Perc</code></strong> –&gt; no stryking connection</li>
 </ol>
 <center>
-<img src="output/Plot_grid_NWR_IndMetBY4.png" title="Plot_grid_NWR_IndMetBY4.png" alt="Plot_grid_NWR_IndMetBY4.png" />
+<img src="output/Plot_grid_NWR_IndMetBY4.png" title="fig:Plot_grid_NWR_IndMetBY4.png" alt="Plot_grid_NWR_IndMetBY4.png" />
 </center>
 <ol start="2" style="list-style-type: decimal">
 <li><strong><code>Q40_NetworkYrlyInspected_Perc</code></strong> –&gt; no stryking connection</li>
 </ol>
 <center>
-<img src="output/Plot_grid_NWR_NetInpsBY4.png" title="Plot_grid_NWR_NetInpsBY4.png" alt="Plot_grid_NWR_NetInpsBY4.png" />
+<img src="output/Plot_grid_NWR_NetInpsBY4.png" title="fig:Plot_grid_NWR_NetInpsBY4.png" alt="Plot_grid_NWR_NetInpsBY4.png" />
 </center>
 <hr />
 <ol start="3" style="list-style-type: decimal">
 <li><strong><code>Q24_VolLossMech_Has</code></strong> –&gt; most suppliers say “Yes” (have a system to record VOLUME LOSSES)</li>
 </ol>
 <center>
-<img src="output/Plot_BOXNWR_VolLoss.png" title="Plot_BOXNWR_VolLoss.png" alt="Plot_BOXNWR_VolLoss.png" />
+<img src="output/Plot_BOXNWR_VolLoss.png" title="fig:Plot_BOXNWR_VolLoss.png" alt="Plot_BOXNWR_VolLoss.png" />
 </center>
 <ol start="4" style="list-style-type: decimal">
 <li><strong><code>Q39_LeaksDetection_Analyzed</code></strong> –&gt; most suppliers say “Yes” (have a systematic campaign to detect ruptures and LEAKS) and those cases show a somewhat lower NRW</li>
 </ol>
 <center>
-<img src="output/Plot_BOXNWR_Leaks.png" title="Plot_BOXNWR_Leaks.png" alt="Plot_BOXNWR_Leaks.png" />
+<img src="output/Plot_BOXNWR_Leaks.png" title="fig:Plot_BOXNWR_Leaks.png" alt="Plot_BOXNWR_Leaks.png" />
 </center>
 <ol start="5" style="list-style-type: decimal">
 <li><strong><code>Q41_ClandConn_Analyzed</code></strong> –&gt; the vast majority suppliers say “Yes” (have a system) and those cases show a significantly lower NRW (for now the NO sub-sample is too small to further analyze)</li>
 </ol>
 <center>
-<img src="output/Plot_BOXNWR_Cland.png" title="Plot_BOXNWR_Cland.png" alt="Plot_BOXNWR_Cland.png" />
+<img src="output/Plot_BOXNWR_Cland.png" title="fig:Plot_BOXNWR_Cland.png" alt="Plot_BOXNWR_Cland.png" />
 </center>
 <blockquote>
 <blockquote>
 <p>NEXT … Further exploration ….. + Exist procedim for estimation of vol loss/ (Q24)<br />
 * (?) Is the year of operation anywhere connected with efficiency?<br />
-* (?) Is thestack of laws connected with efficiency (Expected inverse relation)?? <code>Q8a_c_Leg_comb</code> <code>Q8a_LegInst_Cover</code> <code>Q8b_LegInst_DirServ</code> “<code>Q8c_LegInst_DirQual</code> <code>Q8d_LegInst_Tarif</code>”,</p>
+* (?) Is thestack of laws connected with efficiency (Expected inverse relation)?? <code>Q8a_c_Leg_comb</code> <code>Q8a_LegInst_Cover</code> <code>Q8b_LegInst_DirServ</code> “<code>Q8c_LegInst_DirQual</code> <code>Q8d_LegInst_Tarif</code>,”</p>
 </blockquote>
 </blockquote>
 </div>
@@ -1294,26 +1304,26 @@ div.tocify {
 </blockquote>
 <p>Y + Reliability = Q4… Q45 interruptions X + location + size + age? Q6 + Quality regulation (q8c) + SWIT penetration ? + % eng in staff + % IT in staff?</p>
 <p>The table below shows responses related to the incidence of service interruptions in the past 12 months.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">load</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;MX_REL.Rdata&quot;</span>))</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">library</span>(DT)</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># class(tbl_descstat_cov)</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co"># SIMPLE TABLE WITH FILTER </span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#datatable(data= MX_REL  , filter = &#39;top&#39;)</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">DT<span class="op">::</span><span class="kw">datatable</span>(MX_REL, </a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">                  <span class="dt">elementId =</span> <span class="ot">NULL</span>, </a>
-<a class="sourceLine" id="cb5-9" data-line-number="9">                  <span class="co">#filter = &#39;top&#39;,  </span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">                  <span class="dt">extensions =</span> <span class="st">&#39;Buttons&#39;</span>, </a>
-<a class="sourceLine" id="cb5-11" data-line-number="11">                  <span class="dt">options =</span> <span class="kw">list</span>( <span class="dt">pageLength =</span> <span class="dv">50</span>,  <span class="dt">dom =</span> <span class="st">&#39;Bfrtip&#39;</span>, <span class="dt">buttons =</span> <span class="kw">c</span>( <span class="st">&#39;csv&#39;</span>, <span class="st">&#39;excel&#39;</span>)),</a>
-<a class="sourceLine" id="cb5-12" data-line-number="12">                  <span class="dt">caption =</span> <span class="st">&#39;Individual Supplier</span><span class="ch">\&#39;</span><span class="st">s Responses about Service Interruptions&#39;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="st">    </span><span class="kw">formatRound</span>(<span class="st">&quot;Perc of network affected&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="st">    </span><span class="kw">formatRound</span>(<span class="st">&quot;Avg # days of interruption&quot;</span>, <span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="st">        </span>DT<span class="op">::</span><span class="kw">formatStyle</span>(<span class="st">&quot;Perc of network affected&quot;</span>, <span class="dt">color =</span> <span class="kw">styleInterval</span>( <span class="dv">50</span>, <span class="kw">c</span>(<span class="st">&#39;black&#39;</span>, <span class="st">&#39;red&#39;</span>)) )</a></code></pre></div>
-<div id="htmlwidget-289142cbbb004b4e39d5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-289142cbbb004b4e39d5">{"x":{"filter":"none","extensions":["Buttons"],"caption":"<caption>Individual Supplier's Responses about Service Interruptions<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39"],["10545659240","10545659241","10545659243","10545659244","10545659245","10545659246","10545659247","10545659248","10545659249","10545659250","10545659251","10545659252","10545659253","10545659254","10545659255","10545659256","10545659257","10545659258","10545659259","10545659260","10545659261","10545659262","10545659263","10545659264","10545659265","10545659266","10545659267","10545659268","10545659269","10545659270","10545659271","10545659272","10545659273","10545659274","10545659275","10545659276","10545659277","10545659278","10545659279"],["No","No","Yes","Yes","Yes","No","No","No","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes"],[null,null,"80","40","0.5",null,null,null,"50","0.01","1","70","40","40",null,"40","45","10",null,"50",null,"8","5","36","20","25","90","100","5","15","100","3590",null,"15","100","15","10",null,"1"],[null,null,"2","7","0",null,null,null,"1","5","0","0","0","7",null,"15","180","1",null,"7",null,"3","0.125","7","0.2","5",null,"10","1","3",null,"0.33",null,"30","0.041","30","2",null,"2"],[null,null,"IssueMaint","PlanMaint","IssueEnergy",null,null,null,"IssueEnergy","IssueMaint-Cleaning","BreakAdduct-Cleaning","IssueEnergy","IssueEnergy","PlanMaint",null,"IssueMaint","PlanMaint-PlanStop","IssueEnergy",null,"BreakAdduct",null,"IssueMaint","Leaks","IssueEnergy","PlanMaint","IssueEnergy","IssueMaint","IssueMaint-IssueEnergy","IssueMaint","PlanStop","PlanMaint","IssueMaint-IssueEnergy",null,"IssueMaint","PlanMaint-IssueEnergy","IssueMaint","BreakAdduct",null,"PlanMaint"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>M1_oper_id<\/th>\n      <th>Had Interruption past12m<\/th>\n      <th>Perc of network affected<\/th>\n      <th>Avg # days of interruption<\/th>\n      <th>Reason(s)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"dom":"Bfrtip","buttons":["csv","excel"],"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}],"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 3, 1, 3, \",\", \".\");\nDTWidget.formatRound(this, row, data, 4, 1, 3, \",\", \".\");\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50 ? \"black\" : \"red\"});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">&quot;output&quot;</span>, <span class="st">&quot;MX_REL.Rdata&quot;</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># class(tbl_descstat_cov)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># SIMPLE TABLE WITH FILTER </span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#datatable(data= MX_REL  , filter = &#39;top&#39;)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(MX_REL, </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">elementId =</span> <span class="cn">NULL</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                  <span class="co">#filter = &#39;top&#39;,  </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">extensions =</span> <span class="st">&#39;Buttons&#39;</span>, </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">options =</span> <span class="fu">list</span>( <span class="at">pageLength =</span> <span class="dv">50</span>,  <span class="at">dom =</span> <span class="st">&#39;Bfrtip&#39;</span>, <span class="at">buttons =</span> <span class="fu">c</span>( <span class="st">&#39;csv&#39;</span>, <span class="st">&#39;excel&#39;</span>)),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">caption =</span> <span class="st">&#39;Individual Supplier</span><span class="sc">\&#39;</span><span class="st">s Responses about Service Interruptions&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">formatRound</span>(<span class="st">&quot;Perc of network affected&quot;</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">formatRound</span>(<span class="st">&quot;Avg # days of interruption&quot;</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        DT<span class="sc">::</span><span class="fu">formatStyle</span>(<span class="st">&quot;Perc of network affected&quot;</span>, <span class="at">color =</span> <span class="fu">styleInterval</span>( <span class="dv">50</span>, <span class="fu">c</span>(<span class="st">&#39;black&#39;</span>, <span class="st">&#39;red&#39;</span>)) )</span></code></pre></div>
+<div id="htmlwidget-ad8a16142281227788a1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ad8a16142281227788a1">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"caption":"<caption>Individual Supplier's Responses about Service Interruptions<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39"],["10545659240","10545659241","10545659243","10545659244","10545659245","10545659246","10545659247","10545659248","10545659249","10545659250","10545659251","10545659252","10545659253","10545659254","10545659255","10545659256","10545659257","10545659258","10545659259","10545659260","10545659261","10545659262","10545659263","10545659264","10545659265","10545659266","10545659267","10545659268","10545659269","10545659270","10545659271","10545659272","10545659273","10545659274","10545659275","10545659276","10545659277","10545659278","10545659279"],["No","No","Yes","Yes","Yes","No","No","No","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","No","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","Yes","No","Yes","Yes","Yes","Yes","Yes","Yes"],[null,null,"80","40","0.5",null,null,null,"50","0.01","1","70","40","40",null,"40","45","10",null,"50",null,"8","5","36","20","25","90","100","5","15","100","3590",null,"15","100","15","10",null,"1"],[null,null,"2","7","0",null,null,null,"1","5","0","0","0","7",null,"15","180","1",null,"7",null,"3","0.125","7","0.2","5",null,"10","1","3",null,"0.33",null,"30","0.041","30","2",null,"2"],[null,null,"IssueMaint","PlanMaint","IssueEnergy",null,null,null,"IssueEnergy","IssueMaint-Cleaning","BreakAdduct-Cleaning","IssueEnergy","IssueEnergy","PlanMaint",null,"IssueMaint","PlanMaint-PlanStop","IssueEnergy",null,"BreakAdduct",null,"IssueMaint","Leaks","IssueEnergy","PlanMaint","IssueEnergy","IssueMaint","IssueMaint-IssueEnergy","IssueMaint","PlanStop","PlanMaint","IssueMaint-IssueEnergy",null,"IssueMaint","PlanMaint-IssueEnergy","IssueMaint","BreakAdduct",null,"PlanMaint"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>M1_oper_id<\/th>\n      <th>Had Interruption past12m<\/th>\n      <th>Perc of network affected<\/th>\n      <th>Avg # days of interruption<\/th>\n      <th>Reason(s)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":50,"dom":"Bfrtip","buttons":["csv","excel"],"columnDefs":[{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 1, 3, \",\", \".\", null);\n  }"},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'color':isNaN(parseFloat(value)) ? '' : value <= 50 ? \"black\" : \"red\"});\n}"}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.rowCallback"],"jsHooks":[]}</script>
 <p>The chart below shows the most frequent causes for service interruption p</p>
 <center>
-<img src="output/ggInterrRes.png" alt="InterruptReasons" />
+<img src="output/ggInterrRes.png" title="fig:" alt="InterruptReasons" />
 </center>
 </div>
 </div>
@@ -1328,11 +1338,11 @@ div.tocify {
 <p>NOTES + Some of the respondents are actually large companies comglomerate, so will have to understand better their distribution by size and ownership…. + Even when companies say “yes” to the adoption (e.g. smart meter) it may be just a pilot…</p>
 </blockquote>
 <center>
-<img src="output/TblSWIT_tbl.png" title="TblSWIT_tbl.png" alt="TblSWIT_tbl.png" />
+<img src="output/TblSWIT_tbl.png" title="fig:TblSWIT_tbl.png" alt="TblSWIT_tbl.png" />
 </center>
 <p>Below is a different graph to show the degree of adoption of various types of technologies.</p>
 <center>
-<img src="output/ggSWITbar.png" title="ggSWITbar.png" alt="ggSWITbar.png" />
+<img src="output/ggSWITbar.png" title="fig:ggSWITbar.png" alt="ggSWITbar.png" />
 </center>
 </div>
 </div>
@@ -1349,23 +1359,23 @@ div.tocify {
 <li>In privately owned suppliers, the Board seems the have the responsability monst cases</li>
 </ul>
 <center>
-<img src="output/Q46hireCEO_own_plot.png" title="Q46hireCEO_own_plot.png" alt="Q46hireCEO_own_plot.png" />
+<img src="output/Q46hireCEO_own_plot.png" title="fig:Q46hireCEO_own_plot.png" alt="Q46hireCEO_own_plot.png" />
 </center>
 <center>
-<img src="output/Q49fireCEO_own_plot.png" title="Q49fireCEO_own_plot.png" alt="Q49fireCEO_own_plot.png" />
+<img src="output/Q49fireCEO_own_plot.png" title="fig:Q49fireCEO_own_plot.png" alt="Q49fireCEO_own_plot.png" />
 </center>
 <center>
-<img src="output/Q46hireCEO_size_plot.png" alt="Q46hireCEO_size_plot.png" />
+<img src="output/Q46hireCEO_size_plot.png" title="fig:" alt="Q46hireCEO_size_plot.png" />
 </center>
 <center>
-<img src="output/Q49fireCEO_size_plot.png" alt="Q49fireCEO_size_plot.png" />
+<img src="output/Q49fireCEO_size_plot.png" title="fig:" alt="Q49fireCEO_size_plot.png" />
 </center>
 <hr />
 <center>
-<img src="output/Q48Dir_own_plot.png" alt="Q48Dir_own_plot.png" />
+<img src="output/Q48Dir_own_plot.png" title="fig:" alt="Q48Dir_own_plot.png" />
 </center>
 <center>
-<img src="output/Q48Dir_size_plot.png" alt="Q48Dir_size_plot.png" />
+<img src="output/Q48Dir_size_plot.png" title="fig:" alt="Q48Dir_size_plot.png" />
 </center>
 </div>
 </div>
@@ -1382,26 +1392,26 @@ div.tocify {
 </blockquote>
 </div>
 <div id="reference" class="section level2 unnumbered">
-<h2>REFERENCE</h2>
-<div id="refs" class="references">
-<div id="ref-andres_uncovering_2013">
-<p>Andrés, Luis A., Jordan Schwartz, and J. Luis Guasch. 2013. <em>Uncovering the Drivers of Utility Performance: Lessons from Latin America and the Caribbean on the Role of the Private Sector, Regulation, and Governance in the Power, Water, and Telecommunication Sectors</em>. The World Bank. <a href="https://doi.org/10.1596/978-0-8213-9660-5">https://doi.org/10.1596/978-0-8213-9660-5</a>.</p>
+<h2 class="unnumbered">REFERENCE</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-andres_uncovering_2013" class="csl-entry">
+Andrés, Luis A., Jordan Schwartz, and J. Luis Guasch. 2013. <em>Uncovering the <span>Drivers</span> of <span>Utility Performance</span>: <span>Lessons</span> from <span>Latin America</span> and the <span>Caribbean</span> on the <span>Role</span> of the <span>Private Sector</span>, <span>Regulation</span>, and <span>Governance</span> in the <span>Power</span>, <span>Water</span>, and <span>Telecommunication Sectors</span></em>. <span>The World Bank</span>. <a href="https://doi.org/10.1596/978-0-8213-9660-5">https://doi.org/10.1596/978-0-8213-9660-5</a>.
 </div>
-<div id="ref-arniella_can_2018">
-<p>Arniella, Elio. 2018. “CAN SMART TECHNOLOGIES IMPROVE EFFICIENCY IN THE WATER AND SANITATION SECTOR? Pressure Management Case Studies.” Nota Tecnica. IADB.</p>
+<div id="ref-arniella_can_2018" class="csl-entry">
+Arniella, Elio. 2018. <span>“<span>CAN SMART TECHNOLOGIES IMPROVE EFFICIENCY IN THE WATER AND SANITATION SECTOR</span>? <span>Pressure</span> Management Case Studies.”</span> Nota {{Tecnica}}. <span>IADB</span>.
 </div>
-<div id="ref-gonzalez-gomez_why_2011">
-<p>González-Gómez, Francisco, Miguel A. García-Rubio, and Jorge Guardiola. 2011. “Why Is Non-Revenue Water so High in so Many Cities?” <em>International Journal of Water Resources Development</em> 27 (2): 345–60. <a href="https://doi.org/10.1080/07900627.2010.548317">https://doi.org/10.1080/07900627.2010.548317</a>.</p>
+<div id="ref-gonzalez-gomez_why_2011" class="csl-entry">
+González-Gómez, Francisco, Miguel A. García-Rubio, and Jorge Guardiola. 2011. <span>“Why <span>Is Non</span>-Revenue <span>Water So High</span> in <span>So Many Cities</span>?”</span> <em>International Journal of Water Resources Development</em> 27 (2): 345–60. <a href="https://doi.org/10.1080/07900627.2010.548317">https://doi.org/10.1080/07900627.2010.548317</a>.
 </div>
-<div id="ref-lackey_energy_2017">
-<p>Lackey, Katy, and Lauren Fillmore. 2017. “Energy Management for Water Utilities in Latin America and the Caribbean - Exploring Energy Efficiency and Energy Recovery Potential in Wastewater Treatment Plants.” Water Environment &amp; Reuse Foundation (WE&amp;RF) for World Bank Group.</p>
+<div id="ref-lackey_energy_2017" class="csl-entry">
+Lackey, Katy, and Lauren Fillmore. 2017. <span>“Energy <span>Management</span> for <span>Water Utilities</span> in <span>Latin America</span> and the <span>Caribbean</span> - <span>Exploring Energy Efficiency</span> and <span>Energy Recovery Potential</span> in <span>Wastewater Treatment Plants</span>.”</span> <span>Water Environment &amp; Reuse Foundation (WE&amp;RF) for World Bank Group.</span>
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Later on, I would like to explore if <em>(?) Is the urbanization process (size, local distribution, rate) causing the lack (access, quality, affordability ) to service in the region (controlling for physical assets / hydrological condition, pop #, etc) ? ??</em><a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Later on, I would like to explore if <em>(?) Is the urbanization process (size, local distribution, rate) causing the lack (access, quality, affordability ) to service in the region (controlling for physical assets / hydrological condition, pop #, etc) ? ??</em><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
@@ -1423,7 +1433,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -1441,7 +1451,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -1456,6 +1466,9 @@ $(document).ready(function () {
 <script>
 $(document).ready(function ()  {
 
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
         .removeClass('toc-ignore')
@@ -1467,7 +1480,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0

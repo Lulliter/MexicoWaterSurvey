@@ -1,0 +1,18 @@
+####### R
+
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.Ruserdata
+
+# RStudio files
+.Rproj.user
+.Rproj.user/
+
+
+
+####### confidential data 
+/MexicoWaterSurvey/data/

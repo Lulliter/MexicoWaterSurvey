@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -14,12 +13,22 @@
 
 <title>Info</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -27,33 +36,40 @@
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
 
 
 
 <style type="text/css">
-h1 {
-  font-size: 34px;
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-h1.title {
-  font-size: 38px;
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-h2 {
-  font-size: 30px;
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-h3 {
-  font-size: 24px;
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
 }
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -65,10 +81,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -85,40 +97,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 41px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h2 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h3 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h4 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h5 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
-.section h6 {
-  padding-top: 46px;
-  margin-top: -46px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -146,7 +134,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -158,7 +146,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -169,10 +157,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -184,7 +185,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -220,6 +220,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -248,6 +249,12 @@ $(document).ready(function () {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -309,7 +316,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -323,7 +330,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -382,12 +389,12 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
 <h1 class="title toc-ignore">Info</h1>
-<h4 class="date">Last run: October 30, 2019</h4>
+<h4 class="date">Last run: April 21, 2022</h4>
 
 </div>
 
@@ -400,104 +407,104 @@ div.tocify {
 <h2>ACKNOWLEDGMENTS</h2>
 <ul>
 <li><p>This survey has been designed and sponsored by the <strong>Interamerican Development Bank Water Division</strong> (IADB, INE-WSA)</p></li>
-<li>The fieldwork has been carried out by the Brazilian company <a href="http://www.poparesearch.com/"><strong>PoPa Research</strong></a> in partnership with IADB.</li>
+<li><p>The fieldwork has been carried out by the Brazilian company <a href="http://www.poparesearch.com/"><strong>PoPa Research</strong></a> in partnership with IADB.</p></li>
 <li><p>The design of this webpage follows an example by Prof. Andrew Heiss’ published <a href="https://stats.andrewheiss.com/donors-ngo-restrictions/index.html">here</a></p></li>
 </ul>
 <!-- ## This static website -->
 <!-- This is a static webpage created to share insights from the survey on Brazil WSS Operators. (Raw survey responses are confidential). Its purpose is to...  -->
 </div>
 <div id="bibliography" class="section level2 unnumbered">
-<h2>BIBLIOGRAPHY</h2>
-<div id="refs" class="references">
-<div id="ref-noauthor_acqua_nodate">
-<p>“Acqua pubblica, utility in allarme: la riforma costa 15 miliardi.” n.d. <em>Il Sole 24 ORE</em>. https://www.ilsole24ore.com/art/impresa-e-territori/2019-03-10/acqua-pubblica-utility-allarme-riforma-costa-15-miliardi-100541.shtml?uuid=ABGzGRcB.</p>
+<h2 class="unnumbered">BIBLIOGRAPHY</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-noauthor_acqua_nodate" class="csl-entry">
+<span>“<span class="nocase">Acqua pubblica, utility in allarme: la riforma costa 15 miliardi</span>.”</span> n.d. <em>Il Sole 24 ORE</em>. https://www.ilsole24ore.com/art/impresa-e-territori/2019-03-10/acqua-pubblica-utility-allarme-riforma-costa-15-miliardi-100541.shtml?uuid=ABGzGRcB.
 </div>
-<div id="ref-agua.org.mx_organismos_nodate">
-<p>Agua.org.mx. n.d. “Organismos Operadores.” <em>Agua.org.mx</em>.</p>
+<div id="ref-agua.org.mx_organismos_nodate" class="csl-entry">
+Agua.org.mx. n.d. <span>“Organismos Operadores.”</span> <em>Agua.org.mx</em>.
 </div>
-<div id="ref-andres_uncovering_2013">
-<p>Andrés, Luis A., Jordan Schwartz, and J. Luis Guasch. 2013. <em>Uncovering the Drivers of Utility Performance: Lessons from Latin America and the Caribbean on the Role of the Private Sector, Regulation, and Governance in the Power, Water, and Telecommunication Sectors</em>. The World Bank. <a href="https://doi.org/10.1596/978-0-8213-9660-5">https://doi.org/10.1596/978-0-8213-9660-5</a>.</p>
+<div id="ref-andres_uncovering_2013" class="csl-entry">
+Andrés, Luis A., Jordan Schwartz, and J. Luis Guasch. 2013. <em>Uncovering the <span>Drivers</span> of <span>Utility Performance</span>: <span>Lessons</span> from <span>Latin America</span> and the <span>Caribbean</span> on the <span>Role</span> of the <span>Private Sector</span>, <span>Regulation</span>, and <span>Governance</span> in the <span>Power</span>, <span>Water</span>, and <span>Telecommunication Sectors</span></em>. <span>The World Bank</span>. <a href="https://doi.org/10.1596/978-0-8213-9660-5">https://doi.org/10.1596/978-0-8213-9660-5</a>.
 </div>
-<div id="ref-arias_regulation_2019">
-<p>Arias, Leandro, Juan Pablo Rud, and Christian A. Ruzzier. 2019. “The Regulation of Public Utilities of the Future in Latin America and the Caribbean (LAC) and Sanitation Sector.” DIA 2020 Background Papers.</p>
+<div id="ref-arias_regulation_2019" class="csl-entry">
+Arias, Leandro, Juan Pablo Rud, and Christian A. Ruzzier. 2019. <span>“The <span>Regulation</span> of <span>Public Utilities</span> of the <span>Future</span> in <span>Latin America</span> and the <span>Caribbean</span> (<span>LAC</span>) <span></span> <span>Water</span> and <span>Sanitation Sector</span>.”</span> {{DIA}} 2020 {{Background Papers}}.
 </div>
-<div id="ref-arniella_can_2018">
-<p>Arniella, Elio. 2018. “CAN SMART TECHNOLOGIES IMPROVE EFFICIENCY IN THE WATER AND SANITATION SECTOR? Pressure Management Case Studies.” Nota Tecnica. IADB.</p>
+<div id="ref-arniella_can_2018" class="csl-entry">
+Arniella, Elio. 2018. <span>“<span>CAN SMART TECHNOLOGIES IMPROVE EFFICIENCY IN THE WATER AND SANITATION SECTOR</span>? <span>Pressure</span> Management Case Studies.”</span> Nota {{Tecnica}}. <span>IADB</span>.
 </div>
-<div id="ref-bejarano_behavioral_2019">
-<p>Bejarano, Hernan. 2019. “A Behavioral and Experimental Approach to Environmental Issues.” IADB.</p>
+<div id="ref-bejarano_behavioral_2019" class="csl-entry">
+Bejarano, Hernan. 2019. <span>“A <span>Behavioral</span> and <span>Experimental Approach</span> to <span>Environmental Issues</span>.”</span> <span>IADB</span>.
 </div>
-<div id="ref-noauthor_blog_2019">
-<p>“Blog | Sostenibilità: siamo maglia nera quanto a spreco di acqua potabile.” 2019. <em>Info Data</em>.</p>
+<div id="ref-noauthor_blog_2019" class="csl-entry">
+<span>“<span class="nocase">Blog | Sostenibilit<span class="nocase">à</span>: siamo maglia nera quanto a spreco di acqua potabile</span>.”</span> 2019. <em>Info Data</em>.
 </div>
-<div id="ref-brugnara_r_2018">
-<p>Brugnara, Telmo. 2018. “R Package for (down)Loading Data from IBGE (Instituto Brasileiro de Geografia E Estatística): Tbrugz/Ribge.”</p>
+<div id="ref-brugnara_r_2018" class="csl-entry">
+Brugnara, Telmo. 2018. <span>“R Package for (down)loading Data from <span>IBGE</span> (<span>Instituto Brasileiro</span> de <span>Geografia</span> e <span class="nocase">Estat<span class="nocase">í</span>stica</span>): Tbrugz/Ribge.”</span>
 </div>
-<div id="ref-noauthor_chapter_nodate">
-<p>“Chapter 3 - DIA2020 April 23 2019.Docx.” n.d.</p>
+<div id="ref-noauthor_chapter_nodate" class="csl-entry">
+<span>“Chapter 3 - <span>Dia2020 April</span> 23 2019.docx.”</span> n.d.
 </div>
-<div id="ref-noauthor_cobro-pago_nodate">
-<p>“COBRO-PAGO.” n.d. http://www.fgra-cobro-pago.org.mx/2017/Inicio.</p>
+<div id="ref-noauthor_cobro-pago_nodate" class="csl-entry">
+<span>“<span>COBRO</span>-<span>PAGO</span>.”</span> n.d. http://www.fgra-cobro-pago.org.mx/2017/Inicio.
 </div>
-<div id="ref-conagua_situacion_2016">
-<p>CONAGUA, and (Comisión Nacional del Agua). 2016. “Situación Del Subsector Agua Potable, Drenaje Y Saneamiento, Edición 2016.”</p>
+<div id="ref-conagua_situacion_2016" class="csl-entry">
+CONAGUA, and (Comisión Nacional del Agua). 2016. <span>“Situaci<span>ó</span>n Del <span>Subsector Agua Potable</span>, <span>Drenaje</span> y <span>Saneamiento</span>, Edici<span>ó</span>n 2016.”</span>
 </div>
-<div id="ref-coneval_estudio_diag_medio_ambiente_2018.pdf_2018">
-<p>CONEVAL. 2018. “Estudio_Diag_Medio_Ambiente_2018.Pdf.”</p>
+<div id="ref-coneval_estudio_diag_medio_ambiente_2018.pdf_2018" class="csl-entry">
+CONEVAL. 2018. <span>“Estudio_<span>Diag</span>_<span>Medio</span>_<span>Ambiente</span>_2018.pdf.”</span>
 </div>
-<div id="ref-noauthor_esw_nodate">
-<p>“ESW 2017 - Tendencias de Consumo E Infraestructura - V2019_v2_LMM.Docx.” n.d.</p>
+<div id="ref-noauthor_esw_nodate" class="csl-entry">
+<span>“<span>ESW</span> 2017 - <span>Tendencias</span> de <span>Consumo</span> e <span>Infraestructura</span> - V2019_v2_<span>LMM</span>.docx.”</span> n.d.
 </div>
-<div id="ref-fondo_para_la_comunicacion_y_la_educacion_ambiental_ac_guipara_2009">
-<p>Fondo para la Comunicación y la Educación Ambiental AC. 2009. “Guía para Organismos Operadores. Agua potable, alcantarillado y saneamiento.” México DF.</p>
+<div id="ref-fondo_para_la_comunicacion_y_la_educacion_ambiental_ac_guipara_2009" class="csl-entry">
+Fondo para la Comunicación y la Educación Ambiental AC. 2009. <span>“<span class="nocase">Gu<span class="nocase">í</span>a para Organismos Operadores. Agua potable, alcantarillado y saneamiento</span>.”</span> <span>M<span>é</span>xico DF</span>.
 </div>
-<div id="ref-geografia_inegi_censos_2013">
-<p>Geografía (INEGI), Instituto Nacional de Estadística y. 2013. “Censos Económicos 2014. CE.” <em>Censos Económicos 2014. CE</em>. https://www.inegi.org.mx/programas/ce/2014/default.html#Publicaciones.</p>
+<div id="ref-geografia_inegi_censos_2013" class="csl-entry">
+Geografía (INEGI), Instituto Nacional de Estadística y. 2013. <span>“<span class="nocase">Censos Econ<span class="nocase">ó</span>micos 2014. CE</span>.”</span> <em>Censos Econ<span>ó</span>micos 2014. CE</em>. https://www.inegi.org.mx/programas/ce/2014/default.html#Publicaciones.
 </div>
-<div id="ref-gonzalez-gomez_why_2011">
-<p>González-Gómez, Francisco, Miguel A. García-Rubio, and Jorge Guardiola. 2011. “Why Is Non-Revenue Water so High in so Many Cities?” <em>International Journal of Water Resources Development</em> 27 (2): 345–60. <a href="https://doi.org/10.1080/07900627.2010.548317">https://doi.org/10.1080/07900627.2010.548317</a>.</p>
+<div id="ref-gonzalez-gomez_why_2011" class="csl-entry">
+González-Gómez, Francisco, Miguel A. García-Rubio, and Jorge Guardiola. 2011. <span>“Why <span>Is Non</span>-Revenue <span>Water So High</span> in <span>So Many Cities</span>?”</span> <em>International Journal of Water Resources Development</em> 27 (2): 345–60. <a href="https://doi.org/10.1080/07900627.2010.548317">https://doi.org/10.1080/07900627.2010.548317</a>.
 </div>
-<div id="ref-inegi_panorama_2016">
-<p>INEGI. 2016. “Panorama censal de los organismos operadores de agua en México. Censos Económicos 2014,” 46.</p>
+<div id="ref-inegi_panorama_2016" class="csl-entry">
+INEGI. 2016. <span>“<span class="nocase">Panorama censal de los organismos operadores de agua en M<span class="nocase">é</span>xico. Censos Econ<span class="nocase">ó</span>micos 2014</span>,”</span> 46.
 </div>
-<div id="ref-inegi_manual_nodate">
-<p>———. n.d. “Manual Cartografia Censal - Censo de Población Y Vivienda 2010.”</p>
+<div id="ref-inegi_manual_nodate" class="csl-entry">
+———. n.d. <span>“Manual <span>Cartografia Censal</span> - <span>Censo</span> de <span class="nocase">Poblaci<span class="nocase">ó</span>n</span> y <span>Vivienda</span> 2010.”</span>
 </div>
-<div id="ref-inegi_modulo_2013">
-<p>INEGI, and (Instituto Nacional de Estadística y Geografía). 2013. “Módulo de condiciones socioeconómicas. Encuesta Nacional de Ingresos y Gastos de los Hogares 2012. Manual del entrevistador.”</p>
+<div id="ref-inegi_modulo_2013" class="csl-entry">
+INEGI, and (Instituto Nacional de Estadística y Geografía). 2013. <span>“<span class="nocase">M<span class="nocase">ó</span>dulo de condiciones socioecon<span class="nocase">ó</span>micas. Encuesta Nacional de Ingresos y Gastos de los Hogares 2012. Manual del entrevistador</span>.”</span>
 </div>
-<div id="ref-lackey_energy_2017">
-<p>Lackey, Katy, and Lauren Fillmore. 2017. “Energy Management for Water Utilities in Latin America and the Caribbean - Exploring Energy Efficiency and Energy Recovery Potential in Wastewater Treatment Plants.” Water Environment &amp; Reuse Foundation (WE&amp;RF) for World Bank Group.</p>
+<div id="ref-lackey_energy_2017" class="csl-entry">
+Lackey, Katy, and Lauren Fillmore. 2017. <span>“Energy <span>Management</span> for <span>Water Utilities</span> in <span>Latin America</span> and the <span>Caribbean</span> - <span>Exploring Energy Efficiency</span> and <span>Energy Recovery Potential</span> in <span>Wastewater Treatment Plants</span>.”</span> <span>Water Environment &amp; Reuse Foundation (WE&amp;RF) for World Bank Group.</span>
 </div>
-<div id="ref-lapop_mexico_2016">
-<p>LAPOP. 2016a. “MEXICO - Survey Questionnaire Instrument.”</p>
+<div id="ref-lapop_mexico_2016" class="csl-entry">
+LAPOP. 2016a. <span>“<span>MEXICO - Survey Questionnaire Instrument</span>.”</span>
 </div>
-<div id="ref-lapop_mexico_2016-1">
-<p>———. 2016b. “MEXICO - Survey Technical Information.”</p>
+<div id="ref-lapop_mexico_2016-1" class="csl-entry">
+———. 2016b. <span>“<span>MEXICO</span> - <span>Survey Technical Information</span>.”</span>
 </div>
-<div id="ref-lapop_mexico_2018">
-<p>———. 2018. “MEXICO - Survey Sample Design.”</p>
+<div id="ref-lapop_mexico_2018" class="csl-entry">
+———. 2018. <span>“<span>MEXICO</span> - <span>Survey</span> Sample Design.”</span>
 </div>
-<div id="ref-martinez_brechas_2018">
-<p>Martinez, Ricardo. 2018. “BRECHAS DE AGUA Y SANEAMIENTO EN MÉXICO: Resultados Recientes a Partir Del análisis de La Encuesta Nacional de Los Hogares (Forthcoming).” CDMX, Mexico.</p>
+<div id="ref-martinez_brechas_2018" class="csl-entry">
+Martinez, Ricardo. 2018. <span>“<span>BRECHAS DE AGUA Y SANEAMIENTO EN M<span>É</span>XICO</span>: <span>Resultados</span> Recientes a Partir Del an<span>á</span>lisis de La <span>Encuesta Nacional</span> de Los <span>Hogares</span> (Forthcoming).”</span> <span>CDMX, Mexico</span>.
 </div>
-<div id="ref-martinez_tableau_nodate">
-<p>———. n.d. “Tableau - Organismos Operadores de Agua Y Saneamiento.” https://public.tableau.com/profile/ricardo.martinez.lagunes#!/vizhome/OrganismosOperadoresAguaySaneamiento/Presentacin.</p>
+<div id="ref-martinez_tableau_nodate" class="csl-entry">
+———. n.d. <span>“Tableau - <span>Organismos Operadores</span> de <span>Agua</span> y <span>Saneamiento</span>.”</span> https://public.tableau.com/profile/ricardo.martinez.lagunes#!/vizhome/OrganismosOperadoresAguaySaneamiento/Presentacin.
 </div>
-<div id="ref-oecd_working_2018">
-<p>OECD. 2018. “Working Party on Biodiversity, Water and Ecosystems Addressing the Social Consequences of Tariffs for Water Supply and Sanitation.”</p>
+<div id="ref-oecd_working_2018" class="csl-entry">
+OECD. 2018. <span>“Working <span>Party</span> on <span>Biodiversity</span>, <span>Water</span> and <span>Ecosystems Addressing</span> the Social Consequences of Tariffs for Water Supply and Sanitation.”</span>
 </div>
-<div id="ref-ppiaf_using_2016">
-<p>PPIAF. 2016. “Using Performace-Based Contract to Reduce Non-Revenue Water.” World Bank Group.</p>
+<div id="ref-ppiaf_using_2016" class="csl-entry">
+PPIAF. 2016. <span>“Using <span>Performace</span>-<span>Based Contract</span> to Reduce <span>Non</span>-<span>Revenue Water</span>.”</span> <span>World Bank Group</span>.
 </div>
-<div id="ref-riquelme_lor_2018">
-<p>Riquelme, Rodrigo, and Ricardo Martinez. n.d. “Lor Organismos Operadores de Agua Y Saneamiento En México (Documento En Preparación).” CDMX, Mexico.</p>
+<div id="ref-riquelme_lor_2018" class="csl-entry">
+Riquelme, Rodrigo, and Ricardo Martinez. December 2018 (forthcoming). <span>“Lor <span>Organismos Operadores</span> de <span>Agua</span> y <span>Saneamiento</span> En <span class="nocase">M<span class="nocase">é</span>xico</span> (Documento En Preparaci<span>ó</span>n).”</span> <span>CDMX, Mexico</span>.
 </div>
-<div id="ref-noauthor_rpubs_nodate">
-<p>“RPubs - Análise de Microdados Da PNAD Contínua.” n.d. https://rpubs.com/BragaDouglas/335574.</p>
+<div id="ref-noauthor_rpubs_nodate" class="csl-entry">
+<span>“<span>RPubs</span> - <span class="nocase">An<span class="nocase">á</span>lise</span> de <span>Microdados</span> Da <span class="nocase">PNAD Cont<span class="nocase">í</span>nua</span>.”</span> n.d. https://rpubs.com/BragaDouglas/335574.
 </div>
-<div id="ref-noauthor_sabesp_nodate">
-<p>“Sabesp Da Água Tratada.” n.d. http://site.sabesp.com.br/site/interna/Default.aspx?secaoId=40.</p>
+<div id="ref-noauthor_sabesp_nodate" class="csl-entry">
+<span>“Sabesp <span></span> <span class="nocase"><span>Á</span>gua</span> <span></span> <span>Qualidade</span> Da <span>Á</span>gua Tratada.”</span> n.d. http://site.sabesp.com.br/site/interna/Default.aspx?secaoId=40.
 </div>
 </div>
 </div>
@@ -520,7 +527,7 @@ div.tocify {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -538,7 +545,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -547,6 +554,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
@@ -559,7 +569,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
