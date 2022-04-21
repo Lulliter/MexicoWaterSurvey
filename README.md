@@ -9,7 +9,7 @@ This is a static webpage created to track the progress of a survey on Mexico WSS
 This webpage https://lulliter.github.io/MexicoWaterSurvey/ has been built as an `R Markdown website`, using `Jekyll` as a static site generator with `GitHub Pages`  
 
 
-The code for the page is on my [Github repo](https://github.com/Lulliter/MexicoWaterSurvey), which is actually a sud-directory of the research project. The latter (not publicly disclosed because includes confidential data) is on the IADB company OneDrive cloud. 	
+The code for the page is on my [Github repo](https://github.com/Lulliter/MexicoWaterSurvey), which is **actually a sub-directory** of the research project. The latter (not publicly disclosed because includes confidential data) is on `/Users/luisamimmi/Documents/05_ARCHIVED-Projects_Work/2019_Backup_IADB_2018-2019/DataMEX`. 	
 
 ### Creators: 
 This page was created by Luisa Mimmi (lmm76@georgetown.edu or lmmimmi@iadb.org) but builds on data collected by various IADB colleagues and partner organizations. See [**Info page**](http://mexicowatersurvey.lulliter.com/info.html) for all due credits. 
